@@ -48,15 +48,17 @@
                 ...</h4>
         </div>
 
-        <p id="intro" class="m-5 text-secondary ai-response borderb " hx-get="/ai" hx-trigger="load" hx-swap="InnerHtml">
-            AI: Hi there! Radhi is a software developer who loves diving into web development and backend projects,
-            especially with Java. When he is not coding, you’ll probably find me strategizing over a game of chess. he
-            is also a computer science major and a proud Arch Linux user, always up for
+        <p id="intro"
+           class="m-5 text-secondary ai-response borderb result-streaming"
+           hx-get="/ai"
+           hx-trigger="load"
+           hx-swap="InnerHtml">
         </p>
     </div>
     <div class="borderb w-25 ">
-        <img class="img-fluid tilt-image shadow-lg rounded mt-5" src="https://github.com/user-attachments/assets/3c577c01-0a23-b91-8271-b0dcd1bc4bcc"
-             alt="picture of me" >
+        <img class="img-fluid tilt-image shadow-lg rounded mt-5"
+             src="https://github.com/user-attachments/assets/3c577c01-0a23-b91-8271-b0dcd1bc4bcc"
+             alt="picture of me">
     </div>
 </div>
 
@@ -86,7 +88,7 @@
             console.log('true');
             event.preventDefault();
             const responseHTML = event.detail.xhr.responseText;
-            console.log(responseHTML);
+            event.target.classList.add('result-streaming');
             chatgpt(event.target, responseHTML);
         }
         console.log('done');
@@ -96,7 +98,7 @@
         var typewriter = new Typewriter(element, {
             loop: false,
             delay: 20,
-            cursor: '🮆'
+            cursor: ''
         });
 
         typewriter
@@ -111,8 +113,9 @@
         });
 
         typewriter
-            .pauseFor(1000)
-            .start();
+            .pauseFor(500)
+            .callFunction(() => element.classList.remove('result-streaming'))
+            .start()
     }
 </script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"

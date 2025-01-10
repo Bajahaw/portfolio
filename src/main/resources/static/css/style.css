@@ -1,3 +1,5 @@
+@import url('https://fonts.cdnfonts.com/css/circle');
+
 body {
     font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, Noto Sans, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji !important;
 }
@@ -11,15 +13,22 @@ body {
 }
 
 .Typewriter__cursor {
-    animation: blink-animation 0.3s steps(2, start) 35 !important;
+    animation: none !important;
 }
 
-@keyframes blink-animation {
-
-    50% {
-        opacity: 0;
-    }
+.result-streaming>:not(ol):not(ul):not(pre):not(div):last-child:after,.result-streaming>pre:last-child code:after {
+    content: "⬤";
+    font-size: smaller;
+    /*line-height: normal;*/
+    vertical-align: text-bottom;
 }
+
+/*@keyframes blink-animation {*/
+/*    50% {*/
+/*        opacity: 0;*/
+/*    }*/
+/*}*/
+
 .tilt-image {
     rotate: 3deg;
     cursor: pointer;

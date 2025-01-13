@@ -4,12 +4,15 @@ body {
     font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, Noto Sans, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji !important;
 }
 
-.nav-link:hover {
-    color: var(--bs-navbar-active-color);
+.text-larger {
+    font-size: larger !important;
+}
+
+.scalable:hover {
+    color: var(--bs-navbar-active-color) !important;
     transition: transform 0.3s ease;
     transform: scale(1.05);
-    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
-!important;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1) !important;
 }
 
 .Typewriter__cursor {
@@ -37,8 +40,10 @@ body {
 .tilt-image:hover {
     transform: scale(1.05) rotate(1deg);
 }
+
 .container {
 }
+
 @keyframes appear {
     from {
         opacity: 0;

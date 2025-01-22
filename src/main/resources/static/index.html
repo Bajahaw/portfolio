@@ -83,10 +83,15 @@
         <div class="container d-flex flex-column pt-5" style="min-height: 640px">
             <h1 class="block display-5 fw-bold mt-4">About Me</h1>
             <div id="about-me-brief"
-                 class="block text-secondary text-larger ai-response my-3"
+                 class="block text-secondary text-larger ai-response my-4"
+                 style="min-height: 100px"
                  hx-get="/about-me-brief"
                  hx-trigger="revealed"
                  hx-swap="InnerHtml">
+            </div>
+            <div class="block mt-4">
+                <button class="btn btn-dark rounded-pill">More About Me</button>
+                <button class="btn btn-outline-dark rounded-pill mx-2">Download CV</button>
             </div>
         </div>
     </section>

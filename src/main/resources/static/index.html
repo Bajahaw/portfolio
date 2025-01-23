@@ -42,7 +42,7 @@
                 </div>
                 <div class="d-flex flex-column justify-content-between mt-5 mb-0 h-50">
                     <div id="intro"
-                         class="text-secondary text-larger ai-response"
+                         class="text-secondary text-larger ai-response result-streaming"
                          hx-get="/overview"
                          hx-trigger="load"
                          hx-swap="InnerHtml">
@@ -83,7 +83,7 @@
         <div class="container d-flex flex-column pt-5" style="min-height: 640px">
             <h1 class="block display-5 fw-bold mt-4">About Me</h1>
             <div id="about-me-brief"
-                 class="block text-secondary text-larger ai-response my-4"
+                 class="block text-secondary text-larger ai-response result-streaming my-4"
                  style="min-height: 100px"
                  hx-get="/about-me-brief"
                  hx-trigger="revealed"

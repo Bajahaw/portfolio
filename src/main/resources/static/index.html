@@ -99,7 +99,7 @@
                      hx-trigger="revealed"
                      hx-swap="InnerHtml">
                 </div>
-                <div class="col-lg-6 col-md-5 mx-lg-5">
+                <div class="col-lg-6 col-md-5 mx-lg-5 block">
                     <div class="card shadow-sm mx-5">
                         <div class="card-body">
                             <h5 class="card-title text-center mb-4">Contact Me</h5>
@@ -108,7 +108,8 @@
                                 <div class="form-control d-flex justify-content-between align-items-center rounded-pill">
                                     <span class="text-secondary">bajahawradhi@gmail.com</span>
                                     <div>
-                                        <button class="btn btn-sm" type="button" id="copyButton"><i class="bi bi-copy"></i></button>
+                                        <button class="btn btn-sm" type="button" id="copyButton" onclick="navigator.clipboard.writeText('bajahawradhi@gmail.com');">
+                                        <i class="bi bi-copy"></i></button>
                                         <a href="mailto:bajahawradhi@gmail.com" class="btn btn-dark rounded-pill btn-sm" type="button"><i class="bi bi-envelope"></i></a>
                                     </div>
                                 </div>

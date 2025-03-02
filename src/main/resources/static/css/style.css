@@ -19,9 +19,14 @@ body {
 
 .result-streaming>:not(ol):not(ul):not(pre):not(div):last-child:after,.result-streaming>pre:last-child code:after {
     content: "⬤";
-    font-size: smaller;
-    /*line-height: normal;*/
+    font-size: small;
     vertical-align: text-bottom;
+}
+
+.ai-response {
+    overflow: hidden;
+    transition: height 0.8s ease;
+    height: 0px;
 }
 
 /*@keyframes blink-animation {*/

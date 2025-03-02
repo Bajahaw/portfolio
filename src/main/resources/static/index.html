@@ -42,7 +42,7 @@
                 </div>
                 <div class="d-flex flex-column justify-content-between mt-5 mb-0 h-50">
                     <div id="intro"
-                         class="text-secondary text-larger ai-response result-streaming"
+                         class="text-secondary text-larger ai-response result-streaming w-100"
                          hx-get="/overview"
                          hx-trigger="load"
                          hx-swap="InnerHtml">
@@ -82,8 +82,7 @@
             <div class="col-lg-7 col-md-8 mx-lg-5 d-flex flex-column align-items-center justify-content-center p-5 px-lg-0">
                 <h1 class="block display-5 fw-bold mt-2">About Me</h1>
                 <div id="about-me-brief"
-                    class="block text-secondary text-center text-larger ai-response result-streaming my-4"
-                    style="min-height: 100px"
+                    class="block text-secondary text-center text-larger ai-response result-streaming my-4 w-100"
                     hx-get="/about-me-brief"
                     hx-trigger="revealed"
                     hx-swap="InnerHtml">
@@ -102,7 +101,6 @@
                 <div class="my-4 col-lg-6 col-md-6 d-flex flex-column justify-content-between">
                     <div id="social-overview"
                      class="block text-secondary text-larger ai-response result-streaming "
-                     style="min-height: 100px !important"
                      hx-get="/social-overview"
                      hx-trigger="revealed"
                      hx-swap="InnerHtml">
@@ -153,44 +151,11 @@
     </footer>
 </div>
 
-<script>
-    document.body.addEventListener('htmx:beforeSwap', (event) => {
-        if (event.target.classList.contains('ai-response')) {
-            event.preventDefault();
-
-            const responseHTML = event.detail.xhr.responseText;
-            event.target.classList.add('result-streaming');
-            chatgpt(event.target, responseHTML);
-        }
-    });
-
-    function chatgpt(element, text) {
-        var typewriter = new Typewriter(element, {
-            loop: false,
-            delay: 10,
-            cursor: ''
-        });
-
-        typewriter
-            .pauseFor(500)
-            .typeString('<span class="text-primary text-opacity-75">AI: </span> ');
-
-        text.match(/[^ ]+ ?/g).forEach(word => {
-            typewriter
-                .typeString(word)
-                .pauseFor(45);
-        });
-
-        typewriter
-            .pauseFor(500)
-            .callFunction(() => element.classList.remove('result-streaming'))
-            .start()
-    }
-</script>
+<script src="js/main.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
         crossorigin="anonymous"></script>
 <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
-<script src="https://unpkg.com/typewriter-effect@latest/dist/core.js"></script>
+<!-- <script src="https://unpkg.com/typewriter-effect@latest/dist/core.js"></script> -->
 </body>
 </html>

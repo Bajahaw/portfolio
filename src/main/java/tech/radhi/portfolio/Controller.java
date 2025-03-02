@@ -20,10 +20,10 @@ public class Controller {
     @GetMapping("/about-me-brief")
     public String aboutMeBrief(){
         return """
-                Radhi is a software
-                        engineering student who loves diving into web development and backend projects, especially with Java. When he is not
-                        coding, you’ll probably find me strategizing over a game of chess. <br> he is also a computer science major and a
-                        proud Arch Linux user, always up for exploring new ideas and technologies . . .
+                Radhi currently is a computer science
+                        engineering student at the University of Dunaujvaros - Hungary. He is passionate about technology and loves to 
+                        explore new ideas and concepts. Radhi is a quick learner and enjoys working on challenging projects that push him
+                        to think outside the box. He is always looking for new opportunities to grow and develop his skills . . .
                    \s""";
     }
 

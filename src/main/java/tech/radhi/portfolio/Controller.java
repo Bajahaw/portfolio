@@ -31,10 +31,10 @@ public class Controller {
     @GetMapping("/social-overview")
     public String socialOverview(){
         return """
-                Radhi likes to be a software
-                        engineering student who loves diving into web development and backend projects, especially with Java. When he is not
-                        coding, you’ll probably find me strategizing over a game of chess. <br> he is also a computer science major and a
-                        proud Arch Linux user, always up for exploring new ideas and technologies . . .
+                When Radhi's not coding, he's a dynamic online presence, sparking conversations and connections.
+                        With a knack for fostering meaningful relationships, he's a magnet for like-minded individuals who
+                        share his passion for innovation. Radhi's online persona is a reflection of his curious and
+                        adventurous spirit, always seeking out new perspectives and ideas.
                    \s""";
     }
 }

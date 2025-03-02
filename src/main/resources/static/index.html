@@ -34,7 +34,7 @@
             <div class="col h-100 col-lg-9 col-md-9">
                 <div class="my-5">
                     <h1 class="display-4 fw-bold mb-4">Hi, I am Radhi Bajahaw</h1>
-                    <h3 class="text-secondary">Let the <span class="text-primary text-opacity-75">AI</span> tell you
+                    <h3 class="text-secondary">Let <span class="text-primary text-opacity-75">AI</span> tell you
                         more
                         about
                         me
@@ -90,27 +90,34 @@
                 </div>
                 <div class="block my-4">
                     <button class="btn btn-dark rounded-pill">More About Me</button>
-                    <button class="btn btn-outline-dark rounded-pill m-2">Download CV</button>
+                    <button class="btn btn-outline-dark rounded-pill m-2">See Resume</button>
                 </div>
             </div>
         </div>
     </section>
     <section id="Contact" class="mx-0 px-0">
         <div class="container d-flex flex-column pt-5" style="min-height: 640px">
-            <h1 class="block display-5 fw-bold mt-4">Get in Touch</h1>
-            <div class="d-flex flex-column d-lg-flex flex-lg-row d-md-flex flex-md-row pt-5">
-                <div id="social-overview"
-                     class="block text-secondary text-larger ai-response result-streaming my-4 col-lg-6 col-md-6"
-                     style="min-height: 100px"
+            <h1 class="block display-5 fw-bold mt-5">Get in Touch</h1>
+            <div class="d-flex flex-column d-lg-flex flex-lg-row d-md-flex flex-md-row pt-4">
+                <div class="my-4 col-lg-6 col-md-6 d-flex flex-column justify-content-between">
+                    <div id="social-overview"
+                     class="block text-secondary text-larger ai-response result-streaming "
+                     style="min-height: 100px !important"
                      hx-get="/social-overview"
                      hx-trigger="revealed"
                      hx-swap="InnerHtml">
+                    </div>
+                    <div class="block my-4">
+                        <button class="btn btn-dark rounded-pill">Social Accounts</button>
+                        <button class="btn btn-outline-dark rounded-pill m-2">See Some Insights</button>
+                    </div>
                 </div>
-                <div class="col-lg-6 col-md-7 mx-lg-5 block mt-4">
+                
+                <div class="col-lg-6 col-md-7 mx-lg-5 block my-4">
                     <div class="card shadow-sm mx-lg-5 mx-md-4">
                         <div class="card-body">
                             <h5 class="card-title text-center mb-4">Contact Me</h5>
-                            <p class="mb-3 text-secondary">Feel free to connect with me through the following options:</p>
+                            <p class="mb-3 text-secondary">Feel free to connect with me through the following options: </p><br>
                             <div class="d-grid gap-3">
                                 <div class="form-control d-flex flex-nowrap justify-content-between align-items-center rounded-pill">
                                     <span class="text-secondary">bajahawradhi@gmail.com</span>
@@ -123,7 +130,7 @@
                                 <a href="https://www.linkedin.com/in/radhi-bajahaw" class="btn btn-dark rounded-pill" target="_blank">
                                     <i class="bi bi-linkedin mx-1"></i> LinkedIn
                                 </a>
-                                <a href="https://github.com/Bajahaw" class="btn btn-dark rounded-pill" target="_blank">
+                                <a href="https://github.com/Bajahaw" class="btn btn-dark rounded-pill mb-2" target="_blank">
                                     <i class="bi bi-github mx-1"></i> GitHub
                                 </a>
                             </div>
@@ -171,7 +178,7 @@
         text.match(/[^ ]+ ?/g).forEach(word => {
             typewriter
                 .typeString(word)
-                .pauseFor(75);
+                .pauseFor(45);
         });
 
         typewriter

@@ -42,10 +42,11 @@
                 </div>
                 <div class="d-flex flex-column justify-content-between mt-5 mb-0 h-50">
                     <div id="intro"
-                         class="text-secondary text-larger ai-response result-streaming w-100"
+                         class="text-secondary text-larger ai-response w-100"
                          hx-get="/overview"
                          hx-trigger="load"
                          hx-swap="InnerHtml">
+                         <span class="result-streaming"></span>
                     </div>
                     <div class="d-flex align-items-center my-5">
                         <a class="scalable" aria-label="Follow on GitHub" href="https://github.com/Bajahaw">
@@ -82,10 +83,11 @@
             <div class="col-lg-7 col-md-8 mx-lg-5 d-flex flex-column align-items-center justify-content-center py-5 px-lg-0">
                 <h1 class="block display-5 fw-bold mt-2">About Me</h1>
                 <div id="about-me-brief"
-                    class="block text-secondary text-center text-larger ai-response result-streaming my-4 w-100"
+                    class="block text-secondary text-center text-larger ai-response my-4 w-100"
                     hx-get="/about-me-brief"
                     hx-trigger="revealed"
                     hx-swap="InnerHtml">
+                    <span class="result-streaming"></span>
                 </div>
                 <div class="block my-4">
                     <button class="btn btn-dark rounded-pill">More About Me</button>
@@ -95,34 +97,40 @@
         </div>
     </section>
     <section id="Contact" class="mx-0 px-0">
-        <div class="container d-flex flex-column pt-5" style="min-height: 640px">
-            <h1 class="block display-5 fw-bold mt-5">Get in Touch</h1>
+        <div class="container d-flex flex-column pt-5" style="min-height: 640px">  
             <div class="d-flex flex-column d-lg-flex flex-lg-row d-md-flex flex-md-row pt-4">
-                <div class="my-4 col-lg-6 col-md-6 d-flex flex-column justify-content-between">
+                <div class="my-4 col-lg-6 col-md-6 d-flex flex-column justify-content-center">
+                    <h1 class="block display-5 fw-bold mb-5">Get in Touch</h1>
                     <div id="social-overview"
-                     class="block text-secondary text-larger ai-response result-streaming "
-                     hx-get="/social-overview"
-                     hx-trigger="revealed"
-                     hx-swap="InnerHtml">
+                        class="block text-secondary text-larger ai-response"
+                        hx-get="/social-overview"
+                        hx-trigger="revealed"
+                        hx-swap="InnerHtml">
+                        <span class="result-streaming"></span>
                     </div>
-                    <div class="block my-4">
+                    <div class="block mt-4">
                         <button class="btn btn-dark rounded-pill">Social Accounts</button>
-                        <button class="btn btn-outline-dark rounded-pill m-2">See Some Insights</button>
+                        <button class="btn btn-outline-dark rounded-pill m-2 ">See Insights</button>
                     </div>
                 </div>
                 
-                <div class="col-lg-6 col-md-7 mx-lg-5 block my-4">
+                <div class="col-lg-6 col-md-7 mx-lg-5 block my-5 d-flex align-items-end">
                     <div class="card shadow-sm mx-lg-5 mx-md-4">
                         <div class="card-body">
-                            <h5 class="card-title text-center mb-4">Contact Me</h5>
-                            <p class="mb-3 text-secondary">Feel free to connect with me through the following options: </p><br>
+                            <div>
+                                <h5 class="card-title text-center mb-4">Contact Me</h5>
+                                <p class="mb-3 text-secondary">Feel free to connect with me through the following options: </p>
+                            </div>
                             <div class="d-grid gap-3">
-                                <div class="form-control d-flex flex-nowrap justify-content-between align-items-center rounded-pill">
-                                    <span class="text-secondary">bajahawradhi@gmail.com</span>
-                                    <div class="d-flex flex-nowrap">
+                                <div class="form-control d-flex flex-nowrap align-items-center rounded-pill">
+                                    <span class="text-secondary position-absolute w-50 text-truncate">bajahawradhi@gmail.com</span>
+                                    <div class="ms-auto d-flex flex-nowrap">
                                         <button class="btn btn-sm" type="button" id="copyButton" onclick="navigator.clipboard.writeText('bajahawradhi@gmail.com');">
-                                        <i class="bi bi-copy"></i></button>
-                                        <a href="mailto:bajahawradhi@gmail.com" class="btn btn-dark rounded-pill btn-sm" type="button"><i class="bi bi-envelope"></i></a>
+                                            <i class="bi bi-copy"></i>
+                                        </button>
+                                        <a href="mailto:bajahawradhi@gmail.com" class="btn btn-dark rounded-pill btn-sm" type="button">
+                                            <i class="bi bi-envelope"></i>
+                                        </a>
                                     </div>
                                 </div>
                                 <a href="https://www.linkedin.com/in/radhi-bajahaw" class="btn btn-dark rounded-pill" target="_blank">

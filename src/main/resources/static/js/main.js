@@ -39,7 +39,7 @@ function chatgpt(element, text) {
     let index = 0;
     function processCharacter() {
         if (index < fullText.length) {
-            streamContainer.innerHTML = fullText.slice(0, index + 2) + `<span class="result-streaming"></span>`;
+            streamContainer.innerHTML = fullText.slice(0, index + 2) + `<span class="result-streaming">⬤</span>`;
             const char = fullText[index];
             index += 2;
             const delay = char === ' ' ? 70 : 10;

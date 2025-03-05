@@ -13,12 +13,11 @@ body {
     text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1) !important;
 }
 
-.Typewriter__cursor {
+/* .Typewriter__cursor {
     animation: none !important;
-}
+} */
 
-.result-streaming>:not(ol):not(ul):not(pre):not(div):last-child:after,.result-streaming>pre:last-child code:after {
-    content: "⬤";
+.result-streaming {
     font-size: small;
     vertical-align: text-bottom;
 }

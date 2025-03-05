@@ -44,6 +44,8 @@ function chatgpt(element, text) {
             index += 2;
             const delay = char === ' ' ? 70 : 10;
             setTimeout(processCharacter, delay);
+        } else {
+            streamContainer.innerHTML = fullText;
         }
     }
 

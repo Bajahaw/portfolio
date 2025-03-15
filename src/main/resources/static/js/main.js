@@ -17,7 +17,8 @@ function chatgpt(element, text) {
     const measureEl = document.createElement("div");
     const computed = getComputedStyle(streamContainer);
     
-    measureEl.style.width = streamContainer.clientWidth + "px";
+    measureEl.style.minWidth = streamContainer.clientWidth + "px";
+    measureEl.style.maxWidth = streamContainer.clientWidth + "px";
     measureEl.style.padding = computed.padding;
     measureEl.style.font = computed.font;
     measureEl.style.lineHeight = computed.lineHeight;

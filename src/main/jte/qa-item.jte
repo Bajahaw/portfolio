@@ -1,0 +1,17 @@
+@import tech.radhi.portfolio.QaItem
+@param QaItem item
+@param String show
+@param String trigger
+
+<div class="qa-item overflow-hidden mb-4 rounded-4">
+    <div class="qa-question p-3 rounded-4 bg-dark text-light pointer ease" data-bs-toggle="collapse" data-bs-target="#${item.id()}"
+         role="button" aria-expanded="false" aria-controls="technologies-collapse" hx-get="/overview"
+         hx-trigger="${trigger}" hx-target="#technologies-response" hx-swap="innerHTML">
+        <h5 class="m-0 fw-semibold"><i class="bi bi-code-square me-2"></i>${item.question()}</h5>
+    </div>
+    <div class="${show}" id="${item.id()}">
+        <div class="p-4 text-secondary ai-response" id="technologies-response">
+            <span class="result-streaming">⬤</span>
+        </div>
+    </div>
+</div>

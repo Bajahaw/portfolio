@@ -53,5 +53,10 @@ public class MainController {
                 ));
         return "about";
     }
+
+    @GetMapping("/")
+    public String index(){
+        return "index";
+    }
 }
 

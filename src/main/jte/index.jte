@@ -1,44 +1,15 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Radhi Bajahaw</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="https://unpkg.com/htmx.org@2.0.4"
-            integrity="sha384-HGfztofotfshcF7+8n44JQL2oJmowVChPTg48S+jvZoztPfvwD79OC/LTtG6dMp+"
-            crossorigin="anonymous"></script>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
-          integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-    <link rel="stylesheet" href="css/style.css">
-</head>
-<body>
+@import gg.jte.Content
 
-<div id="navbar" class="container">
-    <header class="navbar navbar-expand d-flex justify-content-center py-3">
-        <ul class="navbar-nav nav navbar-light bg-light shadow-sm border rounded-pill flex-nowrap z-1">
-            <li><a href="#" class="scalable nav-link px-3">Home</a></li>
-            <li><a href="/about" class="scalable nav-link px-3">About</a></li>
-            <li><a href="#" class="scalable nav-link px-3">Social</a></li>
-            <li><a href="#" class="scalable nav-link px-3">Blog</a></li>
-            <li><a href="#" class="scalable nav-link px-3">Contact</a></li>
-        </ul>
-        <div class="d-flex position-absolute w-100 mx-5 p-5">
-            <!--  <button class="btn btn-outline-secondary bg-light text-dark rounded-pill shadow-sm border scalable"> hi </button>-->
-        </div>
-    </header>
-</div>
-<div id="content">
+@param boolean headless = false
+@param Content content = @`
     <section id="overview">
         <div class="container d-flex flex-column-reverse d-lg-flex flex-lg-row d-md-flex flex-md-row pt-5"
              style="min-height: 640px">
             <div class="col h-100 col-lg-9 col-md-9">
                 <div class="my-5">
                     <h1 class="display-4 fw-bold mb-4">Hi, I am Radhi Bajahaw</h1>
-                    <h3 class="text-secondary">Let <span class="text-primary text-opacity-75">AI</span> tell you
-                        more
-                        about
-                        me
-                        ...</h3>
+                    <h3 class="text-secondary"> Let <span class="text-primary text-opacity-75">AI</span>
+                        tell you more about me .. </h3>
                 </div>
                 <div class="d-flex flex-column justify-content-between mt-5 mb-0 h-50">
                     <div id="intro"
@@ -46,7 +17,7 @@
                          hx-get="/overview"
                          hx-trigger="load"
                          hx-swap="InnerHtml">
-                         <span class="result-streaming"></span>
+                        <span class="result-streaming"></span>
                     </div>
                     <div class="d-flex align-items-center my-5">
                         <a class="scalable" aria-label="Follow on GitHub" href="https://github.com/Bajahaw">
@@ -64,7 +35,7 @@
             </div>
             <div class="col col-6 col-lg-3 col-md-3 m-auto m-lg-5 m-md-5">
                 <img class="img-fluid tilt-image shadow-lg rounded"
-                     src="img/dev.svg"
+                     src="/img/dev.svg"
                      alt="Developer avatar illustration">
             </div>
         </div>
@@ -74,38 +45,41 @@
         </div>
     </section>
     <section id="about" class="bg-light mx-0 px-0">
-        <div class="container d-flex flex-column pt-5 d-lg-flex flex-lg-row d-md-flex flex-md-row" style="min-height: 640px">
+        <div class="container d-flex flex-column pt-5 d-lg-flex flex-lg-row d-md-flex flex-md-row"
+             style="min-height: 640px">
             <div class="col col-6 col-lg-3 col-md-5 m-auto m-lg-5 m-md-0 align-self-center block">
                 <img class="img-fluid tilt-image shadow-lg rounded"
-                    src="img/developer.svg"
-                    alt="Developer avatar illustration">
+                     src="/img/developer.svg"
+                     alt="Developer avatar illustration">
             </div>
             <div class="col-lg-7 col-md-8 mx-lg-5 d-flex flex-column align-items-center justify-content-center py-5 px-lg-0">
                 <h1 class="block display-5 fw-bold mt-2">About Me</h1>
                 <div id="about-me-brief"
-                    class="block text-secondary text-center text-larger ai-response my-4 w-100"
-                    hx-get="/about-me-brief"
-                    hx-trigger="revealed"
-                    hx-swap="InnerHtml">
+                     class="block text-secondary text-center text-larger ai-response my-4 w-100"
+                     hx-get="/about-me-brief"
+                     hx-trigger="revealed"
+                     hx-swap="InnerHtml">
                     <span class="result-streaming"></span>
                 </div>
                 <div class="block my-4">
                     <button class="btn btn-dark rounded-pill">More About Me</button>
-                    <button class="btn btn-outline-dark rounded-pill m-2"><i class="bi bi-file-earmark-text me-1"></i> View Resume</button>
+                    <button class="btn btn-outline-dark rounded-pill m-2"><i
+                                class="bi bi-file-earmark-text me-1"></i> View Resume
+                    </button>
                 </div>
             </div>
         </div>
     </section>
     <section id="Contact" class="mx-0 px-0">
-        <div class="container d-flex flex-column pt-5" style="min-height: 640px">  
+        <div class="container d-flex flex-column pt-5" style="min-height: 640px">
             <div class="d-flex flex-column d-lg-flex flex-lg-row d-md-flex flex-md-row pt-4">
                 <div class="my-4 col-lg-6 col-md-6 d-flex flex-column justify-content-center">
                     <h1 class="block display-5 fw-bold mb-5">Get in Touch</h1>
                     <div id="social-overview"
-                        class="block text-secondary text-larger ai-response"
-                        hx-get="/social-overview"
-                        hx-trigger="revealed"
-                        hx-swap="InnerHtml">
+                         class="block text-secondary text-larger ai-response"
+                         hx-get="/social-overview"
+                         hx-trigger="revealed"
+                         hx-swap="InnerHtml">
                         <span class="result-streaming"></span>
                     </div>
                     <div class="block mt-4">
@@ -113,30 +87,35 @@
                         <button class="btn btn-outline-dark rounded-pill m-2 ">See Insights</button>
                     </div>
                 </div>
-                
+
                 <div class="col-lg-6 col-md-7 mx-lg-5 block my-5 d-flex align-items-end">
                     <div class="card shadow-sm mx-lg-5 mx-md-4">
                         <div class="card-body">
                             <div>
                                 <h5 class="card-title text-center mb-4">Contact Me</h5>
-                                <p class="mb-3 text-secondary">Feel free to connect with me through the following options: </p>
+                                <p class="mb-3 text-secondary">Feel free to connect with me through the following
+                                    options: </p>
                             </div>
                             <div class="d-grid gap-3">
                                 <div class="form-control d-flex flex-nowrap align-items-center rounded-pill">
                                     <span class="text-secondary position-absolute w-50 text-truncate">bajahawradhi@gmail.com</span>
                                     <div class="ms-auto d-flex flex-nowrap">
-                                        <button class="btn btn-sm" type="button" id="copyButton" onclick="navigator.clipboard.writeText('bajahawradhi@gmail.com');">
+                                        <button class="btn btn-sm" type="button" id="copyButton"
+                                                onclick="navigator.clipboard.writeText('bajahawradhi@gmail.com');">
                                             <i class="bi bi-copy"></i>
                                         </button>
-                                        <a href="mailto:bajahawradhi@gmail.com" class="btn btn-dark rounded-pill btn-sm" type="button">
+                                        <a href="mailto:bajahawradhi@gmail.com"
+                                           class="btn btn-dark rounded-pill btn-sm" type="button">
                                             <i class="bi bi-envelope"></i>
                                         </a>
                                     </div>
                                 </div>
-                                <a href="https://www.linkedin.com/in/radhi-bajahaw" class="btn btn-dark rounded-pill" target="_blank">
+                                <a href="https://www.linkedin.com/in/radhi-bajahaw"
+                                   class="btn btn-dark rounded-pill" target="_blank">
                                     <i class="bi bi-linkedin mx-1"></i> LinkedIn
                                 </a>
-                                <a href="https://github.com/Bajahaw" class="btn btn-dark rounded-pill mb-2" target="_blank">
+                                <a href="https://github.com/Bajahaw" class="btn btn-dark rounded-pill mb-2"
+                                   target="_blank">
                                     <i class="bi bi-github mx-1"></i> GitHub
                                 </a>
                             </div>
@@ -146,23 +125,8 @@
             </div>
         </div>
     </section>
-    <footer class="bg-dark text-light py-4 mt-sm-4">
-        <div class="text-center">
-            <p class="mb-2 ">&copy; 2025 Radhi Bajahaw. All rights reserved.</p>
-            <p class="mb-0">
-                <a href="https://github.com/Bajahaw" class="text-light mx-2"><i class="bi bi-github"></i></a>
-                <a href="https://www.linkedin.com/in/radhi-bajahaw" class="text-light mx-2"><i class="bi bi-linkedin"></i></a>
-                <a href="https://www.instagram.com/rad7_i" class="text-light mx-2"><i class="bi bi-instagram"></i></a>
-                <a href="mailto:" class="text-light mx-2"><i class="bi bi-envelope"></i></a>
-            </p>
-        </div>
-    </footer>
-</div>
+`
 
-<script src="js/main.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
-        crossorigin="anonymous"></script>
-<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
-</body>
-</html>
+@if(headless) ${content}
+@else @template.main(content = content)
+@endif

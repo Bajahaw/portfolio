@@ -1,9 +1,10 @@
 @import tech.radhi.portfolio.*
 @import java.util.List
+@import gg.jte.Content
 
 @param List<QaItem> questions
-
-@template.main(content = @`
+@param boolean headless = false
+@param Content content = @`
     <section id="about-details d-flex justify-content-center">
         <div class="container d-flex flex-column align-items-center py-5">
             <div class="text-center mb-5"></div>
@@ -36,4 +37,9 @@
             </a>
         </div>
     </section>
-`)
+`
+
+@if(headless) ${content}
+@else @template.main(content = content)
+@endif
+

@@ -1,9 +1,44 @@
+/* Global styles */
 body {
     font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, Noto Sans, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji !important;
 }
 
-.text-larger {
-    font-size: larger !important;
+/* Classes sorted alphabetically */
+.ai-response {
+    overflow: hidden;
+    transition: height 0.8s ease;
+    height: 0px;
+}
+
+.block {
+    animation: appear ease;
+    animation-timeline: view();
+    animation-range: entry 0% cover 30%;
+}
+
+.container {
+    padding-right: 3rem !important;
+    padding-left: 3rem !important;
+}
+
+.ease {
+    transition: all 0.3s ease;
+}
+
+.qa-item {
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+    transition: all 0.3s ease;
+}
+
+.qa-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
+}
+
+.result-streaming {
+    font-size: small;
+    vertical-align: text-bottom;
+    animation: pulse 1.5s infinite;
 }
 
 .scalable:hover {
@@ -13,41 +48,21 @@ body {
     text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1) !important;
 }
 
-/* .Typewriter__cursor {
-    animation: none !important;
-} */
-
-.result-streaming {
-    font-size: small;
-    vertical-align: text-bottom;
+.text-larger {
+    font-size: larger !important;
 }
-
-.ai-response {
-    overflow: hidden;
-    transition: height 0.8s ease;
-    height: 0px;
-}
-
-/*@keyframes blink-animation {*/
-/*    50% {*/
-/*        opacity: 0;*/
-/*    }*/
-/*}*/
 
 .tilt-image {
     rotate: 3deg;
     cursor: pointer;
-    transition: transform 0.3s ease;;
+    transition: transform 0.3s ease;
 }
+
 .tilt-image:hover {
     transform: scale(1.05) rotate(1deg);
 }
 
-.container {
-    padding-right: 3rem !important;
-    padding-left: 3rem !important;
-}
-
+/* Keyframes */
 @keyframes appear {
     from {
         opacity: 0;
@@ -59,8 +74,16 @@ body {
     }
 }
 
-.block {
-    animation: appear ease;
-    animation-timeline: view();
-    animation-range: entry 0% cover 30%;
+@keyframes pulse {
+    0% {
+        opacity: 0.7;
+    }
+
+    50% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0.7;
+    }
 }

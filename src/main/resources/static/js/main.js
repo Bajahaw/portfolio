@@ -7,7 +7,12 @@ document.body.addEventListener('htmx:beforeSwap', (event) => {
     }
 });
 
-
+function activate(element) {
+    document.querySelectorAll('.nav-link').forEach(el => {
+        if (el !== element) el.classList.remove('active');
+    });
+    element.classList.add('active');
+}
 
 function chatgpt(element, text) {
 
@@ -16,7 +21,7 @@ function chatgpt(element, text) {
 
     const measureEl = document.createElement("div");
     const computed = getComputedStyle(streamContainer);
-    
+
     measureEl.style.minWidth = streamContainer.clientWidth + "px";
     measureEl.style.maxWidth = streamContainer.clientWidth + "px";
     measureEl.style.padding = computed.padding;
@@ -27,7 +32,7 @@ function chatgpt(element, text) {
     measureEl.style.visibility = "hidden";
     measureEl.style.border = "1px solid red";
     measureEl.textContent = fullText;
-    
+
     document.body.appendChild(measureEl);
     const finalHeight = measureEl.offsetHeight;
     console.log(finalHeight);
@@ -51,26 +56,5 @@ function chatgpt(element, text) {
     }
 
     processCharacter();
-
-    // var typewriter = new Typewriter(element, {
-    //     loop: false,
-    //     delay: 10,
-    //     cursor: ''
-    // });
-
-    // typewriter
-    //     .pauseFor(500)
-    //     .typeString('<span class="text-primary text-opacity-75">AI: </span> ');
-
-    // text.match(/[^ ]+ ?/g).forEach(word => {
-    //     typewriter
-    //         .typeString(word)
-    //         .pauseFor(45);
-    // });
-
-    // typewriter
-    //     .pauseFor(500)
-    //     .callFunction(() => element.classList.remove('result-streaming'))
-    //     .start()
 }
 

@@ -2,6 +2,7 @@ package tech.radhi.portfolio;
 
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestHeader;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.stereotype.Controller;
 
@@ -43,7 +44,7 @@ public class MainController {
     }
 
     @GetMapping("/about")
-    public String about(Model model){
+    public String about(Model model, @RequestHeader(value = "HX-Request", required = false) String hxRequest) {
         model.addAttribute("questions",
                 List.of(
                         new QaItem("first", "who am I?"),
@@ -51,11 +52,19 @@ public class MainController {
                         new QaItem("third", "What tech stack I use?"),
                         new QaItem("forth", "What projects did I do?")
                 ));
+
+        // headless in case of using htmx
+        if ("true".equals(hxRequest)) {
+            model.addAttribute("headless", true);
+        }
         return "about";
     }
 
     @GetMapping("/")
-    public String index(){
+    public String index( Model model, @RequestHeader(value = "HX-Request", required = false) String hxRequest) {
+        if ("true".equals(hxRequest)) {
+            model.addAttribute("headless", true);
+        }
         return "index";
     }
 }

@@ -1,6 +1,7 @@
 @import tech.radhi.portfolio.*
 @import java.util.List
 @import gg.jte.Content
+@import tech.radhi.portfolio.content.ContentTemplate
 
 @param List<ContentTemplate> questions
 @param boolean headless = false
@@ -15,15 +16,9 @@
         <div class="container w-75">
             @for(int i = 0; i < questions.size(); i++)
                 @if(i == 0)
-                    @template.qa-item(
-                    item = questions.get(i),
-                    show = "show",
-                    trigger = "load")
+                    @template.qa-item(item = questions.get(i), show = "show", trigger = "load")
                 @else
-                    @template.qa-item(
-                    item = questions.get(i),
-                    show = "collapse",
-                    trigger = "click once")
+                    @template.qa-item(item = questions.get(i), show = "collapse", trigger = "click once")
                 @endif
             @endfor
         </div>

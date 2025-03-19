@@ -14,7 +14,7 @@
                 <div class="d-flex flex-column justify-content-between mt-5 mb-0 h-50">
                     <div id="intro"
                          class="text-secondary text-larger ai-response w-100"
-                         hx-get="/overview"
+                         hx-get="/content/overview"
                          hx-trigger="load"
                          hx-swap="InnerHtml">
                         <span class="result-streaming"></span>
@@ -56,7 +56,7 @@
                 <h1 class="block display-5 fw-bold mt-2">About Me</h1>
                 <div id="about-me-brief"
                      class="block text-secondary text-center text-larger ai-response my-4 w-100"
-                     hx-get="/about-me-brief"
+                     hx-get="/content/about-me-brief"
                      hx-trigger="revealed"
                      hx-swap="InnerHtml">
                     <span class="result-streaming"></span>
@@ -77,7 +77,7 @@
                     <h1 class="block display-5 fw-bold mb-5">Get in Touch</h1>
                     <div id="social-overview"
                          class="block text-secondary text-larger ai-response"
-                         hx-get="/social-overview"
+                         hx-get="/content/social-overview"
                          hx-trigger="revealed"
                          hx-swap="InnerHtml">
                         <span class="result-streaming"></span>

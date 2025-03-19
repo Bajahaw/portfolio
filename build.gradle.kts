@@ -23,7 +23,9 @@ dependencies {
 	implementation("org.springframework.boot:spring-boot-starter-web")
 	implementation("gg.jte:jte:3.1.12")
 	implementation("gg.jte:jte-spring-boot-starter-3:3.1.12")
+	implementation("org.springframework.boot:spring-boot-starter-data-jdbc")
 	testImplementation("org.springframework.boot:spring-boot-starter-test")
+	runtimeOnly("org.postgresql:postgresql")
 	testRuntimeOnly("org.junit.platform:junit-platform-launcher")
 }
 

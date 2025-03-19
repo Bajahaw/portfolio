@@ -2,7 +2,7 @@
 @import java.util.List
 @import gg.jte.Content
 
-@param List<QaItem> questions
+@param List<ContentTemplate> questions
 @param boolean headless = false
 @param Content content = @`
     <section id="about-details d-flex justify-content-center">

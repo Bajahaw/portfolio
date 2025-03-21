@@ -1,42 +1,40 @@
-FROM debian:12-slim AS build
+FROM ghcr.io/graalvm/native-image-community:21-muslib AS build
 
-# setup debian env
-RUN apt-get update && \
-    apt-get install -y wget gcc libz-dev && \
-    rm -rf /var/lib/apt/lists/*
+# Install necessary tools
+RUN microdnf install wget xz findutils
 
-# install graalvm manually
-RUN wget https://github.com/graalvm/graalvm-ce-builds/releases/download/jdk-21.0.2/graalvm-community-jdk-21.0.2_linux-x64_bin.tar.gz && \
-    tar -xvzf graalvm-community-jdk-21.0.2_linux-x64_bin.tar.gz && \
-    rm graalvm-community-jdk-21.0.2_linux-x64_bin.tar.gz
-
-# Set the GraalVM installation path
-ENV GRAALVM_HOME=/graalvm-community-openjdk-21.0.2+13.1
-ENV PATH=$GRAALVM_HOME/bin:$PATH
-
-# set working directory
 WORKDIR /app
 
-# copy project files
 COPY . .
+
+# to use in scratch image for tomcat server
+RUN mkdir -p /tmp
 
 # compile native image
 RUN ./gradlew nativeCompile --no-daemon
 
-# minimal but comaptable ~5mb
-FROM frolvlad/alpine-glibc:alpine-3.20
 
-# Set up workdir
+# Install UPX (Ultimate Packer for eXecutables) to compress even more.
+RUN wget https://github.com/upx/upx/releases/download/v4.2.4/upx-4.2.4-amd64_linux.tar.xz
+RUN tar xvf upx-4.2.4-amd64_linux.tar.xz
+
+# Set up the environment variables required to run the UPX command.
+ENV UPX_HOME=/app/upx-4.2.4-amd64_linux
+ENV PATH=$UPX_HOME:$PATH
+
+RUN upx -7 -k /app/build/native/nativeCompile/portfolio
+
+# absolute minimalism ..
+FROM scratch
+
 WORKDIR /app
 
-# Copy the native executable from the build stage
+# copy the native executable from the build stage
 COPY --from=build /app/build/native/nativeCompile/portfolio /app/portfolio
+COPY --from=build /tmp /tmp
 
-# Set executable permissions
-RUN chmod +x /app/portfolio
-
-# Expose application port
+# expose application port
 EXPOSE 3000
 
-# Start the application
-ENTRYPOINT ["/app/portfolio"]
+# start the application
+CMD ["./portfolio"]

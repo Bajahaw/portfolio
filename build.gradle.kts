@@ -15,6 +15,15 @@ java {
 	}
 }
 
+graalvmNative {
+	binaries {
+		named("main") {
+			buildArgs.add("--libc=musl")
+			buildArgs.add("--static")
+		}
+	}
+}
+
 repositories {
 	mavenCentral()
 }

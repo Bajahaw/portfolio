@@ -13,7 +13,7 @@
             <p class="lead text-secondary">Get to know me through this interactive Q&A</p>
         </div>
 
-        <div class="container w-75">
+        <div class="container col-lg-9">
             @for(int i = 0; i < questions.size(); i++)
                 @if(i == 0)
                     @template.qa-item(item = questions.get(i), show = "show", trigger = "load")
@@ -23,11 +23,11 @@
             @endfor
         </div>
 
-        <div class="text-center mt-5">
-            <a href="/" class="btn btn-dark rounded-pill px-4 py-2 me-3">
+        <div class="text-center my-5">
+            <a href="/" class="btn btn-dark rounded-pill px-4 py-2 m-1">
                 <i class="bi bi-house-door me-1"></i> Back to Home
             </a>
-            <a href="#" class="btn btn-outline-dark rounded-pill px-4 py-2">
+            <a href="#" class="btn btn-outline-dark rounded-pill px-4 py-2 m-1">
                 <i class="bi bi-file-earmark-text me-1"></i> View Resume
             </a>
         </div>

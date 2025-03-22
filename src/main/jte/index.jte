@@ -61,9 +61,9 @@
                      hx-swap="InnerHtml">
                     <span class="result-streaming"></span>
                 </div>
-                <div class="block my-4">
-                    <button class="btn btn-dark rounded-pill">More About Me</button>
-                    <button class="btn btn-outline-dark rounded-pill m-2"><i
+                <div class="block text-center my-4">
+                    <button class="btn btn-dark rounded-pill m-1">More About Me</button>
+                    <button class="btn btn-outline-dark rounded-pill m-1"><i
                                 class="bi bi-file-earmark-text me-1"></i> View Resume
                     </button>
                 </div>
@@ -82,9 +82,9 @@
                          hx-swap="InnerHtml">
                         <span class="result-streaming"></span>
                     </div>
-                    <div class="block mt-4">
-                        <button class="btn btn-dark rounded-pill">Social Accounts</button>
-                        <button class="btn btn-outline-dark rounded-pill m-2 ">See Insights</button>
+                    <div class="block d-flex justify-content-lg-start justify-content-md-start justify-content-center mt-4">
+                        <button class="btn btn-dark rounded-pill m-1">Social Accounts</button>
+                        <button class="btn btn-outline-dark rounded-pill m-1">See Insights</button>
                     </div>
                 </div>
 

@@ -37,4 +37,4 @@ COPY --from=build /tmp /tmp
 EXPOSE 3000
 
 # start the application
-CMD ["./portfolio"]
+CMD ["./portfolio", "-Dspring.profiles.active=production"]

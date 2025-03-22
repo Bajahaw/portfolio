@@ -7,7 +7,7 @@ body {
 .ai-response {
     overflow: hidden;
     transition: height 0.8s ease;
-    height: 0px;
+    height: 0;
 }
 
 .block {
@@ -16,9 +16,15 @@ body {
     animation-range: entry 0% cover 30%;
 }
 
+@media (max-width: 576px) {
+    .container {
+        padding-right: 1.5rem !important;
+        padding-left: 1.5rem !important;
+    }
+}
 .container {
-    padding-right: 3rem !important;
-    padding-left: 3rem !important;
+    padding-right: 3rem;
+    padding-left: 3rem;
 }
 
 .ease {

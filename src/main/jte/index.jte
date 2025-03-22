@@ -55,7 +55,7 @@
             <div class="col-lg-7 col-md-8 mx-lg-5 d-flex flex-column align-items-center justify-content-center py-5 px-lg-0">
                 <h1 class="block display-5 fw-bold mt-2">About Me</h1>
                 <div id="about-me-brief"
-                     class="block text-secondary text-center text-larger ai-response my-4 w-100"
+                     class="block text-secondary text-sm-center text-larger ai-response my-4 w-100"
                      hx-get="/content/about-me-brief"
                      hx-trigger="revealed"
                      hx-swap="InnerHtml">
@@ -83,8 +83,10 @@
                         <span class="result-streaming"></span>
                     </div>
                     <div class="block d-flex justify-content-lg-start justify-content-md-start justify-content-center mt-4">
-                        <button class="btn btn-dark rounded-pill m-1">Social Accounts</button>
-                        <button class="btn btn-outline-dark rounded-pill m-1">See Insights</button>
+                        <button class="btn btn-dark rounded-pill m-1">
+                            <i class="bi bi-instagram me-2"></i>Social Accounts</button>
+                        <button class="btn btn-outline-dark rounded-pill m-1"><i
+                                    class="bi bi-lightbulb me-2"></i>See Insights</button>
                     </div>
                 </div>
 

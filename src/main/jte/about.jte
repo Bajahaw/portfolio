@@ -1,4 +1,3 @@
-@import tech.radhi.portfolio.*
 @import java.util.List
 @import gg.jte.Content
 @import tech.radhi.portfolio.content.ContentTemplate
@@ -24,11 +23,11 @@
         </div>
 
         <div class="text-center my-5">
-            <a href="/" class="btn btn-dark rounded-pill px-4 py-2 m-1">
-                <i class="bi bi-house-door me-1"></i> Back to Home
+            <a href="/" class="btn btn-dark rounded-pill px-3 py-2 m-1">
+                <i class="bi bi-house-door me-2 p-sm-3"></i> Back to Home
             </a>
-            <a href="#" class="btn btn-outline-dark rounded-pill px-4 py-2 m-1">
-                <i class="bi bi-file-earmark-text me-1"></i> View Resume
+            <a href="#" class="btn btn-outline-dark rounded-pill px-3 py-2 m-1">
+                <i class="bi bi-file-earmark-text me-2"></i> View Resume
             </a>
         </div>
     </section>

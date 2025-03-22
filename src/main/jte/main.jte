@@ -15,21 +15,21 @@
 <body>
 <div id="navbar" class="container">
     <header class="navbar navbar-expand d-flex justify-content-center py-3">
-        <ul class="navbar-nav nav navbar-light bg-light shadow-sm border rounded-pill flex-nowrap z-1">
-            <li><a href="/" class="scalable nav-link px-3" hx-get="/" hx-target="#content" hx-trigger="click"
+        <ul class="navbar-nav nav navbar-light bg-light shadow-sm border rounded-pill flex-nowrap z-1 px-1">
+            <li><a href="/" class="scalable nav-link px-md-3" hx-get="/" hx-target="#content" hx-trigger="click"
                    hx-on:click="activate(this)">Home</a></li>
-            <li><a href="/about" class="scalable nav-link px-3" hx-get="/about" hx-target="#content" hx-trigger="click"
+            <li><a href="/about" class="scalable nav-link px-md-3" hx-get="/about" hx-target="#content" hx-trigger="click"
                    hx-on:click="activate(this)">About</a></li>
-            <li><a href="#" class="scalable nav-link px-3" hx-get="/social" hx-target="#content" hx-trigger="click"
+            <li><a href="#" class="scalable nav-link px-md-3" hx-get="/social" hx-target="#content" hx-trigger="click"
                    hx-on:click="activate(this)">Social</a></li>
-            <li><a href="#" class="scalable nav-link px-3" hx-get="/blog" hx-target="#content" hx-trigger="click"
+            <li><a href="#" class="scalable nav-link px-md-3" hx-get="/blog" hx-target="#content" hx-trigger="click"
                    hx-on:click="activate(this)">Blog</a></li>
-            <li><a href="#" class="scalable nav-link px-3" hx-get="/contact" hx-target="#content" hx-trigger="click"
+            <li><a href="#" class="scalable nav-link px-md-3" hx-get="/contact" hx-target="#content" hx-trigger="click"
                    hx-on:click="activate(this)">Contact</a></li>
         </ul>
         <div class="d-flex position-absolute w-100 mx-5 p-5">
-            <button class="btn btn-outline-secondary bg-light text-dark rounded-pill shadow-sm border scalable"><i
-                        class="bi bi-github"></i></button>
+<%--            <button class="btn btn-outline-secondary bg-light text-dark rounded-pill shadow-sm border scalable"><i--%>
+<%--                        class="bi bi-github"></i></button>--%>
         </div>
     </header>
 </div>

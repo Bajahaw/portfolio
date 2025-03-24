@@ -8,6 +8,7 @@
     <meta charset="UTF-8">
     <title>About Me - Radhi Bajahaw</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="htmx-config" content='{"historyCacheSize": 0, "refreshOnHistoryMiss": true}'>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
           integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <link rel="stylesheet" href="css/style.css">
@@ -17,15 +18,15 @@
     <header class="navbar navbar-expand d-flex justify-content-center py-3">
         <ul class="navbar-nav nav navbar-light bg-light shadow-sm border rounded-pill flex-nowrap z-1 px-1">
             <li><a href="/" class="scalable nav-link px-md-3" hx-get="/" hx-target="#content" hx-trigger="click"
-                   hx-on:click="activate(this)">Home</a></li>
+                   hx-on:click="activate(this)" hx-push-url="true">Home</a></li>
             <li><a href="/about" class="scalable nav-link px-md-3" hx-get="/about" hx-target="#content" hx-trigger="click"
-                   hx-on:click="activate(this)">About</a></li>
+                   hx-on:click="activate(this)" hx-push-url="true">About</a></li>
             <li><a href="#" class="scalable nav-link px-md-3" hx-get="/social" hx-target="#content" hx-trigger="click"
-                   hx-on:click="activate(this)">Social</a></li>
+                   hx-on:click="activate(this)" hx-push-url="true">Social</a></li>
             <li><a href="#" class="scalable nav-link px-md-3" hx-get="/blog" hx-target="#content" hx-trigger="click"
-                   hx-on:click="activate(this)">Blog</a></li>
+                   hx-on:click="activate(this)" hx-push-url="true">Blog</a></li>
             <li><a href="#" class="scalable nav-link px-md-3" hx-get="/contact" hx-target="#content" hx-trigger="click"
-                   hx-on:click="activate(this)">Contact</a></li>
+                   hx-on:click="activate(this)" hx-push-url="true">Contact</a></li>
         </ul>
         <div class="d-flex position-absolute w-100 mx-5 p-5">
 <%--            <button class="btn btn-outline-secondary bg-light text-dark rounded-pill shadow-sm border scalable"><i--%>

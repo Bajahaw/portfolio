@@ -7,8 +7,7 @@
 @param Content content = @`
     <section id="about-details">
         <div class="container d-flex flex-column align-items-center py-5">
-            <div class="text-center mb-5"></div>
-            <h1 class="display-4 fw-bold">About Radhi Bajahaw</h1>
+            <h1 class="display-4 fw-bold mt-2">About Radhi Bajahaw</h1>
             <p class="lead text-secondary">Get to know me through my <span class="text-primary text-opacity-75">AI</span> Assistant</p>
             <div id="intro"
                  class="text-secondary lead ai-response col-12 col-md-9"
@@ -26,7 +25,7 @@
                     <div class="card h-100 border-0 qa-item rounded-4">
                         <div class="card-body text-center p-4">
                             <i class="bi bi-code-square fs-1 mb-3"></i>
-                            <h4 class="card-title fw-semibold">Frontend Development</h4>
+                            <h4 class="card-title fw-semibold">Frontend</h4>
                             <div class="d-flex flex-wrap justify-content-center gap-2 mt-3">
                                 <span class="badge bg-light text-secondary border p-2 block">HTML5</span>
                                 <span class="badge bg-light text-secondary border p-2 block">CSS3</span>
@@ -42,7 +41,7 @@
                     <div class="card h-100 border-0 qa-item rounded-4">
                         <div class="card-body text-center p-4">
                             <i class="bi bi-server fs-1 mb-3"></i>
-                            <h4 class="card-title fw-semibold">Backend Development</h4>
+                            <h4 class="card-title fw-semibold">Backend</h4>
                             <div class="d-flex flex-wrap justify-content-center gap-2 mt-3">
                                 <span class="badge bg-light text-secondary border p-2 block">Java</span>
                                 <span class="badge bg-light text-secondary border p-2 block">Kotlin</span>
@@ -79,14 +78,14 @@
 
                 <div class="position-absolute h-100 d-none d-md-block rounded-2"
                      style="width: 5px; background-color: #dee2e6; left: 50%; transform: translateX(-50%);"></div>
-                <div class="me-3 me-sm-4 d-md-none mb-4 rounded-2"
+                <div class="me-3 me-sm-4 d-md-none mb-3 rounded-2"
                      style="width: 5px; color: transparent; background-color: #dee2e6;">..
                 </div>
 
                 <div>
                     <div class="row g-5">
 
-                        <div class="col-md-6 offset-md-6 mb-4">
+                        <div class="col-md-6 offset-md-6 mb-3">
                             <div class="card qa-item border-0 rounded-4 block h-100">
                                 <div class="card-body">
                                     <div class="d-flex align-items-center mb-3">
@@ -106,7 +105,7 @@
                             </div>
                         </div>
 
-                        <div class="col-md-6 mb-4">
+                        <div class="col-md-6 mb-3">
                             <div class="card qa-item border-0 rounded-4 block h-100">
                                 <div class="card-body">
                                     <div class="d-flex align-items-center mb-3">
@@ -124,7 +123,7 @@
                             </div>
                         </div>
 
-                        <div class="col-md-6 offset-md-6 mb-4">
+                        <div class="col-md-6 offset-md-6 mb-3">
                             <div class="card qa-item border-0 rounded-4 block h-100">
                                 <div class="card-body">
                                     <div class="d-flex align-items-center mb-3">
@@ -149,6 +148,7 @@
         </div>
 
         <div class="container col-lg-9">
+            <h2 class="text-center fw-bold m-5">Ask <span class="text-primary">AI</span> about me</h2>
             @for(int i = 0; i < questions.size(); i++)
                 @if(i == 0)
                     @template.qa-item(item = questions.get(i), show = "show", trigger = "load")

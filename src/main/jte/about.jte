@@ -11,7 +11,7 @@
             <h1 class="display-4 fw-bold">About Radhi Bajahaw</h1>
             <p class="lead text-secondary">Get to know me through my <span class="text-primary text-opacity-75">AI</span> Assistant</p>
             <div id="intro"
-                 class="text-secondary lead ai-response col-sm-12 col-md-9"
+                 class="text-secondary lead ai-response col-12 col-md-9"
                  hx-get="/content/about-me-brief"
                  hx-trigger="load"
                  hx-swap="InnerHtml">

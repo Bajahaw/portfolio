@@ -35,7 +35,6 @@ function chatgpt(element, text) {
 
     document.body.appendChild(measureEl);
     const finalHeight = measureEl.offsetHeight;
-    console.log(finalHeight);
     measureEl.remove();
 
     requestAnimationFrame(() => {
@@ -52,6 +51,7 @@ function chatgpt(element, text) {
             setTimeout(processCharacter, delay);
         } else {
             streamContainer.innerHTML = fullText;
+            streamContainer.style.height = 'revert';
         }
     }
 

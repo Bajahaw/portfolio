@@ -25,18 +25,19 @@ body {
 .container {
     padding-right: 3rem;
     padding-left: 3rem;
+    max-width: 1140px;
 }
 
 .ease {
     transition: all 0.3s ease;
 }
 
-.qa-item {
+.card-shadow {
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
     transition: all 0.3s ease;
 }
 
-.qa-item:hover {
+.card-shadow:hover {
     transform: translateY(-5px);
     box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
 }

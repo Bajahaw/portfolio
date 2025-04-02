@@ -8,9 +8,10 @@
     <section id="about-details">
         <div class="container d-flex flex-column align-items-center py-5">
             <h1 class="display-4 fw-bold mt-2">About Radhi Bajahaw</h1>
-            <p class="lead text-secondary">Get to know me through my <span class="text-primary text-opacity-75">AI</span> Assistant</p>
+            <p class="lead text-secondary">Get to know me through my <span
+                        class="text-primary text-opacity-75">AI</span> Assistant</p>
             <div id="intro"
-                 class="text-secondary lead ai-response col-12 col-md-9"
+                 class="text-secondary lead ai-response col-12 col-md-9 mt-4"
                  hx-get="/content/about-me-brief"
                  hx-trigger="load"
                  hx-swap="InnerHtml">
@@ -22,7 +23,7 @@
             <h2 class="text-center mb-4 fw-bold">Skills & Expertise</h2>
             <div class="row g-4">
                 <div class="col-md-4">
-                    <div class="card h-100 border-0 qa-item rounded-4">
+                    <div class="card h-100 border-0 card-shadow rounded-4">
                         <div class="card-body text-center p-4">
                             <i class="bi bi-code-square fs-1 mb-3"></i>
                             <h4 class="card-title fw-semibold">Frontend</h4>
@@ -38,7 +39,7 @@
                     </div>
                 </div>
                 <div class="col-md-4">
-                    <div class="card h-100 border-0 qa-item rounded-4">
+                    <div class="card h-100 border-0 card-shadow rounded-4">
                         <div class="card-body text-center p-4">
                             <i class="bi bi-server fs-1 mb-3"></i>
                             <h4 class="card-title fw-semibold">Backend</h4>
@@ -54,7 +55,7 @@
                     </div>
                 </div>
                 <div class="col-md-4">
-                    <div class="card h-100 border-0 qa-item rounded-4">
+                    <div class="card h-100 border-0 card-shadow rounded-4">
                         <div class="card-body text-center p-4">
                             <i class="bi bi-gear fs-1 mb-3"></i>
                             <h4 class="card-title fw-semibold">Tools & Practices</h4>
@@ -74,70 +75,92 @@
 
         <div class="container py-5">
             <h2 class="text-center fw-bold mb-5">Projects Timeline</h2>
-            <div class="position-relative d-flex flex-row">
+            <div class="position-relative">
+                <div class="position-absolute h-100 rounded-2"
+                     style="width: 5px; background-color: #dee2e6; left: 30px; top: 0;"></div>
 
-                <div class="position-absolute h-100 d-none d-md-block rounded-2"
-                     style="width: 5px; background-color: #dee2e6; left: 50%; transform: translateX(-50%);"></div>
-                <div class="me-3 me-sm-4 d-md-none mb-3 rounded-2"
-                     style="width: 5px; color: transparent; background-color: #dee2e6;">..
-                </div>
-
-                <div>
-                    <div class="row g-5">
-
-                        <div class="col-md-6 offset-md-6 mb-3">
-                            <div class="card qa-item border-0 rounded-4 block h-100">
-                                <div class="card-body">
-                                    <div class="d-flex align-items-center mb-3">
-                                        <span class="badge bg-dark rounded-pill me-2">2025</span>
-                                        <h5 class="card-title fw-semibold mb-0">Portfolio Website</h5>
-                                    </div>
-                                    <p class="card-text text-secondary">Personal portfolio website built with Spring
-                                        Boot, JTE
-                                        templates,
-                                        and HTMX for a responsive and dynamic user experience.</p>
-                                    <div class="d-flex flex-wrap gap-1 mt-2">
-                                        <span class="badge bg-light text-secondary block border">Spring Boot</span>
-                                        <span class="badge bg-light text-secondary block border">HTMX</span>
-                                        <span class="badge bg-light text-secondary block border">PostgreSQL</span>
+                <div class="ps-5 mx-4">
+                    <div class="position-relative mb-5">
+                        <!-- Timeline dot -->
+                        <div class="card card-shadow border-0 rounded-4 block">
+                            <div class="row g-0">
+                                <div class="col-md-4 overflow-hidden">
+                                    <img src="/img/dev.svg"
+                                         class="rounded-start-4 w-50 object-fit-fill"
+                                         alt="Authentication System">
+                                </div>
+                                <div class="col-md-8">
+                                    <div class="card-body p-4">
+                                        <div class="d-flex align-items-center mb-3">
+                                            <span class="badge bg-dark rounded-pill me-2">2025</span>
+                                            <h5 class="card-title fw-semibold mb-0">Portfolio Website</h5>
+                                        </div>
+                                        <p class="card-text text-secondary">Personal portfolio website built with Spring
+                                            Boot, JTE templates, and HTMX for a responsive and dynamic user experience.</p>
+                                        <div class="d-flex flex-wrap gap-1 mt-2 h-100 align-items-end">
+                                            <span class="badge bg-light text-secondary block border">Java</span>
+                                            <span class="badge bg-light text-secondary block border">Spring Boot</span>
+                                            <span class="badge bg-light text-secondary block border">SSE</span>
+                                            <span class="badge bg-light text-secondary block border">Web</span>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
-
-                        <div class="col-md-6 mb-3">
-                            <div class="card qa-item border-0 rounded-4 block h-100">
-                                <div class="card-body">
-                                    <div class="d-flex align-items-center mb-3">
-                                        <span class="badge bg-dark rounded-pill me-2">2024</span>
-                                        <h5 class="card-title fw-semibold mb-0">Authentication System</h5>
-                                    </div>
-                                    <p class="card-text text-secondary">Full authentication and authorization system
-                                        with JWT, refresh tokens and social login.</p>
-                                    <div class="d-flex flex-wrap gap-1 mt-2">
-                                        <span class="badge bg-light text-secondary block border">Java</span>
-                                        <span class="badge bg-light text-secondary block border">PosgreSQL</span>
-                                        <span class="badge bg-light text-secondary block border">Spring Security</span>
+                    </div>
+                    <div class="position-relative mb-5">
+                        <!-- Timeline dot -->
+                        <div class="card card-shadow border-0 rounded-4 block">
+                            <div class="row g-0">
+                                <div class="col-md-4 overflow-hidden">
+                                    <img src="/img/dev.svg"
+                                         class="rounded-start-4 w-50 object-fit-fill"
+                                         alt="Authentication System">
+                                </div>
+                                <div class="col-md-8">
+                                    <div class="card-body p-4">
+                                        <div class="d-flex align-items-center mb-3">
+                                            <span class="badge bg-dark rounded-pill me-2">2024</span>
+                                            <h5 class="card-title fw-semibold mb-0">Authentication System</h5>
+                                        </div>
+                                        <p class="card-text text-secondary">Full authentication and authorization system
+                                            with JWT, refresh tokens and social login.</p>
+                                        <div class="d-flex flex-wrap gap-1 mt-2 h-100 align-items-end">
+                                            <span class="badge bg-light text-secondary block border">Java</span>
+                                            <span class="badge bg-light text-secondary block border">Spring Boot</span>
+                                            <span class="badge bg-light text-secondary block border">SSE</span>
+                                            <span class="badge bg-light text-secondary block border">Web</span>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
-
-                        <div class="col-md-6 offset-md-6 mb-3">
-                            <div class="card qa-item border-0 rounded-4 block h-100">
-                                <div class="card-body">
-                                    <div class="d-flex align-items-center mb-3">
-                                        <span class="badge bg-dark rounded-pill me-2">2023</span>
-                                        <h5 class="card-title fw-semibold mb-0">Multiplayer Game Server Online</h5>
-                                    </div>
-                                    <p class="card-text text-secondary">Developed a server for an online multiplayer
-                                        game, focusing on real-time interactions,
-                                        scalable architecture, and efficient data management.</p>
-                                    <div class="d-flex flex-wrap gap-1 mt-2">
-                                        <span class="badge bg-light text-secondary block border">Java</span>
-                                        <span class="badge bg-light text-secondary block border">Spring boot</span>
-                                        <span class="badge bg-light text-secondary block border">SSE</span>
-                                        <span class="badge bg-light text-secondary block border">Web</span>
+                    </div>
+                    <div class="position-relative mb-5">
+                        <!-- Timeline dot -->
+                        <div class="card card-shadow border-0 rounded-4 block">
+                            <div class="row g-0">
+                                <div class="col-md-4">
+                                    <img src="/img/dev.svg"
+                                         class="img-fluid rounded-start-4 w-50"
+                                         alt="Multiplayer Game Server">
+                                </div>
+                                <div class="col-md-8">
+                                    <div class="card-body p-4">
+                                        <div class="d-flex align-items-center mb-3">
+                                            <span class="badge bg-dark rounded-pill me-2">2023</span>
+                                            <h5 class="card-title fw-semibold mb-0">Multiplayer Game Server</h5>
+                                        </div>
+                                        <p class="card-text text-secondary">Developed a server for an online
+                                            multiplayer
+                                            game, focusing on real-time interactions, scalable architecture, and
+                                            efficient data management.</p>
+                                        <div class="d-flex flex-wrap gap-1 mt-2">
+                                            <span class="badge bg-light text-secondary block border">Java</span>
+                                            <span class="badge bg-light text-secondary block border">Spring Boot</span>
+                                            <span class="badge bg-light text-secondary block border">SSE</span>
+                                            <span class="badge bg-light text-secondary block border">Web</span>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -146,6 +169,7 @@
                 </div>
             </div>
         </div>
+
 
         <div class="container col-lg-9">
             <h2 class="text-center fw-bold m-5">Ask <span class="text-primary">AI</span> about me</h2>

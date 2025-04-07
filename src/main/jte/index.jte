@@ -100,13 +100,13 @@
                             </div>
                             <div class="d-grid gap-3">
                                 <div class="form-control d-flex flex-nowrap align-items-center rounded-pill">
-                                    <span class="text-secondary position-absolute w-50 text-truncate">bajahawradhi@gmail.com</span>
+                                    <span class="text-secondary position-absolute w-50 text-truncate">info@radhi.tech</span>
                                     <div class="ms-auto d-flex flex-nowrap">
                                         <button class="btn btn-sm" type="button" id="copyButton"
-                                                onclick="navigator.clipboard.writeText('bajahawradhi@gmail.com');">
+                                                onclick="navigator.clipboard.writeText('info@radhi.tech');">
                                             <i class="bi bi-copy"></i>
                                         </button>
-                                        <a href="mailto:bajahawradhi@gmail.com"
+                                        <a href="mailto:info@radhi.tech"
                                            class="btn btn-dark rounded-pill btn-sm" type="button">
                                             <i class="bi bi-envelope"></i>
                                         </a>

@@ -100,8 +100,8 @@
                                         <div class="d-flex flex-wrap gap-1 mt-2 h-100 align-items-end">
                                             <span class="badge bg-light text-secondary block border">Java</span>
                                             <span class="badge bg-light text-secondary block border">Spring Boot</span>
-                                            <span class="badge bg-light text-secondary block border">SSE</span>
-                                            <span class="badge bg-light text-secondary block border">Web</span>
+                                            <span class="badge bg-light text-secondary block border">JTE</span>
+                                            <span class="badge bg-light text-secondary block border">Bootstrap</span>
                                         </div>
                                     </div>
                                 </div>
@@ -127,9 +127,8 @@
                                             with JWT, refresh tokens and social login.</p>
                                         <div class="d-flex flex-wrap gap-1 mt-2 h-100 align-items-end">
                                             <span class="badge bg-light text-secondary block border">Java</span>
-                                            <span class="badge bg-light text-secondary block border">Spring Boot</span>
-                                            <span class="badge bg-light text-secondary block border">SSE</span>
-                                            <span class="badge bg-light text-secondary block border">Web</span>
+                                            <span class="badge bg-light text-secondary block border">Spring Security</span>
+                                            <span class="badge bg-light text-secondary block border">JWT</span>
                                         </div>
                                     </div>
                                 </div>
@@ -152,9 +151,8 @@
                                             <h5 class="card-title fw-semibold mb-0">Multiplayer Game Server</h5>
                                         </div>
                                         <p class="card-text text-secondary">Developed a server for an online
-                                            multiplayer
-                                            game, focusing on real-time interactions, scalable architecture, and
-                                            efficient data management.</p>
+                                            multiplayer game, focusing on real-time interactions, scalable architecture,
+                                            and efficient data management.</p>
                                         <div class="d-flex flex-wrap gap-1 mt-2">
                                             <span class="badge bg-light text-secondary block border">Java</span>
                                             <span class="badge bg-light text-secondary block border">Spring Boot</span>

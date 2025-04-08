@@ -76,10 +76,10 @@
         <div class="container py-5">
             <h2 class="text-center fw-bold mb-5">Projects Timeline</h2>
             <div class="position-relative">
-                <div class="position-absolute h-100 rounded-2"
-                     style="width: 5px; background-color: #dee2e6; left: 30px; top: 0;"></div>
+                <div class="position-absolute h-100 ms-md-4 rounded-2"
+                     style="width: 5px; background-color: #dee2e6;"></div>
 
-                <div class="ps-5 mx-4">
+                <div class="ps-4 ps-md-5 mx-md-4">
                     <div class="position-relative mb-5">
                         <!-- Timeline dot -->
                         <div class="card card-shadow border-0 rounded-4 block">

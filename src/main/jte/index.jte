@@ -3,9 +3,9 @@
 @param boolean headless = false
 @param Content content = @`
     <section id="overview">
-        <div class="container d-flex flex-column-reverse d-lg-flex flex-lg-row d-md-flex flex-md-row pt-5"
+        <div class="container d-flex flex-column-reverse d-md-flex flex-md-row pt-5"
              style="min-height: 640px">
-            <div class="col h-100 col-lg-9 col-md-9">
+            <div class="col h-100 col-md-9">
                 <div class="my-5">
                     <h1 class="display-4 fw-bold mb-4">Hi, I am Radhi Bajahaw</h1>
                     <h3 class="text-secondary"> Let <span class="text-primary text-opacity-75">AI</span>
@@ -19,7 +19,7 @@
                          hx-swap="InnerHtml">
                         <span class="result-streaming"></span>
                     </div>
-                    <div class="d-flex align-items-center my-5">
+                    <div class="d-flex align-items-center justify-content-center justify-content-md-start my-5">
                         <a class="scalable" aria-label="Follow on GitHub" href="https://github.com/Bajahaw">
                             <i class="bi bi-github text-secondary"></i>
                         </a>
@@ -33,19 +33,19 @@
                     </div>
                 </div>
             </div>
-            <div class="col col-6 col-lg-3 col-md-3 m-auto m-lg-5 m-md-5">
+            <div class="col col-6 col-md-3 m-auto m-md-5">
                 <img class="img-fluid tilt-image shadow-lg rounded"
                      src="/img/dev.svg"
                      alt="Developer avatar illustration">
             </div>
         </div>
         <div class="container block d-flex justify-content-center">
-            <small class="text-secondary">-- This site uses experimental styling features. It is recommended to use
+            <small class="text-secondary text-center">-- This site uses experimental styling features. It is recommended to use
                 Chromium-based browser for best experience --</small>
         </div>
     </section>
     <section id="about" class="bg-light mx-0 px-0">
-        <div class="container d-flex flex-column pt-5 d-lg-flex flex-lg-row d-md-flex flex-md-row"
+        <div class="container d-flex flex-column pt-5 d-md-flex flex-md-row"
              style="min-height: 640px">
             <div class="col col-6 col-lg-3 col-md-5 m-auto m-lg-5 m-md-0 align-self-center block">
                 <img class="img-fluid tilt-image shadow-lg rounded"
@@ -72,8 +72,8 @@
     </section>
     <section id="Contact" class="mx-0 px-0">
         <div class="container d-flex flex-column pt-5" style="min-height: 640px">
-            <div class="d-flex flex-column d-lg-flex flex-lg-row d-md-flex flex-md-row pt-4">
-                <div class="my-4 col-lg-6 col-md-6 d-flex flex-column justify-content-center">
+            <div class="d-flex flex-column d-md-flex flex-md-row pt-4">
+                <div class="my-4 col-md-6 d-flex flex-column justify-content-center">
                     <h1 class="block display-5 fw-bold mb-5">Get in Touch</h1>
                     <div id="social-overview"
                          class="block text-secondary text-larger ai-response"
@@ -82,7 +82,7 @@
                          hx-swap="InnerHtml">
                         <span class="result-streaming"></span>
                     </div>
-                    <div class="block d-flex justify-content-lg-start justify-content-md-start justify-content-center mt-4">
+                    <div class="block d-flex justify-content-md-start justify-content-center mt-4">
                         <button class="btn btn-dark rounded-pill m-1">
                             <i class="bi bi-instagram me-2"></i>Social Accounts</button>
                         <button class="btn btn-outline-dark rounded-pill m-1"><i
@@ -90,8 +90,8 @@
                     </div>
                 </div>
 
-                <div class="col-lg-6 col-md-7 mx-lg-5 block my-5 d-flex align-items-end">
-                    <div class="card shadow-sm mx-lg-5 mx-md-4">
+                <div class="col-md-7 col-lg-6 mx-lg-5 block my-5 d-flex align-items-end">
+                    <div class="card shadow-sm mx-md-4 mx-lg-5">
                         <div class="card-body">
                             <div>
                                 <h5 class="card-title text-center mb-4">Contact Me</h5>

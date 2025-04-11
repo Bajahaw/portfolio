@@ -7,8 +7,8 @@
              style="min-height: 640px">
             <div class="col h-100 col-md-9">
                 <div class="my-5">
-                    <h1 class="display-4 fw-bold mb-4">Hi, I am Radhi Bajahaw</h1>
-                    <h3 class="text-secondary"> Let <span class="text-primary text-opacity-75">AI</span>
+                    <h1 class="display-4 fw-bold mb-4 text-center text-md-start">Hi, I am Radhi Bajahaw</h1>
+                    <h3 class="text-secondary text-center text-md-start"> Let <span class="text-primary text-opacity-75">AI</span>
                         tell you more about me .. </h3>
                 </div>
                 <div class="d-flex flex-column justify-content-between mt-5 mb-0 h-50">
@@ -74,7 +74,7 @@
         <div class="container d-flex flex-column pt-5" style="min-height: 640px">
             <div class="d-flex flex-column d-md-flex flex-md-row pt-4">
                 <div class="my-4 col-md-6 d-flex flex-column justify-content-center">
-                    <h1 class="block display-5 fw-bold mb-5">Get in Touch</h1>
+                    <h1 class="block display-5 fw-bold mb-5 text-center text-md-start">Get in Touch</h1>
                     <div id="social-overview"
                          class="block text-secondary text-larger ai-response"
                          hx-get="/content/social-overview"

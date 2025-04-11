@@ -7,9 +7,12 @@
 @param Content content = @`
     <section id="about-details">
         <div class="container d-flex flex-column align-items-center py-5">
-            <h1 class="display-4 fw-bold mt-2">About Radhi Bajahaw</h1>
-            <p class="lead text-secondary">Get to know me through my <span
-                        class="text-primary text-opacity-75">AI</span> Assistant</p>
+            <h1 class="display-4 fw-bold mt-2 text-center">About Radhi Bajahaw</h1>
+            <p class="lead text-secondary text-center">Get to know me through my
+                <span class="text-nowrap">
+                    <span class="text-primary text-opacity-75">AI</span> Assistant
+                </span>
+            </p>
             <div id="intro"
                  class="text-secondary lead ai-response col-12 col-md-9 mt-4"
                  hx-get="/content/about-me-brief"

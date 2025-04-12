@@ -1,7 +1,6 @@
 document.body.addEventListener('htmx:beforeSwap', (event) => {
     if (event.target.classList.contains('ai-response')) {
         event.preventDefault();
-
         const responseHTML = event.detail.xhr.responseText;
         chatgpt(event.target, responseHTML);
     }
@@ -18,6 +17,7 @@ function chatgpt(element, text) {
 
     const fullText = text;
     const streamContainer = element;
+    streamContainer.innerHTML = '';
 
     const measureEl = document.createElement("div");
     const computed = getComputedStyle(streamContainer);
@@ -30,7 +30,7 @@ function chatgpt(element, text) {
     measureEl.style.boxSizing = computed.boxSizing;
     measureEl.style.position = "absolute";
     measureEl.style.visibility = "hidden";
-    measureEl.style.border = "1px solid red";
+    // measureEl.style.border = "1px solid red"; // for debug purposes
     measureEl.textContent = fullText;
 
     document.body.appendChild(measureEl);
@@ -42,16 +42,26 @@ function chatgpt(element, text) {
     });
 
     let index = 0;
+
     function processCharacter() {
         if (index < fullText.length) {
-            streamContainer.innerHTML = fullText.slice(0, index + 2) + `<span class="result-streaming">⬤</span>`;
+            const sentenceBlock = document.createElement('span');
+            sentenceBlock.className = 'ease opacity-0';
+            sentenceBlock.textContent = fullText.slice(index, index + 3);
+            streamContainer.append(sentenceBlock);
+
             const char = fullText[index];
-            index += 2;
-            const delay = char === ' ' ? 70 : 10;
+            const delay = char === ' ' ? 100 : 10;
+            index += 3;
+
+            setTimeout(() => sentenceBlock.classList.add('opacity-100'), 100);
             setTimeout(processCharacter, delay);
+
         } else {
-            streamContainer.innerHTML = fullText;
-            streamContainer.style.height = 'revert';
+            setTimeout(() => {
+                streamContainer.innerHTML = fullText;
+                streamContainer.style.height = 'revert';
+            }, 1000);
         }
     }
 

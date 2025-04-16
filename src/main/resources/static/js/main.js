@@ -46,13 +46,13 @@ function chatgpt(element, text) {
     function processCharacter() {
         if (index < fullText.length) {
             const sentenceBlock = document.createElement('span');
-            sentenceBlock.className = 'ease opacity-0';
-            sentenceBlock.textContent = fullText.slice(index, index + 3);
+            sentenceBlock.className = 'ease-long opacity-0';
+            sentenceBlock.textContent = fullText.slice(index, index + 2);
             streamContainer.append(sentenceBlock);
 
-            const char = fullText[index];
-            const delay = char === ' ' ? 100 : 10;
-            index += 3;
+            const char = fullText[index+2];
+            const delay = char === '.' ? 100 : 10;
+            index += 2;
 
             setTimeout(() => sentenceBlock.classList.add('opacity-100'), 100);
             setTimeout(processCharacter, delay);
@@ -61,7 +61,7 @@ function chatgpt(element, text) {
             setTimeout(() => {
                 streamContainer.innerHTML = fullText;
                 streamContainer.style.height = 'revert';
-            }, 1000);
+            }, 2000);
         }
     }
 

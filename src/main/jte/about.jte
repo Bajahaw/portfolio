@@ -87,9 +87,9 @@
                         <!-- Timeline dot -->
                         <div class="card card-shadow border-0 rounded-4 block">
                             <div class="row g-0">
-                                <div class="col-md-4 overflow-hidden">
-                                    <img src="/img/dev.svg"
-                                         class="rounded-start-4 w-50 object-fit-fill"
+                                <div class="col-md-3 overflow-hidde p-2 d-flex align-items-center">
+                                    <img src="https://picsum.photos/720/480"
+                                         class="rounded img-fluid"
                                          alt="Authentication System">
                                 </div>
                                 <div class="col-md-8">
@@ -115,9 +115,9 @@
                         <!-- Timeline dot -->
                         <div class="card card-shadow border-0 rounded-4 block">
                             <div class="row g-0">
-                                <div class="col-md-4 overflow-hidden">
-                                    <img src="/img/dev.svg"
-                                         class="rounded-start-4 w-50 object-fit-fill"
+                                <div class="col-md-3 overflow-hidde p-2 d-flex align-items-center">
+                                    <img src="https://picsum.photos/720/480"
+                                         class="rounded img-fluid"
                                          alt="Authentication System">
                                 </div>
                                 <div class="col-md-8">
@@ -142,10 +142,10 @@
                         <!-- Timeline dot -->
                         <div class="card card-shadow border-0 rounded-4 block">
                             <div class="row g-0">
-                                <div class="col-md-4">
-                                    <img src="/img/dev.svg"
-                                         class="img-fluid rounded-start-4 w-50"
-                                         alt="Multiplayer Game Server">
+                                <div class="col-md-3 overflow-hidde p-2 d-flex align-items-center">
+                                    <img src="https://picsum.photos/720/480"
+                                         class="rounded img-fluid"
+                                         alt="Authentication System">
                                 </div>
                                 <div class="col-md-8">
                                     <div class="card-body p-4">

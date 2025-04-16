@@ -35,8 +35,8 @@
             </div>
             <div class="col col-6 col-md-3 m-auto m-md-5">
                 <img class="img-fluid tilt-image shadow-lg rounded"
-                     src="/img/dev.svg"
-                     alt="Developer avatar illustration">
+                     src="https://iili.io/304b26P.md.png"
+                     alt="Developer avatar illustration" width="480px" height="720px">
             </div>
         </div>
         <div class="container block d-flex justify-content-center">
@@ -49,7 +49,7 @@
              style="min-height: 640px">
             <div class="col col-6 col-lg-3 col-md-5 m-auto m-lg-5 m-md-0 align-self-center block">
                 <img class="img-fluid tilt-image shadow-lg rounded"
-                     src="/img/developer.svg"
+                     src="https://iili.io/306PY3G.jpg"
                      alt="Developer avatar illustration">
             </div>
             <div class="col-lg-7 col-md-8 mx-lg-5 d-flex flex-column align-items-center justify-content-center py-5 px-lg-0">
@@ -90,7 +90,7 @@
                     </div>
                 </div>
 
-                <div class="col-md-7 col-lg-6 mx-lg-5 block my-5 d-flex align-items-end">
+                <div class="col-md-7 col-lg-6 mx-lg-5 block my-5 d-flex align-items-end justify-content-center">
                     <div class="card shadow-sm mx-md-4 mx-lg-5">
                         <div class="card-body">
                             <div>

@@ -34,9 +34,9 @@
                 </div>
             </div>
             <div class="col col-6 col-md-3 m-auto m-md-5">
-                <img class="img-fluid tilt-image shadow-lg rounded"
-                     src="https://iili.io/304b26P.md.png"
-                     alt="Developer avatar illustration" width="480px" height="720px">
+                <img class="img-fluid crop-img tilt-image lg rounded-4"
+                     src="https://backend.radhi.tech/api/files/pbc_2337082678/myg3b0xi3a58zqp/avatar_small_y5tazk1zad.png"
+                     alt="Developer avatar illustration">
             </div>
         </div>
         <div class="container block d-flex justify-content-center">
@@ -48,8 +48,8 @@
         <div class="container d-flex flex-column pt-5 d-md-flex flex-md-row"
              style="min-height: 640px">
             <div class="col col-6 col-lg-3 col-md-5 m-auto m-lg-5 m-md-0 align-self-center block">
-                <img class="img-fluid tilt-image shadow-lg rounded"
-                     src="https://iili.io/306PY3G.jpg"
+                <img class="img-fluid crop-img tilt-image rounded-4"
+                     src="https://backend.radhi.tech/api/files/pbc_2337082678/53v3lig28lbz834/dev_casual_2_kau7j9adyc.png"
                      alt="Developer avatar illustration">
             </div>
             <div class="col-lg-7 col-md-8 mx-lg-5 d-flex flex-column align-items-center justify-content-center py-5 px-lg-0">

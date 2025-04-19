@@ -46,6 +46,19 @@ body {
     box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
 }
 
+.crop-img {
+    aspect-ratio: 3 / 4;
+    object-fit: cover;
+    object-position: top;
+}
+
+@media (max-width: 767px) {
+    .crop-img {
+        aspect-ratio: 1;
+        border-radius: 50% !important;
+    }
+}
+
 .result-streaming {
     font-size: small;
     vertical-align: text-bottom;

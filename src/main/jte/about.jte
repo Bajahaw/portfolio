@@ -3,6 +3,9 @@
 @import tech.radhi.portfolio.content.ContentTemplate
 
 @param List<ContentTemplate> questions
+@param List<String> frontend
+@param List<String> backend
+@param List<String> tools
 @param boolean headless = false
 @param Content content = @`
     <section id="about-details">
@@ -31,12 +34,9 @@
                             <i class="bi bi-code-square fs-1 mb-3"></i>
                             <h4 class="card-title fw-semibold">Frontend</h4>
                             <div class="d-flex flex-wrap justify-content-center gap-2 mt-3">
-                                <span class="badge bg-light text-secondary border p-2 block">HTML5</span>
-                                <span class="badge bg-light text-secondary border p-2 block">CSS3</span>
-                                <span class="badge bg-light text-secondary border p-2 block">JavaScript</span>
-                                <span class="badge bg-light text-secondary border p-2 block">React</span>
-                                <span class="badge bg-light text-secondary border p-2 block">HTMX</span>
-                                <span class="badge bg-light text-secondary border p-2 block">Bootstrap</span>
+                                @for(String skill : frontend)
+                                    <span class="badge bg-light text-secondary border p-2 block">${skill}</span>
+                                @endfor
                             </div>
                         </div>
                     </div>
@@ -47,12 +47,9 @@
                             <i class="bi bi-server fs-1 mb-3"></i>
                             <h4 class="card-title fw-semibold">Backend</h4>
                             <div class="d-flex flex-wrap justify-content-center gap-2 mt-3">
-                                <span class="badge bg-light text-secondary border p-2 block">Java</span>
-                                <span class="badge bg-light text-secondary border p-2 block">Kotlin</span>
-                                <span class="badge bg-light text-secondary border p-2 block">Python</span>
-                                <span class="badge bg-light text-secondary border p-2 block">Spring Boot</span>
-                                <span class="badge bg-light text-secondary border p-2 block">PostgreSQL</span>
-                                <span class="badge bg-light text-secondary border p-2 block">REST API</span>
+                                @for(String skill : backend)
+                                    <span class="badge bg-light text-secondary border p-2 block">${skill}</span>
+                                @endfor
                             </div>
                         </div>
                     </div>
@@ -63,11 +60,9 @@
                             <i class="bi bi-gear fs-1 mb-3"></i>
                             <h4 class="card-title fw-semibold">Tools & Practices</h4>
                             <div class="d-flex flex-wrap justify-content-center gap-2 mt-3">
-                                <span class="badge bg-light text-secondary border p-2 block">Git</span>
-                                <span class="badge bg-light text-secondary border p-2 block">Docker</span>
-                                <span class="badge bg-light text-secondary border p-2 block">CI/CD</span>
-                                <span class="badge bg-light text-secondary border p-2 block">Agile</span>
-                                <span class="badge bg-light text-secondary border p-2 block">Testing</span>
+                                @for(String skill : tools)
+                                    <span class="badge bg-light text-secondary border p-2 block">${skill}</span>
+                                @endfor
                             </div>
                         </div>
                     </div>

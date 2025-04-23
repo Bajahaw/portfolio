@@ -1,10 +1,9 @@
 package tech.radhi.portfolio.content;
 
 import org.springframework.http.ResponseEntity;
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
-@Controller
+@RestController
 @RequestMapping("/content")
 public class ContentController {
 
@@ -14,7 +13,6 @@ public class ContentController {
         this.service = service;
     }
 
-    @ResponseBody
     @GetMapping("/{id}")
     public String content(@PathVariable String id) {
         return service.getContentById(id);

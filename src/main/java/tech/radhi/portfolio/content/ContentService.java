@@ -1,5 +1,6 @@
 package tech.radhi.portfolio.content;
 
+import org.springframework.data.jdbc.core.JdbcAggregateTemplate;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -7,9 +8,11 @@ import java.util.List;
 @Service
 public class ContentService {
     ContentRepository repository;
+    JdbcAggregateTemplate jdbcTemplate;
 
-    public ContentService(ContentRepository repository) {
+    public ContentService(ContentRepository repository, JdbcAggregateTemplate template) {
         this.repository = repository;
+        this.jdbcTemplate = template;
     }
 
     public String getContentById(String id) {
@@ -27,7 +30,7 @@ public class ContentService {
     }
 
     public void addContent(ContentTemplate content) {
-        repository.save(content);
+        jdbcTemplate.insert(content);
     }
 
     public void updateContent(String id, ContentTemplate content) {
@@ -39,6 +42,6 @@ public class ContentService {
     }
 
     public void deleteContent(String id) {
-        repository.removeById(id);
+        repository.deleteById(id);
     }
 }

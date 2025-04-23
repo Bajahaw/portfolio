@@ -1,6 +1,7 @@
 package tech.radhi.portfolio.content;
 
 import org.springframework.data.repository.CrudRepository;
+import org.springframework.lang.NonNull;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
@@ -12,5 +13,5 @@ public interface ContentRepository extends CrudRepository<ContentTemplate, Strin
 
     ContentTemplate getContentById(String id);
 
-    void removeById(String id);
+    void deleteById(@NonNull String id);
 }

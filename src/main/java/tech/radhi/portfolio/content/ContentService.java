@@ -11,6 +11,7 @@ public class ContentService {
     public ContentService(ContentRepository repository) {
         this.repository = repository;
     }
+
     public String getContentById(String id) {
         ContentTemplate p = repository.getContentById(id);
         return p != null ? p.contentBody() : "Oh!, Something seems off, got nothing to say . . . ";
@@ -25,4 +26,19 @@ public class ContentService {
         return List.of(error);
     }
 
+    public void addContent(ContentTemplate content) {
+        repository.save(content);
+    }
+
+    public void updateContent(String id, ContentTemplate content) {
+        var c = new ContentTemplate(
+                id, content.type(),
+                content.contentBody()
+        );
+        repository.save(c);
+    }
+
+    public void deleteContent(String id) {
+        repository.removeById(id);
+    }
 }

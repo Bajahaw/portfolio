@@ -7,6 +7,10 @@ import java.util.List;
 
 @Repository
 public interface ContentRepository extends CrudRepository<ContentTemplate, String> {
+
     List<ContentTemplate> getAllByType(String type);
+
     ContentTemplate getContentById(String id);
+
+    void removeById(String id);
 }

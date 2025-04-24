@@ -34,7 +34,9 @@ dependencies {
 	implementation("gg.jte:jte-spring-boot-starter-3:3.1.12")
 	implementation("org.springframework.boot:spring-boot-starter-data-jdbc")
 	implementation("org.springdoc:springdoc-openapi-starter-webmvc-ui:2.8.6")
+	implementation("org.springframework.boot:spring-boot-starter-security")
 	testImplementation("org.springframework.boot:spring-boot-starter-test")
+	testImplementation("org.springframework.security:spring-security-test")
 	runtimeOnly("org.postgresql:postgresql")
 	testRuntimeOnly("org.junit.platform:junit-platform-launcher")
 }

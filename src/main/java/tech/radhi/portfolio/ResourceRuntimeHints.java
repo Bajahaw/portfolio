@@ -25,12 +25,24 @@ public class ResourceRuntimeHints implements RuntimeHintsRegistrar {
                 .registerPattern("**/*.bin");
 
         hints.reflection()
-                .registerType(JteindexGenerated.class, MemberCategory.INVOKE_DECLARED_CONSTRUCTORS, MemberCategory.INVOKE_DECLARED_METHODS);
+                .registerType(JteindexGenerated.class,
+                        MemberCategory.INVOKE_DECLARED_CONSTRUCTORS,
+                        MemberCategory.INVOKE_DECLARED_METHODS
+                );
         hints.reflection()
-                .registerType(JteaboutGenerated.class, MemberCategory.INVOKE_DECLARED_CONSTRUCTORS, MemberCategory.INVOKE_DECLARED_METHODS);
+                .registerType(JteaboutGenerated.class,
+                        MemberCategory.INVOKE_DECLARED_CONSTRUCTORS,
+                        MemberCategory.INVOKE_DECLARED_METHODS
+                );
         hints.reflection()
-                .registerType(JtemainGenerated.class, MemberCategory.INVOKE_DECLARED_CONSTRUCTORS, MemberCategory.INVOKE_DECLARED_METHODS);
+                .registerType(JtemainGenerated.class,
+                        MemberCategory.INVOKE_DECLARED_CONSTRUCTORS,
+                        MemberCategory.INVOKE_DECLARED_METHODS
+                );
         hints.reflection()
-                .registerType(JteqaitemGenerated.class, MemberCategory.INVOKE_DECLARED_CONSTRUCTORS, MemberCategory.INVOKE_DECLARED_METHODS);
+                .registerType(JteqaitemGenerated.class,
+                        MemberCategory.INVOKE_DECLARED_CONSTRUCTORS,
+                        MemberCategory.INVOKE_DECLARED_METHODS
+                );
     }
 }

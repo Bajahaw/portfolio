@@ -4,6 +4,7 @@ import io.swagger.v3.oas.models.Components;
 import io.swagger.v3.oas.models.OpenAPI;
 import io.swagger.v3.oas.models.security.SecurityRequirement;
 import io.swagger.v3.oas.models.security.SecurityScheme;
+import io.swagger.v3.oas.models.servers.Server;
 import jakarta.servlet.FilterChain;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServletRequest;
@@ -67,9 +68,11 @@ public class MainConfig {
         SecurityRequirement requirement = new SecurityRequirement();
         requirement.addList("queryToken");
 
-        OpenAPI openAPI = new OpenAPI();
-        openAPI.components(components).addSecurityItem(requirement);
+        var server = new Server().url("https://portfolio.radhi.tech");
 
-        return openAPI;
+        return new OpenAPI()
+                .components(components)
+                .addSecurityItem(requirement)
+                .servers(List.of(server));
     }
 }

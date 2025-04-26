@@ -27,6 +27,8 @@ import java.util.List;
 public class MainConfig {
     @Value("${token}")
     private String KEY;
+    @Value("${url}")
+    private String URL;
 
     OncePerRequestFilter tokenFilter = new OncePerRequestFilter() {
         @Override
@@ -68,7 +70,7 @@ public class MainConfig {
         SecurityRequirement requirement = new SecurityRequirement();
         requirement.addList("queryToken");
 
-        var server = new Server().url("https://portfolio.radhi.tech");
+        var server = new Server().url(URL);
 
         return new OpenAPI()
                 .components(components)

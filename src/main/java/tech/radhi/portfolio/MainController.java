@@ -15,17 +15,16 @@ public class MainController {
     }
 
     @GetMapping("/")
-    public String index(
-            Model model,
+    public String index(Model model,
             @RequestHeader(value = "HX-Request", required = false) String hxRequest
     ) {
+        mainService.getIndexContent(model);
         mainService.handleHtmxRequests(model, hxRequest);
         return "index";
     }
 
     @GetMapping("/about")
-    public String about(
-            Model model,
+    public String about(Model model,
             @RequestHeader(value = "HX-Request", required = false) String hxRequest
     ) {
         mainService.getAboutContent(model);

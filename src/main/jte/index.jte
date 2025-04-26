@@ -1,7 +1,8 @@
-@import gg.jte.Content
+@import java.util.Map
 
 @param boolean headless = false
-@param Content content = @`
+@param Map<String, String> imgs
+!{var content = @`
     <section id="overview">
         <div class="container d-flex flex-column-reverse d-md-flex flex-md-row pt-5"
              style="min-height: 640px">
@@ -35,7 +36,7 @@
             </div>
             <div class="col col-9 col-md-3 m-auto m-md-5">
                 <img class="crop-img tilt-image lg rounded-4"
-                     src="https://backend.radhi.tech/api/files/pbc_2337082678/myg3b0xi3a58zqp/avatar_small_y5tazk1zad.png"
+                     src="${imgs.get("developer-avatar-illustration-1")}"
                      alt="Developer avatar illustration">
             </div>
         </div>
@@ -49,7 +50,7 @@
              style="min-height: 640px">
             <div class="col col-9 col-lg-3 col-md-5 m-auto m-lg-5 m-md-0 align-self-center block">
                 <img class="crop-img tilt-image rounded-4"
-                     src="https://backend.radhi.tech/api/files/pbc_2337082678/7592xrn2zx968cv/dev_large_czweciw3gs.png"
+                     src="${imgs.get("developer-avatar-illustration-2")}"
                      alt="Developer avatar illustration">
             </div>
             <div class="col-lg-7 col-md-8 mx-lg-5 d-flex flex-column align-items-center justify-content-center py-5 px-lg-0">
@@ -128,7 +129,7 @@
             </div>
         </div>
     </section>
-`
+`;}
 
 @if(headless) ${content}
 @else @template.main(content = content)

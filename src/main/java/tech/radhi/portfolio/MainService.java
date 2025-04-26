@@ -3,8 +3,10 @@ package tech.radhi.portfolio;
 import org.springframework.stereotype.Service;
 import org.springframework.ui.Model;
 import tech.radhi.portfolio.content.ContentService;
+import tech.radhi.portfolio.content.ContentTemplate;
 
 import java.util.List;
+import java.util.stream.Collectors;
 
 @Service
 public class MainService {
@@ -12,6 +14,16 @@ public class MainService {
 
     public MainService(ContentService service){
         contentRepo = service;
+    }
+
+    public void getIndexContent(Model model){
+        var pics = contentRepo.getListOfContent("img");
+        var map = pics.stream().collect(Collectors.toMap(
+                ContentTemplate::id,
+                ContentTemplate::contentBody,
+                (oldV, newV) -> newV
+        ));
+        model.addAttribute("imgs", map);
     }
 
     public void handleHtmxRequests(Model model, String header){
@@ -25,10 +37,7 @@ public class MainService {
         var questions = contentRepo.getListOfContent("q");
         model.addAttribute("questions", questions);
 
-        if (skills.length <= 2) {
-            skills = new String[]{"sorry","error", "happened"};
-        }
-
+        if (skills.length <= 2) skills = new String[]{"sorry","error", "happened"};
         model.addAttribute("frontend", List.of(skills[0].split(",")));
         model.addAttribute("backend", List.of(skills[1].split(",")));
         model.addAttribute("tools", List.of(skills[2].split(",")));

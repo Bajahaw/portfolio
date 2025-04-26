@@ -1,5 +1,4 @@
 @import java.util.List
-@import gg.jte.Content
 @import tech.radhi.portfolio.content.ContentTemplate
 
 @param List<ContentTemplate> questions
@@ -7,7 +6,28 @@
 @param List<String> backend
 @param List<String> tools
 @param boolean headless = false
-@param Content content = @`
+
+!{var lists = List.of(frontend,backend,tools);}
+!{var listNames = List.of("Frontend", "Backend", "Tools & Practices");}
+!{ var skillsTemplate = @`
+    @for(var list: lists)
+        <div class="col-md-4">
+            <div class="card h-100 border-0 card-shadow rounded-4">
+                <div class="card-body text-center p-4">
+                    <i class="bi bi-code-square fs-1 mb-3"></i>
+                    <h4 class="card-title fw-semibold">${listNames.get(lists.indexOf(list))}</h4>
+                    <div class="d-flex flex-wrap justify-content-center gap-2 mt-3">
+                        @for(String skill : list)
+                            <span class="badge bg-light text-secondary border p-2 block">${skill}</span>
+                        @endfor
+                    </div>
+                </div>
+            </div>
+        </div>
+    @endfor
+`;}
+
+!{ var  content = @`
     <section id="about-details">
         <div class="container d-flex flex-column align-items-center py-5">
             <h1 class="display-4 fw-bold mt-2 text-center">About Radhi Bajahaw</h1>
@@ -28,48 +48,9 @@
         <div class="container py-5">
             <h2 class="text-center mb-4 fw-bold">Skills & Expertise</h2>
             <div class="row g-4">
-                <div class="col-md-4">
-                    <div class="card h-100 border-0 card-shadow rounded-4">
-                        <div class="card-body text-center p-4">
-                            <i class="bi bi-code-square fs-1 mb-3"></i>
-                            <h4 class="card-title fw-semibold">Frontend</h4>
-                            <div class="d-flex flex-wrap justify-content-center gap-2 mt-3">
-                                @for(String skill : frontend)
-                                    <span class="badge bg-light text-secondary border p-2 block">${skill}</span>
-                                @endfor
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="card h-100 border-0 card-shadow rounded-4">
-                        <div class="card-body text-center p-4">
-                            <i class="bi bi-server fs-1 mb-3"></i>
-                            <h4 class="card-title fw-semibold">Backend</h4>
-                            <div class="d-flex flex-wrap justify-content-center gap-2 mt-3">
-                                @for(String skill : backend)
-                                    <span class="badge bg-light text-secondary border p-2 block">${skill}</span>
-                                @endfor
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="card h-100 border-0 card-shadow rounded-4">
-                        <div class="card-body text-center p-4">
-                            <i class="bi bi-gear fs-1 mb-3"></i>
-                            <h4 class="card-title fw-semibold">Tools & Practices</h4>
-                            <div class="d-flex flex-wrap justify-content-center gap-2 mt-3">
-                                @for(String skill : tools)
-                                    <span class="badge bg-light text-secondary border p-2 block">${skill}</span>
-                                @endfor
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                ${skillsTemplate}
             </div>
         </div>
-
 
         <div class="container py-5">
             <h2 class="text-center fw-bold mb-5">Projects Timeline</h2>
@@ -94,7 +75,8 @@
                                             <h5 class="card-title fw-semibold mb-0">Portfolio Website</h5>
                                         </div>
                                         <p class="card-text text-secondary">Personal portfolio website built with Spring
-                                            Boot, JTE templates, and HTMX for a responsive and dynamic user experience.</p>
+                                            Boot, JTE templates, and HTMX for a responsive and dynamic user
+                                            experience.</p>
                                         <div class="d-flex flex-wrap gap-1 mt-2 h-100 align-items-end">
                                             <span class="badge bg-light text-secondary block border">Java</span>
                                             <span class="badge bg-light text-secondary block border">Spring Boot</span>
@@ -187,7 +169,7 @@
             </a>
         </div>
     </section>
-`
+`;}
 
 @if(headless) ${content}
 @else @template.main(content = content)

@@ -17,6 +17,8 @@ import org.springframework.cache.concurrent.ConcurrentMapCache;
 import org.springframework.cache.support.SimpleCacheManager;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.security.authentication.AuthenticationManager;
+import org.springframework.security.authentication.AuthenticationServiceException;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configurers.AbstractHttpConfigurer;
 import org.springframework.security.core.context.SecurityContextHolder;
@@ -57,13 +59,26 @@ public class MainConfig implements CachingConfigurer {
         http
                 .csrf(AbstractHttpConfigurer::disable)
                 .authorizeHttpRequests(auth -> auth
-                        .requestMatchers("/swagger-ui/index.html", "/content/add", "/content/put/**", "/content/delete/**")
+                        .requestMatchers(
+                                "/swagger-ui/index.html",
+                                "/content/add",
+                                "/content/put/**",
+                                "/content/delete/**"
+                        )
                         .authenticated().anyRequest().permitAll()
                 )
                 .addFilterBefore(tokenFilter, BasicAuthenticationFilter.class);
 
         return http.build();
     }
+
+    @Bean
+    public AuthenticationManager defaultAuthManager(){
+        return authentication -> {
+            throw new AuthenticationServiceException("Authentication is disabled");
+        };
+    }
+
     @Bean
     public OpenAPI keyEnabledApi() {
         SecurityScheme scheme = new SecurityScheme()

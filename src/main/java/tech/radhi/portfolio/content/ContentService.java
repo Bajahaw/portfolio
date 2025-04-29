@@ -1,7 +1,12 @@
 package tech.radhi.portfolio.content;
 
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.ObjectMapper;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.data.jdbc.core.JdbcAggregateTemplate;
 import org.springframework.stereotype.Service;
+import tech.radhi.portfolio.ResourceRuntimeHints;
 
 import java.util.List;
 
@@ -9,15 +14,18 @@ import java.util.List;
 public class ContentService {
     ContentRepository repository;
     JdbcAggregateTemplate jdbcTemplate;
+    ObjectMapper mapper;
+    Logger log = LoggerFactory.getLogger(ResourceRuntimeHints.class);
 
-    public ContentService(ContentRepository repository, JdbcAggregateTemplate template) {
+    public ContentService(ContentRepository repository, JdbcAggregateTemplate template, ObjectMapper mapper) {
         this.repository = repository;
         this.jdbcTemplate = template;
+        this.mapper = mapper;
     }
 
     public String getContentById(String id) {
         ContentTemplate p = repository.getContentById(id);
-        return p != null ? p.contentBody() : "Oh!, Something seems off, got nothing to say . . . ";
+        return p != null ? p.contentBody() : "Oh!, Something seems off, got nothing to say ..";
     }
 
     public List<ContentTemplate> getListOfContent(String type) {
@@ -27,6 +35,22 @@ public class ContentService {
                 "error", type,
                 "Oh!, Something seems off, got nothing to show ..");
         return List.of(error);
+    }
+
+    public List<ProjectTemplate> getListOfProjects(){
+        return getListOfContent("project")
+                .stream()
+                .map(this::toProject)
+                .toList();
+    }
+
+    public ProjectTemplate toProject(ContentTemplate contentTemplate) {
+        try {
+            return mapper.readValue(contentTemplate.contentBody(), ProjectTemplate.class);
+        } catch (JsonProcessingException e) {
+            log.error("Error parsing project:", e);
+            return new ProjectTemplate(0,"error","error happened",List.of("error"),"error");
+        }
     }
 
     public void addContent(ContentTemplate content) {

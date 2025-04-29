@@ -1,7 +1,9 @@
 @import java.util.List
 @import tech.radhi.portfolio.content.ContentTemplate
+@import tech.radhi.portfolio.content.ProjectTemplate
 
 @param List<ContentTemplate> questions
+@param List<ProjectTemplate> projects
 @param List<String> frontend
 @param List<String> backend
 @param List<String> tools
@@ -44,14 +46,12 @@
                 <span class="result-streaming"></span>
             </div>
         </div>
-
         <div class="container py-5">
             <h2 class="text-center mb-4 fw-bold">Skills & Expertise</h2>
             <div class="row g-4">
                 ${skillsTemplate}
             </div>
         </div>
-
         <div class="container py-5">
             <h2 class="text-center fw-bold mb-5">Projects Timeline</h2>
             <div class="position-relative">
@@ -59,96 +59,12 @@
                      style="width: 5px; background-color: #dee2e6;"></div>
 
                 <div class="ps-4 ps-md-5 mx-md-4">
-                    <div class="position-relative mb-5">
-                        <!-- Timeline dot -->
-                        <div class="card card-shadow border-0 rounded-4 block">
-                            <div class="row g-0">
-                                <div class="col-md-3 overflow-hidde p-2 d-flex align-items-center">
-                                    <img src="https://picsum.photos/720/480"
-                                         class="rounded img-fluid"
-                                         alt="Authentication System">
-                                </div>
-                                <div class="col-md-8">
-                                    <div class="card-body p-4">
-                                        <div class="d-flex align-items-center mb-3">
-                                            <span class="badge bg-dark rounded-pill me-2">2025</span>
-                                            <h5 class="card-title fw-semibold mb-0">Portfolio Website</h5>
-                                        </div>
-                                        <p class="card-text text-secondary">Personal portfolio website built with Spring
-                                            Boot, JTE templates, and HTMX for a responsive and dynamic user
-                                            experience.</p>
-                                        <div class="d-flex flex-wrap gap-1 mt-2 h-100 align-items-end">
-                                            <span class="badge bg-light text-secondary block border">Java</span>
-                                            <span class="badge bg-light text-secondary block border">Spring Boot</span>
-                                            <span class="badge bg-light text-secondary block border">JTE</span>
-                                            <span class="badge bg-light text-secondary block border">Bootstrap</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="position-relative mb-5">
-                        <!-- Timeline dot -->
-                        <div class="card card-shadow border-0 rounded-4 block">
-                            <div class="row g-0">
-                                <div class="col-md-3 overflow-hidde p-2 d-flex align-items-center">
-                                    <img src="https://picsum.photos/720/480"
-                                         class="rounded img-fluid"
-                                         alt="Authentication System">
-                                </div>
-                                <div class="col-md-8">
-                                    <div class="card-body p-4">
-                                        <div class="d-flex align-items-center mb-3">
-                                            <span class="badge bg-dark rounded-pill me-2">2024</span>
-                                            <h5 class="card-title fw-semibold mb-0">Authentication System</h5>
-                                        </div>
-                                        <p class="card-text text-secondary">Full authentication and authorization system
-                                            with JWT, refresh tokens and social login.</p>
-                                        <div class="d-flex flex-wrap gap-1 mt-2 h-100 align-items-end">
-                                            <span class="badge bg-light text-secondary block border">Java</span>
-                                            <span class="badge bg-light text-secondary block border">Spring Security</span>
-                                            <span class="badge bg-light text-secondary block border">JWT</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="position-relative mb-5">
-                        <!-- Timeline dot -->
-                        <div class="card card-shadow border-0 rounded-4 block">
-                            <div class="row g-0">
-                                <div class="col-md-3 overflow-hidde p-2 d-flex align-items-center">
-                                    <img src="https://picsum.photos/720/480"
-                                         class="rounded img-fluid"
-                                         alt="Authentication System">
-                                </div>
-                                <div class="col-md-8">
-                                    <div class="card-body p-4">
-                                        <div class="d-flex align-items-center mb-3">
-                                            <span class="badge bg-dark rounded-pill me-2">2023</span>
-                                            <h5 class="card-title fw-semibold mb-0">Multiplayer Game Server</h5>
-                                        </div>
-                                        <p class="card-text text-secondary">Developed a server for an online
-                                            multiplayer game, focusing on real-time interactions, scalable architecture,
-                                            and efficient data management.</p>
-                                        <div class="d-flex flex-wrap gap-1 mt-2">
-                                            <span class="badge bg-light text-secondary block border">Java</span>
-                                            <span class="badge bg-light text-secondary block border">Spring Boot</span>
-                                            <span class="badge bg-light text-secondary block border">SSE</span>
-                                            <span class="badge bg-light text-secondary block border">Web</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                    @for(var project: projects)
+                        @template.project-item(project = project)
+                    @endfor
                 </div>
             </div>
         </div>
-
-
         <div class="container col-lg-9">
             <h2 class="text-center fw-bold m-5">Ask <span class="text-primary">AI</span> about me</h2>
             @for(int i = 0; i < questions.size(); i++)

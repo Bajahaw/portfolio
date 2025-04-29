@@ -10,14 +10,14 @@ import java.util.stream.Collectors;
 
 @Service
 public class MainService {
-    ContentService contentRepo;
+    ContentService contentService;
 
     public MainService(ContentService service){
-        contentRepo = service;
+        contentService = service;
     }
 
     public void getIndexContent(Model model){
-        var pics = contentRepo.getListOfContent("img");
+        var pics = contentService.getListOfContent("img");
         var map = pics.stream().collect(Collectors.toMap(
                 ContentTemplate::id,
                 ContentTemplate::contentBody,
@@ -33,9 +33,12 @@ public class MainService {
     }
 
     public void getAboutContent(Model model) {
-        var skills = contentRepo.getContentById("skills").split("\\.");
-        var questions = contentRepo.getListOfContent("q");
+        var skills = contentService.getContentById("skills").split("\\.");
+        var questions = contentService.getListOfContent("q");
+        var projects = contentService.getListOfProjects();
+
         model.addAttribute("questions", questions);
+        model.addAttribute("projects", projects);
 
         if (skills.length <= 2) skills = new String[]{"sorry","error", "happened"};
         model.addAttribute("frontend", List.of(skills[0].split(",")));

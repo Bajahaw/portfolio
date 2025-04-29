@@ -4,6 +4,7 @@ import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.data.jdbc.core.JdbcAggregateTemplate;
 import org.springframework.stereotype.Service;
 import tech.radhi.portfolio.ResourceRuntimeHints;
@@ -23,11 +24,13 @@ public class ContentService {
         this.mapper = mapper;
     }
 
+    @Cacheable(cacheNames = "default", key = "#id")
     public String getContentById(String id) {
         ContentTemplate p = repository.getContentById(id);
         return p != null ? p.contentBody() : "Oh!, Something seems off, got nothing to say ..";
     }
 
+    @Cacheable(cacheNames = "default", key = "#type")
     public List<ContentTemplate> getListOfContent(String type) {
         var list = repository.getAllByType(type);
         if (!list.isEmpty()) return list;
@@ -37,6 +40,7 @@ public class ContentService {
         return List.of(error);
     }
 
+    @Cacheable(cacheNames = "default")
     public List<ProjectTemplate> getListOfProjects(){
         return getListOfContent("project")
                 .stream()

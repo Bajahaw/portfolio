@@ -10,6 +10,11 @@ import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.cache.CacheManager;
+import org.springframework.cache.annotation.CachingConfigurer;
+import org.springframework.cache.annotation.EnableCaching;
+import org.springframework.cache.concurrent.ConcurrentMapCache;
+import org.springframework.cache.support.SimpleCacheManager;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
@@ -22,9 +27,11 @@ import org.springframework.web.filter.OncePerRequestFilter;
 
 import java.io.IOException;
 import java.util.List;
+import java.util.Set;
 
 @Configuration
-public class MainConfig {
+@EnableCaching
+public class MainConfig implements CachingConfigurer {
     @Value("${token}")
     private String KEY;
     @Value("${url}")
@@ -76,5 +83,14 @@ public class MainConfig {
                 .components(components)
                 .addSecurityItem(requirement)
                 .servers(List.of(server));
+    }
+
+    @Bean
+    @Override
+    public CacheManager cacheManager() {
+        var cacheManager = new SimpleCacheManager();
+        var map = new ConcurrentMapCache("default");
+        cacheManager.setCaches(Set.of(map));
+        return cacheManager;
     }
 }

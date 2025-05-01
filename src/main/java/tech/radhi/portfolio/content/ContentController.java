@@ -1,5 +1,8 @@
 package tech.radhi.portfolio.content;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.springframework.cache.annotation.CacheEvict;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -9,10 +12,18 @@ import java.util.List;
 @RequestMapping("/content")
 public class ContentController {
 
+    private static final Logger log = LoggerFactory.getLogger(ContentController.class);
     private final ContentService service;
 
     public ContentController(ContentService service) {
         this.service = service;
+    }
+
+    @CacheEvict("default")
+    @GetMapping("/invalidate-cache")
+    public ResponseEntity<String> invalidateCache() {
+        log.warn("Cache cleared!");
+        return ResponseEntity.ok("Cache Invalidated!");
     }
 
     @GetMapping("/{id}")

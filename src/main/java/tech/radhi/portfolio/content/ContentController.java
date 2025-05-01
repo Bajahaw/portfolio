@@ -18,16 +18,10 @@ public class ContentController {
         return service.getContentById(id);
     }
 
-    @PostMapping("/add")
-    public ResponseEntity<String> addContent(@RequestBody ContentTemplate content) {
-        service.addContent(content);
+    @PostMapping("/save")
+    public ResponseEntity<String> save(@RequestBody ContentTemplate content) {
+        service.saveContent(content);
         return ResponseEntity.ok("added!");
-    }
-
-    @PutMapping("/put/{id}")
-    public ResponseEntity<String> updateContent(@PathVariable String id, @RequestBody ContentTemplate content){
-        service.updateContent(id, content);
-        return ResponseEntity.ok("updated!");
     }
 
     @DeleteMapping("/delete/{id}")

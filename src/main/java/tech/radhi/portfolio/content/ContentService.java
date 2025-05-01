@@ -57,16 +57,10 @@ public class ContentService {
         }
     }
 
-    public void addContent(ContentTemplate content) {
-        jdbcTemplate.insert(content);
-    }
-
-    public void updateContent(String id, ContentTemplate content) {
-        var c = new ContentTemplate(
-                id, content.type(),
-                content.contentBody()
-        );
-        repository.save(c);
+    public void saveContent(ContentTemplate content) {
+        var contentExist = repository.existsById(content.id());
+        if (contentExist) repository.save(content); // update
+        else jdbcTemplate.insert(content);
     }
 
     public void deleteContent(String id) {

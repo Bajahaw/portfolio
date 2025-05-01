@@ -3,6 +3,8 @@ package tech.radhi.portfolio.content;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @RestController
 @RequestMapping("/content")
 public class ContentController {
@@ -28,6 +30,17 @@ public class ContentController {
     public ResponseEntity<String> deleteContent(@PathVariable String id) {
         service.deleteContent(id);
         return ResponseEntity.ok("deleted!");
+    }
+
+    @GetMapping("/all")
+    public List<ContentTemplate> getAllContent() {
+        return service.getAllContent();
+    }
+
+    @PostMapping("/save-all")
+    public ResponseEntity<String> saveAll(@RequestBody List<ContentTemplate> list) {
+        list.forEach(content -> service.saveContent(content)); // TODO: needs optimizing )_
+        return ResponseEntity.ok("all saved");
     }
 
 }

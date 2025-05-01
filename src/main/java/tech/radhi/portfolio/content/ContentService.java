@@ -66,4 +66,8 @@ public class ContentService {
     public void deleteContent(String id) {
         repository.deleteById(id);
     }
+
+    public List<ContentTemplate> getAllContent() {
+        return repository.getAllContent();
+    }
 }

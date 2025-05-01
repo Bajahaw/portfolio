@@ -10,6 +10,7 @@ import org.springframework.aot.hint.MemberCategory;
 import org.springframework.aot.hint.RuntimeHints;
 import org.springframework.aot.hint.RuntimeHintsRegistrar;
 import org.springframework.stereotype.Component;
+import tech.radhi.portfolio.content.ProjectTemplate;
 
 @Component
 public class ResourceRuntimeHints implements RuntimeHintsRegistrar {
@@ -41,6 +42,11 @@ public class ResourceRuntimeHints implements RuntimeHintsRegistrar {
                 );
         hints.reflection()
                 .registerType(JteqaitemGenerated.class,
+                        MemberCategory.INVOKE_DECLARED_CONSTRUCTORS,
+                        MemberCategory.INVOKE_DECLARED_METHODS
+                );
+        hints.reflection()
+                .registerType(ProjectTemplate.class,
                         MemberCategory.INVOKE_DECLARED_CONSTRUCTORS,
                         MemberCategory.INVOKE_DECLARED_METHODS
                 );

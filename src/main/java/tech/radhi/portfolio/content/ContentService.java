@@ -7,16 +7,15 @@ import org.slf4j.LoggerFactory;
 import org.springframework.cache.annotation.Cacheable;
 import org.springframework.data.jdbc.core.JdbcAggregateTemplate;
 import org.springframework.stereotype.Service;
-import tech.radhi.portfolio.ResourceRuntimeHints;
 
 import java.util.List;
 
 @Service
 public class ContentService {
-    ContentRepository repository;
-    JdbcAggregateTemplate jdbcTemplate;
-    ObjectMapper mapper;
-    Logger log = LoggerFactory.getLogger(ResourceRuntimeHints.class);
+    private final ContentRepository repository;
+    private final JdbcAggregateTemplate jdbcTemplate;
+    private final ObjectMapper mapper;
+    private static final Logger log = LoggerFactory.getLogger(ContentService.class);
 
     public ContentService(ContentRepository repository, JdbcAggregateTemplate template, ObjectMapper mapper) {
         this.repository = repository;

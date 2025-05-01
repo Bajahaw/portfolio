@@ -10,7 +10,7 @@ import java.util.stream.Collectors;
 
 @Service
 public class MainService {
-    ContentService contentService;
+    private final ContentService contentService;
 
     public MainService(ContentService service){
         contentService = service;

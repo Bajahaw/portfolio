@@ -1,4 +1,4 @@
-FROM ghcr.io/graalvm/native-image-community:21-muslib AS build
+FROM ghcr.io/graalvm/native-image-community:24-muslib AS build
 
 # Install necessary tools
 RUN microdnf install wget xz findutils

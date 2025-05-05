@@ -16,7 +16,7 @@
                     <div id="intro"
                          class="text-secondary text-larger ai-response w-100"
                          hx-get="/content/overview"
-                         hx-trigger="load"
+                         hx-trigger="revealed"
                          hx-swap="InnerHtml">
                         <span class="result-streaming"></span>
                     </div>
@@ -63,7 +63,13 @@
                     <span class="result-streaming"></span>
                 </div>
                 <div class="block text-center my-4">
-                    <button class="btn btn-dark rounded-pill m-1">More About Me</button>
+                    <button class="btn btn-dark rounded-pill m-1"
+                            hx-get="/about#navbar"
+                            hx-target="#content"
+                            hx-push-url="true"
+                            onclick="activate(document.getElementById('about'))"
+                    >More About
+                    </button>
                     <button class="btn btn-outline-dark rounded-pill m-1"
                             data-bs-toggle="modal"
                             data-bs-target="#pdfModal"

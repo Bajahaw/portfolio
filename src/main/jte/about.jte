@@ -41,7 +41,7 @@
             <div id="intro"
                  class="text-secondary lead ai-response col-12 col-md-9 mt-4"
                  hx-get="/content/about-me-brief"
-                 hx-trigger="load"
+                 hx-trigger="revealed"
                  hx-swap="InnerHtml">
                 <span class="result-streaming"></span>
             </div>
@@ -53,7 +53,7 @@
             </div>
         </div>
         <div class="container py-5">
-            <h2 class="text-center fw-bold mb-5">Projects Timeline</h2>
+            <h2 class="text-center fw-bold mb-5">Projects I've worked on ..</h2>
             <div class="position-relative">
                 <div class="position-absolute h-100 ms-md-4 rounded-2"
                      style="width: 5px; background-color: #dee2e6;"></div>
@@ -77,13 +77,22 @@
         </div>
 
         <div class="text-center my-5">
-            <a href="/" class="btn btn-dark rounded-pill px-3 py-2 m-1">
+            <a class="btn btn-dark rounded-pill px-3 py-2 m-1"
+               hx-get="/#navbar"
+               hx-target="#content"
+               hx-push-url="true"
+               onclick="activate(document.getElementById('home'))">
                 <i class="bi bi-house-door me-2"></i> Back to Home
             </a>
-            <a href="#" class="btn btn-outline-dark rounded-pill px-3 py-2 m-1">
+            <a class="btn btn-outline-dark rounded-pill px-3 py-2 m-1"
+               data-bs-toggle="modal"
+               data-bs-target="#pdfModal"
+               hx-trigger="click"
+               hx-on:click="prepareResume()">
                 <i class="bi bi-file-earmark-text me-2"></i> View Resume
             </a>
         </div>
+        @template.pdf-item()
     </section>
 `;}
 

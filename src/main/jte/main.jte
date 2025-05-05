@@ -17,9 +17,9 @@
 <div id="navbar" class="container">
     <header class="navbar navbar-expand d-flex justify-content-center py-3">
         <ul class="navbar-nav nav navbar-light bg-light shadow-sm border rounded-pill flex-nowrap z-1 px-1">
-            <li><a href="/" class="scalable nav-link px-md-3" hx-get="/" hx-target="#content" hx-trigger="click"
+            <li><a id="home" href="/" class="scalable nav-link px-md-3" hx-get="/" hx-target="#content" hx-trigger="click"
                    hx-on:click="activate(this)" hx-push-url="true">Home</a></li>
-            <li><a href="/about" class="scalable nav-link px-md-3" hx-get="/about" hx-target="#content"
+            <li><a id="about" href="/about" class="scalable nav-link px-md-3" hx-get="/about" hx-target="#content"
                    hx-trigger="click" hx-on:click="activate(this)" hx-push-url="true">About</a></li>
             <li><a href="#" class="scalable nav-link px-md-3" hx-get="/social" hx-target="#content" hx-trigger="click"
                    hx-on:click="activate(this)" hx-push-url="true">Social</a></li>
@@ -48,7 +48,7 @@
     </div>
 </footer>
 <script src="js/main.js"></script>
-<script src="https://unpkg.com/htmx.org@2.0.4"></script>
+<script src="https://unpkg.com/htmx.org@2.0.4/dist/htmx.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
 </body>

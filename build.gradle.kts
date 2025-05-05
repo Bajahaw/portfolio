@@ -20,6 +20,7 @@ graalvmNative {
 		named("main") {
 			buildArgs.add("--libc=musl")
 			buildArgs.add("--static")
+			buildArgs.add("-O3")
 		}
 	}
 }

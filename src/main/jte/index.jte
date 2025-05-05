@@ -64,8 +64,12 @@
                 </div>
                 <div class="block text-center my-4">
                     <button class="btn btn-dark rounded-pill m-1">More About Me</button>
-                    <button class="btn btn-outline-dark rounded-pill m-1"><i
-                                class="bi bi-file-earmark-text me-1"></i> View Resume
+                    <button class="btn btn-outline-dark rounded-pill m-1"
+                            data-bs-toggle="modal"
+                            data-bs-target="#pdfModal"
+                            hx-trigger="click"
+                            hx-on:click="prepareResume()">
+                        <i class="bi bi-file-earmark-text me-1"></i> View Resume
                     </button>
                 </div>
             </div>
@@ -128,6 +132,7 @@
                 </div>
             </div>
         </div>
+        @template.pdf-item()
     </section>
 `;}
 

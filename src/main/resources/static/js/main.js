@@ -13,6 +13,35 @@ function activate(element) {
     element.classList.add('active');
 }
 
+async function prepareResume() {
+    const url = 'https://backend.radhi.tech/api/files/pbc_2337082678/za752529s88748l/cv_new_v3_l23uow5lsh.pdf';
+    const loadingTask = pdfjsLib.getDocument(url);
+    const pdf = await loadingTask.promise;
+    const page = await pdf.getPage(1);
+    const scale = 1.5;
+    const viewport = page.getViewport({scale});
+    // Support HiDPI-screens.
+    const outputScale = window.devicePixelRatio || 1;
+
+    const canvas = document.getElementById("resume");
+    const context = canvas.getContext("2d");
+
+    canvas.width = Math.floor(viewport.width * outputScale);
+    canvas.height = Math.floor(viewport.height * outputScale);
+
+    const transform = outputScale !== 1
+        ? [outputScale, 0, 0, outputScale, 0, 0]
+        : null;
+
+    const renderContext = {
+        canvasContext: context,
+        transform,
+        viewport,
+    };
+    document.getElementById('loadingSpinner').style.display = 'none';
+    page.render(renderContext);
+}
+
 function chatgpt(element, text) {
 
     const fullText = text;

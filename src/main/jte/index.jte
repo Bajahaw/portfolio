@@ -68,7 +68,7 @@
                             hx-target="#content"
                             hx-push-url="true"
                             onclick="activate(document.getElementById('about'))"
-                    >More About
+                    >More About Me
                     </button>
                     <button class="btn btn-outline-dark rounded-pill m-1"
                             data-bs-toggle="modal"

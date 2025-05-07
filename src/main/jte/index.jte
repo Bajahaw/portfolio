@@ -82,8 +82,8 @@
         </div>
     </section>
     <section id="Contact" class="mx-0 px-0">
-        <div class="container d-flex flex-column pt-5" style="min-height: 640px">
-            <div class="d-flex flex-column d-md-flex flex-md-row pt-4">
+        <div class="container d-flex flex-column py-5">
+            <div class="d-flex flex-column d-md-flex flex-md-row" style="min-height: 500px;">
                 <div class="my-4 col-md-6 d-flex flex-column justify-content-center">
                     <h1 class="block display-5 fw-bold mb-5 text-center text-md-start">Get in Touch</h1>
                     <div id="social-overview"
@@ -102,8 +102,8 @@
                     </div>
                 </div>
 
-                <div class="col-md-7 col-lg-6 mx-lg-5 block my-5 d-flex align-items-end justify-content-center">
-                    <div class="card shadow-sm mx-md-4 mx-lg-5">
+                <div class="col-md-7 col-lg-6 mx-lg-5 block my-5 d-flex align-items-center justify-content-center">
+                    <div class="card rounded-4 border mx-md-4 mx-lg-5">
                         <div class="card-body">
                             <div>
                                 <h5 class="card-title text-center mb-4">Contact Me</h5>
@@ -119,16 +119,16 @@
                                             <i class="bi bi-copy"></i>
                                         </button>
                                         <a href="mailto:info@radhi.tech"
-                                           class="btn btn-dark rounded-pill btn-sm" type="button">
+                                           class="btn btn-dark rounded-pill btn-sm card-shadow" type="button">
                                             <i class="bi bi-envelope"></i>
                                         </a>
                                     </div>
                                 </div>
                                 <a href="https://www.linkedin.com/in/radhi-bajahaw"
-                                   class="btn btn-dark rounded-pill" target="_blank">
+                                   class="btn btn-dark rounded-pill card-shadow" target="_blank">
                                     <i class="bi bi-linkedin mx-1"></i> LinkedIn
                                 </a>
-                                <a href="https://github.com/Bajahaw" class="btn btn-dark rounded-pill mb-2"
+                                <a href="https://github.com/Bajahaw" class="btn btn-dark rounded-pill mb-2 card-shadow"
                                    target="_blank">
                                     <i class="bi bi-github mx-1"></i> GitHub
                                 </a>

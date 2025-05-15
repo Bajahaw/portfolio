@@ -8,6 +8,7 @@ import org.springframework.cache.annotation.Cacheable;
 import org.springframework.data.jdbc.core.JdbcAggregateTemplate;
 import org.springframework.stereotype.Service;
 
+import java.util.Comparator;
 import java.util.List;
 
 @Service
@@ -44,7 +45,10 @@ public class ContentService {
         return getListOfContent("project")
                 .stream()
                 .map(this::toProject)
-                .toList();
+                .sorted(Comparator
+                        .comparing(ProjectTemplate::year)
+                        .reversed()
+                ).toList();
     }
 
     public ProjectTemplate toProject(ContentTemplate contentTemplate) {

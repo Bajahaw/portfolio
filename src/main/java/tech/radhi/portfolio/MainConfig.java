@@ -17,6 +17,7 @@ import org.springframework.cache.concurrent.ConcurrentMapCache;
 import org.springframework.cache.support.SimpleCacheManager;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.lang.NonNull;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.AuthenticationServiceException;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
@@ -42,8 +43,10 @@ public class MainConfig implements CachingConfigurer {
 
     OncePerRequestFilter tokenFilter = new OncePerRequestFilter() {
         @Override
-        protected void doFilterInternal(HttpServletRequest request,
-                HttpServletResponse response, FilterChain filterChain
+        protected void doFilterInternal(
+                HttpServletRequest request,
+                @NonNull HttpServletResponse response,
+                @NonNull FilterChain filterChain
         ) throws ServletException, IOException {
             // simply checking equality with an - already given - token
             var token = request.getParameter("token");
@@ -79,7 +82,7 @@ public class MainConfig implements CachingConfigurer {
 
     @Bean
     public AuthenticationManager defaultAuthManager(){
-        return authentication -> {
+        return _ -> {
             throw new AuthenticationServiceException("Authentication is disabled");
         };
     }

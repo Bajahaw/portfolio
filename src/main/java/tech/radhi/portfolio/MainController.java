@@ -31,5 +31,15 @@ public class MainController {
         mainService.handleHtmxRequests(model, hxRequest);
         return "about";
     }
+
+    @GetMapping("/403")
+    public String forbidden() {
+        return "fragments/403";
+    }
+
+    @GetMapping("/404")
+    public String notFound() {
+        return "fragments/404";
+    }
 }
 

@@ -23,6 +23,7 @@ import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configurers.AbstractHttpConfigurer;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.web.SecurityFilterChain;
+import org.springframework.security.web.authentication.LoginUrlAuthenticationEntryPoint;
 import org.springframework.security.web.authentication.preauth.PreAuthenticatedAuthenticationToken;
 import org.springframework.security.web.authentication.www.BasicAuthenticationFilter;
 import org.springframework.web.filter.OncePerRequestFilter;
@@ -66,6 +67,10 @@ public class MainConfig implements CachingConfigurer {
                                 "/content/delete/**"
                         )
                         .authenticated().anyRequest().permitAll()
+                )
+                .formLogin(AbstractHttpConfigurer::disable)
+                .exceptionHandling(auth -> auth
+                        .authenticationEntryPoint(new LoginUrlAuthenticationEntryPoint("/403"))
                 )
                 .addFilterBefore(tokenFilter, BasicAuthenticationFilter.class);
 

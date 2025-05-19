@@ -8,10 +8,11 @@
     <meta charset="UTF-8">
     <title>About Me - Radhi Bajahaw</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" type="image/png" href="https://backend.radhi.tech/api/files/pbc_2337082678/928xsl4zft3fm51/67b3adcd_b0ff_4553_8ad0_59a07750ff42_favicon_jd0qcukk9c.png"></head>
+    <link rel="icon" type="image/png" href="https://backend.radhi.tech/api/files/pbc_2337082678/928xsl4zft3fm51/67b3adcd_b0ff_4553_8ad0_59a07750ff42_favicon_jd0qcukk9c.png">
     <meta name="htmx-config" content='{"historyCacheSize": 0, "refreshOnHistoryMiss": true}'>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
+</head>
 <body>
 <div id="navbar" class="container">
     <header class="navbar navbar-expand d-flex justify-content-center py-3">

@@ -10,6 +10,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" type="image/png" href="https://backend.radhi.tech/api/files/pbc_2337082678/928xsl4zft3fm51/67b3adcd_b0ff_4553_8ad0_59a07750ff42_favicon_jd0qcukk9c.png">
     <meta name="htmx-config" content='{"historyCacheSize": 0, "refreshOnHistoryMiss": true}'>
+    <meta property="og:title" content="About Me - Radhi Bajahaw" />
+    <meta property="og:description" content="Software Engingeer, with Backend and DevOps specilities." />
+    <meta property="og:image" content="https://backend.radhi.tech/api/files/pbc_2337082678/t56t4a6553215f6/screenshot_from_2025_05_15_15_09_35_fkbhuyp4lm.png" />
+    <meta property="og:url" content="https://portfolio.radhi.tech" />
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
 </head>

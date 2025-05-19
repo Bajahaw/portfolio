@@ -1,11 +1,7 @@
 package tech.radhi.portfolio;
 
-import gg.jte.generated.precompiled.JteaboutGenerated;
-import gg.jte.generated.precompiled.JteindexGenerated;
-import gg.jte.generated.precompiled.JtemainGenerated;
-import gg.jte.generated.precompiled.JteqaitemGenerated;
+import gg.jte.generated.precompiled.*;
 import gg.jte.generated.precompiled.fragments.Jte403Generated;
-import gg.jte.generated.precompiled.fragments.Jte404Generated;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.aot.hint.MemberCategory;
@@ -33,7 +29,7 @@ public class ResourceRuntimeHints implements RuntimeHintsRegistrar {
                 JteqaitemGenerated.class,
                 ProjectTemplate.class,
                 Jte403Generated.class,
-                Jte404Generated.class
+                JteerrorGenerated.class
         );
 
         classes.forEach(c ->

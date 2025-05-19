@@ -36,10 +36,5 @@ public class MainController {
     public String forbidden() {
         return "fragments/403";
     }
-
-    @GetMapping("/404")
-    public String notFound() {
-        return "fragments/404";
-    }
 }
 

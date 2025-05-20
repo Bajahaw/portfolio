@@ -1,8 +1,8 @@
 @param int status = 500
 @param java.util.Date timestamp
 @param String error = "Internal Server Error"
-@param boolean headless = true
-!{var forbidden = @`
+@param boolean headless = false
+!{var errorView = @`
     <div class="container d-flex flex-column align-items-center p-4">
         <h1>⚠️</h1>
         <h2 class="fw-semibold">${status}: ${error}</h2>
@@ -16,6 +16,6 @@
         </small>
     </div>
 `;}
-@if(headless) ${forbidden}
-@else @template.main(content = forbidden)
+@if(headless) ${errorView}
+@else @template.main(content = errorView)
 @endif

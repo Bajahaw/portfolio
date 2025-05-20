@@ -33,7 +33,10 @@ public class MainController {
     }
 
     @GetMapping("/403")
-    public String forbidden() {
+    public String forbidden(Model model,
+                            @RequestHeader(value = "HX-Request", required = false) String hxRequest
+    ) {
+        mainService.handleHtmxRequests(model, hxRequest);
         return "fragments/403";
     }
 }

@@ -25,11 +25,11 @@
                    hx-trigger="click" hx-on:click="activate(this)" hx-push-url="true">Home</a></li>
             <li><a id="about" href="/about" hx-get="/about" class="scalable nav-link px-md-3" hx-target="#content"
                    hx-trigger="click" hx-on:click="activate(this)" hx-push-url="true">About</a></li>
-            <li><a href="#" hx-get="/social" class="scalable nav-link px-md-3" hx-target="#content" hx-trigger="click"
+            <li><a href="/soon" hx-get="/soon" class="scalable nav-link px-md-3" hx-target="#content" hx-trigger="click"
                    hx-on:click="activate(this)" hx-push-url="true">Social</a></li>
-            <li><a href="#" hx-get="/blog" class="scalable nav-link px-md-3" hx-target="#content" hx-trigger="click"
+            <li><a href="/soon" hx-get="/soon" class="scalable nav-link px-md-3" hx-target="#content" hx-trigger="click"
                    hx-on:click="activate(this)" hx-push-url="true">Blog</a></li>
-            <li><a href="#" hx-get="/contact" class="scalable nav-link px-md-3" hx-target="#content" hx-trigger="click"
+            <li><a href="/soon" hx-get="/soon" class="scalable nav-link px-md-3" hx-target="#content" hx-trigger="click"
                    hx-on:click="activate(this)" hx-push-url="true">Contact</a></li>
         </ul>
         <div class="d-flex position-absolute w-100 mx-5 p-5"></div>

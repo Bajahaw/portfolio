@@ -29,7 +29,8 @@ public class ResourceRuntimeHints implements RuntimeHintsRegistrar {
                 JteqaitemGenerated.class,
                 ProjectTemplate.class,
                 Jte403Generated.class,
-                JteerrorGenerated.class
+                JteerrorGenerated.class,
+                JteinsightsGenerated.class
         );
 
         classes.forEach(c ->

@@ -25,8 +25,8 @@
                    hx-trigger="click" hx-on:click="activate(this)" hx-push-url="true">Home</a></li>
             <li><a id="about" href="/about" hx-get="/about" class="scalable nav-link px-md-3" hx-target="#content"
                    hx-trigger="click" hx-on:click="activate(this)" hx-push-url="true">About</a></li>
-            <li><a href="/soon" hx-get="/soon" class="scalable nav-link px-md-3" hx-target="#content" hx-trigger="click"
-                   hx-on:click="activate(this)" hx-push-url="true">Social</a></li>
+            <li><a href="/stats" hx-get="/stats" class="scalable nav-link px-md-3" hx-target="#content"
+                   hx-trigger="click" hx-on:click="activate(this)" hx-push-url="true">Stats</a></li>
             <li><a href="/soon" hx-get="/soon" class="scalable nav-link px-md-3" hx-target="#content" hx-trigger="click"
                    hx-on:click="activate(this)" hx-push-url="true">Blog</a></li>
             <li><a href="/soon" hx-get="/soon" class="scalable nav-link px-md-3" hx-target="#content" hx-trigger="click"

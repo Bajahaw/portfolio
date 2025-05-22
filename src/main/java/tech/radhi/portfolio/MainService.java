@@ -45,4 +45,39 @@ public class MainService {
         model.addAttribute("backend", List.of(skills[1].split(",")));
         model.addAttribute("tools", List.of(skills[2].split(",")));
     }
+
+    public void getInsightsContent(Model model) {
+
+        int mockGitHubRepos = 30;
+        int mockGitHubStars = 8;
+        int mockCommitsLastMonth = 62;
+        int skillsCount = 15;
+
+        String beverage = "Tea & Coffee";
+        String os = "Arch Linux";
+        String ide = "IntelliJ IDEA / VS Code";
+        String uptime = "99.98%";
+        String resumeSkill = "Java";
+
+        long totalVisits = 5680;
+        long uniqueVisitors = 783;
+        double availability = 97.98;
+
+
+        InsightsData insightsData = new InsightsData(
+            mockGitHubRepos,
+            mockGitHubStars,
+            mockCommitsLastMonth,
+            skillsCount,
+            beverage,
+            os,
+            ide,
+            uptime,
+            resumeSkill,
+            totalVisits,
+            uniqueVisitors,
+            availability
+        );
+        model.addAttribute("insightsData", insightsData);
+    }
 }

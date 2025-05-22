@@ -36,6 +36,14 @@ public class MainController {
         return "about";
     }
 
+    @GetMapping("/stats") // New endpoint
+    public String insights(Model model,
+                           @RequestHeader(value = "HX-Request", required = false) String hxRequest) {
+        mainService.getInsightsContent(model);
+        mainService.handleHtmxRequests(model, hxRequest);
+        return "stats";
+    }
+
     @GetMapping("/403")
     public String forbidden(Model model,
                             @RequestHeader(value = "HX-Request", required = false) String hxRequest

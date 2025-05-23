@@ -65,6 +65,9 @@ public class MainConfig implements CachingConfigurer {
                 .authorizeHttpRequests(auth -> auth
                         .requestMatchers(
                                 "/swagger-ui/index.html",
+                                "/actuator",
+                                "/actuator/health",
+                                "/actuator/health/**",
                                 "/content/add",
                                 "/content/put/**",
                                 "/content/delete/**"

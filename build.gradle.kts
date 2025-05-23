@@ -30,16 +30,18 @@ repositories {
 }
 
 dependencies {
-	implementation("org.springframework.boot:spring-boot-starter-web")
-	implementation("gg.jte:jte:3.1.12")
-	implementation("gg.jte:jte-spring-boot-starter-3:3.1.12")
 	implementation("org.springframework.boot:spring-boot-starter-data-jdbc")
 	implementation("org.springdoc:springdoc-openapi-starter-webmvc-ui:2.8.6")
 	implementation("org.springframework.boot:spring-boot-starter-security")
+	implementation("org.springframework.boot:spring-boot-starter-actuator")
+	implementation("org.springframework.boot:spring-boot-starter-web")
+	implementation("org.jsoup:jsoup:1.20.1")
+	implementation("gg.jte:jte:3.1.12")
+	implementation("gg.jte:jte-spring-boot-starter-3:3.1.12")
 	testImplementation("org.springframework.boot:spring-boot-starter-test")
 	testImplementation("org.springframework.security:spring-security-test")
-	runtimeOnly("org.postgresql:postgresql")
 	testRuntimeOnly("org.junit.platform:junit-platform-launcher")
+	runtimeOnly("org.postgresql:postgresql")
 }
 
 jte {

@@ -30,7 +30,7 @@ public class ResourceRuntimeHints implements RuntimeHintsRegistrar {
                 ProjectTemplate.class,
                 Jte403Generated.class,
                 JteerrorGenerated.class,
-                JteinsightsGenerated.class
+                JtestatsGenerated.class
         );
 
         classes.forEach(c ->

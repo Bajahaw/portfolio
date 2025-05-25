@@ -57,7 +57,7 @@
                         <div class="card h-100 border-0 card-shadow rounded-4 text-center block">
                             <div class="card-body p-4">
                                 <i class="bi bi-graph-up-arrow fs-1 mb-3 text-success"></i>
-                                <h3 class="card-title fw-semibold">${String.format("%.2f%%", insightsData.availabilityLast30Days())}</h3>
+                                <h3 class="card-title fw-semibold">${insightsData.availabilityLast30Days()}</h3>
                                 <p class="text-secondary mb-0">Availability (Last 30 Days)</p>
                             </div>
                         </div>

@@ -10,7 +10,7 @@ public record InsightsData(
         String idePref,
         String uptimeStatus,
         String topResumeSkill,
+        String availabilityLast30Days,
         long totalWebsiteVisits,
-        long uniqueVisitors,
-        double availabilityLast30Days
+        long uniqueVisitors
 ) {}

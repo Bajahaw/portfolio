@@ -4,6 +4,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.ui.Model;
 import tech.radhi.portfolio.content.ContentService;
 import tech.radhi.portfolio.content.ContentTemplate;
+import tech.radhi.portfolio.scraper.PageScraper;
 
 import java.util.List;
 import java.util.stream.Collectors;
@@ -11,9 +12,11 @@ import java.util.stream.Collectors;
 @Service
 public class MainService {
     private final ContentService contentService;
+    private final PageScraper scraper;
 
-    public MainService(ContentService service){
-        contentService = service;
+    public MainService(ContentService service, PageScraper scraper){
+        this.contentService = service;
+        this.scraper = scraper;
     }
 
     public void getIndexContent(Model model){
@@ -56,12 +59,16 @@ public class MainService {
         String beverage = "Tea & Coffee";
         String os = "Arch Linux";
         String ide = "IntelliJ IDEA / VS Code";
-        String uptime = "99.98%";
         String resumeSkill = "Java";
 
         long totalVisits = 5680;
         long uniqueVisitors = 783;
-        double availability = 97.98;
+
+        var uptimeData = scraper.fetchJsonNode(
+                "https://raw.githubusercontent.com/bajahaw/web-monitor/master/history/summary.json"
+        );
+        var uptime = uptimeData.get(1).get("uptimeDay").asText();
+        var availability = uptimeData.get(1).get("uptimeMonth").asText();
 
 
         InsightsData insightsData = new InsightsData(
@@ -74,9 +81,9 @@ public class MainService {
             ide,
             uptime,
             resumeSkill,
+            availability,
             totalVisits,
-            uniqueVisitors,
-            availability
+            uniqueVisitors
         );
         model.addAttribute("insightsData", insightsData);
     }

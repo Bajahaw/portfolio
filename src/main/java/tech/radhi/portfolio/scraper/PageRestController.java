@@ -28,7 +28,7 @@ public class PageRestController {
             page = scraper.scrape(url);
             log.info("Page scraped in {} thread : {}", Thread.currentThread(), page.url());
         } catch (Exception e) {
-            log.warn("Page could not scraped : {}", url);
+            log.warn("Page {} could not scraped - {} ", url, e.getMessage());
         }
         return page;
     }

@@ -36,9 +36,10 @@ public class PageScraper {
                 URI.create(url),
                 document.title(),
                 document.select("meta[name=keywords]").eachAttr("content"),
-                document.selectXpath("//a[string-length(@href) > 0]")
+                document.select("a[href]")
                         .stream()
                         .map(element -> getHref(url, element.attr("href")))
+                        .filter(href -> !href.isBlank())
                         .toList()
         );
     }

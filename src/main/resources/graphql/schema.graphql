@@ -1,0 +1,45 @@
+schema {
+    query: Query
+}
+
+type Query {
+    GetZoneAnalytics(
+        zoneTag: String
+        since: String
+        until: String
+    ): Viewer
+    viewer: Viewer
+}
+
+type Viewer {
+    zones(filter: ZoneFilter): [Zone!]!
+}
+
+input ZoneFilter {
+    zoneTag: String
+}
+
+type Zone {
+    httpRequests1dGroups(
+        limit: Int
+        filter: DateFilter
+    ): [ZoneHttpRequests1dGroups!]!
+}
+
+input DateFilter {
+    date_geq: String
+    date_lt:  String
+}
+
+type ZoneHttpRequests1dGroups {
+    sum:   ZoneHttpRequests1dGroupsSum!
+    uniq:  ZoneHttpRequests1dGroupsUniq!
+}
+
+type ZoneHttpRequests1dGroupsSum {
+    requests: Int!
+}
+
+type ZoneHttpRequests1dGroupsUniq {
+    uniques: Int!
+}

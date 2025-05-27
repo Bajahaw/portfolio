@@ -4,7 +4,8 @@ import org.springframework.stereotype.Service;
 import org.springframework.ui.Model;
 import tech.radhi.portfolio.content.ContentService;
 import tech.radhi.portfolio.content.ContentTemplate;
-import tech.radhi.portfolio.scraper.PageScraper;
+import tech.radhi.portfolio.web.CloudflareService;
+import tech.radhi.portfolio.web.WebScraper;
 
 import java.util.List;
 import java.util.stream.Collectors;
@@ -12,24 +13,26 @@ import java.util.stream.Collectors;
 @Service
 public class MainService {
     private final ContentService contentService;
-    private final PageScraper scraper;
+    private final CloudflareService cloudflareService;
+    private final WebScraper scraper;
 
-    public MainService(ContentService service, PageScraper scraper){
+    public MainService(ContentService service, CloudflareService cloudflareService, WebScraper scraper) {
         this.contentService = service;
+        this.cloudflareService = cloudflareService;
         this.scraper = scraper;
     }
 
-    public void getIndexContent(Model model){
+    public void getIndexContent(Model model) {
         var pics = contentService.getListOfContent("img");
         var map = pics.stream().collect(Collectors.toMap(
                 ContentTemplate::id,
                 ContentTemplate::contentBody,
-                (oldV, newV) -> newV
+                (_, newV) -> newV
         ));
         model.addAttribute("imgs", map);
     }
 
-    public void handleHtmxRequests(Model model, String header){
+    public void handleHtmxRequests(Model model, String header) {
         if ("true".equals(header)) {
             model.addAttribute("headless", true);
         }
@@ -43,7 +46,7 @@ public class MainService {
         model.addAttribute("questions", questions);
         model.addAttribute("projects", projects);
 
-        if (skills.length <= 2) skills = new String[]{"sorry","error", "happened"};
+        if (skills.length <= 2) skills = new String[]{"sorry", "error", "happened"};
         model.addAttribute("frontend", List.of(skills[0].split(",")));
         model.addAttribute("backend", List.of(skills[1].split(",")));
         model.addAttribute("tools", List.of(skills[2].split(",")));
@@ -61,29 +64,33 @@ public class MainService {
         String ide = "IntelliJ IDEA / VS Code";
         String resumeSkill = "Java";
 
-        long totalVisits = 5680;
-        long uniqueVisitors = 783;
+        var siteData = cloudflareService.getAnalytics()
+                .get("viewer")
+                .get("zones").get(0)
+                .get("totals").get(0);
+        String totalRequests = siteData.get("sum").get("requests").asText();
+        String uniqueVisitors = siteData.get("uniq").get("uniques").asText();
 
         var uptimeData = scraper.fetchJsonNode(
                 "https://raw.githubusercontent.com/bajahaw/web-monitor/master/history/summary.json"
         );
-        var uptime = uptimeData.get(1).get("uptimeDay").asText();
-        var availability = uptimeData.get(1).get("uptimeMonth").asText();
+        String uptime = uptimeData.get(1).get("uptimeDay").asText();
+        String availability = uptimeData.get(1).get("uptimeMonth").asText();
 
 
         InsightsData insightsData = new InsightsData(
-            mockGitHubRepos,
-            mockGitHubStars,
-            mockCommitsLastMonth,
-            skillsCount,
-            beverage,
-            os,
-            ide,
-            uptime,
-            resumeSkill,
-            availability,
-            totalVisits,
-            uniqueVisitors
+                mockGitHubRepos,
+                mockGitHubStars,
+                mockCommitsLastMonth,
+                skillsCount,
+                beverage,
+                os,
+                ide,
+                uptime,
+                resumeSkill,
+                availability,
+                totalRequests,
+                uniqueVisitors
         );
         model.addAttribute("insightsData", insightsData);
     }

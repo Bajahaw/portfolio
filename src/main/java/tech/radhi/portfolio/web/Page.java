@@ -1,4 +1,4 @@
-package tech.radhi.portfolio.scraper;
+package tech.radhi.portfolio.web;
 
 import java.net.URI;
 import java.util.List;

@@ -1,4 +1,4 @@
-package tech.radhi.portfolio.scraper;
+package tech.radhi.portfolio.web;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.JsonNode;
@@ -13,12 +13,12 @@ import java.util.Optional;
 import java.util.function.Function;
 
 @Component
-public class PageScraper {
+public class WebScraper {
 
     private final RestClient restClient;
     private final ObjectMapper mapper;
 
-    public PageScraper(RestClient restClient, ObjectMapper mapper) {
+    public WebScraper(RestClient restClient, ObjectMapper mapper) {
         this.restClient = restClient;
         this.mapper = mapper;
     }

@@ -11,6 +11,6 @@ public record InsightsData(
         String uptimeStatus,
         String topResumeSkill,
         String availabilityLast30Days,
-        long totalWebsiteVisits,
-        long uniqueVisitors
+        String totalWebsiteVisits,
+        String uniqueVisitors
 ) {}

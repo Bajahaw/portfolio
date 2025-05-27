@@ -1,23 +1,31 @@
-package tech.radhi.portfolio.scraper;
+package tech.radhi.portfolio.web;
 
+import com.fasterxml.jackson.databind.JsonNode;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.graphql.client.FieldAccessException;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.Collections;
+import java.util.Map;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
 @RestController
-public class PageRestController {
+public class WebRestController {
 
-    private static final Logger log = LoggerFactory.getLogger(PageRestController.class);
+    private static final Logger log = LoggerFactory.getLogger(WebRestController.class);
 
-    private final PageScraper scraper;
+    private final WebScraper scraper;
+    private final CloudflareService cloudflareService;
 
-    public PageRestController(PageScraper scraper) {
+    public WebRestController(WebScraper scraper, CloudflareService service, CloudflareService cloudflareService) {
         this.scraper = scraper;
+        this.cloudflareService = cloudflareService;
     }
 
     @GetMapping("/scrape")
@@ -45,5 +53,17 @@ public class PageRestController {
             log.error(e.getMessage());
         }
         return "Discovered " + scrapedPage.links().size() + " links, inspect server logs to see the progress of the scraping.";
+    }
+
+    @GetMapping("/cloudflare")
+    public JsonNode getAnalytics() {
+        return cloudflareService.getAnalytics();
+    }
+
+    @ExceptionHandler(FieldAccessException.class)
+    public ResponseEntity<Map<String, String>> handleFieldAccess(FieldAccessException ex) {
+        return ResponseEntity
+                .badRequest()
+                .body(Collections.singletonMap("error", ex.getMessage()));
     }
 }

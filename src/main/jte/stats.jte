@@ -118,7 +118,7 @@
                             <div class="card-body p-4 d-flex flex-column justify-content-center align-items-center">
                                 <i class="bi bi-file-earmark-person fs-1 mb-3 text-primary"></i>
                                 <h5 class="card-title fw-semibold text-center">Analyze Your Resume</h5>
-                                <p class="text-secondary text-center mb-3">Upload your resume to get AI-powered skill
+                                <p class="text-secondary text-center mb-3">Upload your resume to get AI-powered skill (Soon)
                                     insights.</p>
                                 <%-- <button class="btn btn-primary rounded-pill" hx-get="/soon" hx-target="#content"--%>
                                 <%-- hx-push-url="true">Upload & Analyze (Soon)--%>

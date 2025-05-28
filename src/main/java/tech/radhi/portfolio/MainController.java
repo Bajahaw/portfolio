@@ -39,9 +39,26 @@ public class MainController {
     @GetMapping("/stats") // New endpoint
     public String insights(Model model,
                            @RequestHeader(value = "HX-Request", required = false) String hxRequest) {
-        mainService.getInsightsContent(model);
         mainService.handleHtmxRequests(model, hxRequest);
         return "stats";
+    }
+
+    @GetMapping("/github-stats") // New endpoint
+    public String getGithubStats(Model model) {
+        model.addAttribute("stats", mainService.getGithubStats());
+        return "fragments/github-stats";
+    }
+
+    @GetMapping("/cloudflare-stats") // New endpoint
+    public String getCloudflareStats(Model model) {
+        model.addAttribute("stats", mainService.getCloudflareStats());
+        return "fragments/request-stats";
+    }
+
+    @GetMapping("/upptime-stats") // New endpoint
+    public String getUptimeStats(Model model) {
+        model.addAttribute("stats", mainService.getUptimeStats());
+        return "fragments/upptime-stats";
     }
 
     @GetMapping("/403")

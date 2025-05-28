@@ -59,7 +59,7 @@ public class GithubService {
         return graphQlClient
                 .document(doc)
                 .variables(vars)
-                .executeSync().
-                toEntity(JsonNode.class);
+                .executeSync()
+                .toEntity(JsonNode.class);
     }
 }

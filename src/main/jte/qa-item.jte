@@ -1,4 +1,4 @@
-@import tech.radhi.portfolio.content.ContentTemplate
+@import tech.radhi.portfolio.dto.ContentTemplate
 @param ContentTemplate item
 @param String show
 @param String trigger

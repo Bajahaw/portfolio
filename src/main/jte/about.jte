@@ -1,6 +1,6 @@
 @import java.util.List
-@import tech.radhi.portfolio.content.ContentTemplate
-@import tech.radhi.portfolio.content.ProjectTemplate
+@import tech.radhi.portfolio.dto.ContentTemplate
+@import tech.radhi.portfolio.dto.ProjectTemplate
 
 @param List<ContentTemplate> questions
 @param List<ProjectTemplate> projects

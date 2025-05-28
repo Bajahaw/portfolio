@@ -7,6 +7,8 @@ import org.slf4j.LoggerFactory;
 import org.springframework.cache.annotation.Cacheable;
 import org.springframework.data.jdbc.core.JdbcAggregateTemplate;
 import org.springframework.stereotype.Service;
+import tech.radhi.portfolio.dto.ContentTemplate;
+import tech.radhi.portfolio.dto.ProjectTemplate;
 
 import java.util.Comparator;
 import java.util.List;

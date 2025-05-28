@@ -7,6 +7,7 @@ import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.springframework.stereotype.Component;
 import org.springframework.web.client.RestClient;
+import tech.radhi.portfolio.dto.Page;
 
 import java.net.URI;
 import java.util.Optional;

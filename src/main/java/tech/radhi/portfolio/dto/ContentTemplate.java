@@ -1,4 +1,4 @@
-package tech.radhi.portfolio.content;
+package tech.radhi.portfolio.dto;
 
 import org.springframework.data.annotation.Id;
 import org.springframework.data.relational.core.mapping.Column;

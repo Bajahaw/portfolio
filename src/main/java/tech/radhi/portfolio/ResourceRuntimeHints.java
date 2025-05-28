@@ -2,13 +2,16 @@ package tech.radhi.portfolio;
 
 import gg.jte.generated.precompiled.*;
 import gg.jte.generated.precompiled.fragments.Jte403Generated;
+import gg.jte.generated.precompiled.fragments.JtegithubstatsGenerated;
+import gg.jte.generated.precompiled.fragments.JterequeststatsGenerated;
+import gg.jte.generated.precompiled.fragments.JteupptimestatsGenerated;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.aot.hint.MemberCategory;
 import org.springframework.aot.hint.RuntimeHints;
 import org.springframework.aot.hint.RuntimeHintsRegistrar;
 import org.springframework.stereotype.Component;
-import tech.radhi.portfolio.content.ProjectTemplate;
+import tech.radhi.portfolio.dto.ProjectTemplate;
 
 import java.util.List;
 
@@ -30,7 +33,10 @@ public class ResourceRuntimeHints implements RuntimeHintsRegistrar {
                 ProjectTemplate.class,
                 Jte403Generated.class,
                 JteerrorGenerated.class,
-                JtestatsGenerated.class
+                JtestatsGenerated.class,
+                JtegithubstatsGenerated.class,
+                JterequeststatsGenerated.class,
+                JteupptimestatsGenerated.class
         );
 
         classes.forEach(c ->

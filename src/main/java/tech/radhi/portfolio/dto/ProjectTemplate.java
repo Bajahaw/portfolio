@@ -1,4 +1,4 @@
-package tech.radhi.portfolio.content;
+package tech.radhi.portfolio.dto;
 
 import java.util.List;
 

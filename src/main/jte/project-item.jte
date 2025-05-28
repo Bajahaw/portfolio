@@ -1,4 +1,4 @@
-@import tech.radhi.portfolio.content.ProjectTemplate
+@import tech.radhi.portfolio.dto.ProjectTemplate
 @param ProjectTemplate project
 
 <div class="position-relative mb-5">

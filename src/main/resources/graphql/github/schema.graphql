@@ -1,0 +1,60 @@
+scalar DateTime
+
+schema {
+    query: Query
+}
+
+type Query {
+    user(login: String!): User
+}
+
+type User {
+    login: String!
+    publicRepos: RepositoriesConnection!
+    repositories(
+        first: Int = 100
+        privacy: RepositoryPrivacy = PUBLIC
+        ownerAffiliations: [RepositoryAffiliation!] = [OWNER]
+    ): RepositoriesConnection!
+    contributionsCollection(
+        from: DateTime!
+        to: DateTime!
+    ): ContributionsCollection!
+}
+
+enum RepositoryPrivacy {
+    PUBLIC
+    PRIVATE
+}
+
+enum RepositoryAffiliation {
+    OWNER
+    COLLABORATOR
+    ORGANIZATION_MEMBER
+}
+
+type RepositoriesConnection {
+    totalCount: Int!
+    nodes: [Repository!]!
+}
+
+type Repository {
+    name: String!
+    stargazers: StargazerConnection!
+}
+
+type StargazerConnection {
+    totalCount: Int!
+}
+
+type ContributionsCollection {
+    totalCommitContributions: Int!
+    totalIssueContributions: Int!
+    totalPullRequestContributions: Int!
+    totalPullRequestReviewContributions: Int!
+    contributionCalendar: ContributionCalendar!
+}
+
+type ContributionCalendar {
+    totalContributions: Int!
+}

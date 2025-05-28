@@ -5,6 +5,7 @@ import org.springframework.ui.Model;
 import tech.radhi.portfolio.content.ContentService;
 import tech.radhi.portfolio.content.ContentTemplate;
 import tech.radhi.portfolio.web.CloudflareService;
+import tech.radhi.portfolio.web.GithubService;
 import tech.radhi.portfolio.web.WebScraper;
 
 import java.util.List;
@@ -14,11 +15,18 @@ import java.util.stream.Collectors;
 public class MainService {
     private final ContentService contentService;
     private final CloudflareService cloudflareService;
+    private final GithubService githubService;
     private final WebScraper scraper;
 
-    public MainService(ContentService service, CloudflareService cloudflareService, WebScraper scraper) {
+    public MainService(
+            WebScraper scraper,
+            ContentService service,
+            GithubService githubService,
+            CloudflareService cloudflareService
+    ) {
         this.contentService = service;
         this.cloudflareService = cloudflareService;
+        this.githubService = githubService;
         this.scraper = scraper;
     }
 
@@ -52,17 +60,33 @@ public class MainService {
         model.addAttribute("tools", List.of(skills[2].split(",")));
     }
 
+    // todo: needs refactoring
     public void getInsightsContent(Model model) {
 
-        int mockGitHubRepos = 30;
-        int mockGitHubStars = 8;
-        int mockCommitsLastMonth = 62;
         int skillsCount = 15;
 
         String beverage = "Tea & Coffee";
         String os = "Arch Linux";
         String ide = "IntelliJ IDEA / VS Code";
         String resumeSkill = "Java";
+
+        var githubData = githubService.getAnalytics().get("user");
+        int mockGitHubRepos = githubData
+                .get("publicRepos")
+                .get("totalCount")
+                .asInt();
+
+        int gitHubStars = githubData
+                .findValues("stargazers")
+                .stream()
+                .map(node -> node.get("totalCount").asInt())
+                .reduce(Integer::sum)
+                .orElse(0);
+
+        int commitsLastMonth = githubData
+                .get("contributionsCollection")
+                .get("totalCommitContributions")
+                .asInt();
 
         var siteData = cloudflareService.getAnalytics()
                 .get("viewer")
@@ -80,8 +104,8 @@ public class MainService {
 
         InsightsData insightsData = new InsightsData(
                 mockGitHubRepos,
-                mockGitHubStars,
-                mockCommitsLastMonth,
+                gitHubStars,
+                commitsLastMonth,
                 skillsCount,
                 beverage,
                 os,

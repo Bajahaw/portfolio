@@ -1,0 +1,14 @@
+{
+  "cloudflare": {
+    "schemaPath": "src/main/resources/graphql/cloudflare/schema.graphql",
+    "includes": [
+      "src/main/resources/graphql/cloudflare/**/*.graphql"
+    ]
+  },
+  "github": {
+    "schemaPath": "src/main/resources/graphql/github/schema.graphql",
+    "includes": [
+      "src/main/resources/graphql/github/**/*.graphql"
+    ]
+  }
+}

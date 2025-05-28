@@ -11,7 +11,6 @@ import java.util.Map;
 @Component
 public class CloudflareService {
 
-    private final String TOKEN;
     private final String ZONE;
     private final HttpGraphQlClient graphQlClient;
 
@@ -21,11 +20,10 @@ public class CloudflareService {
             HttpGraphQlClient graphQlClient
     ) {
         this.ZONE = zone;
-        this.TOKEN = token;
         this.graphQlClient = graphQlClient
                 .mutate()
                 .url("https://api.cloudflare.com/client/v4/graphql")
-                .header("Authorization", "Bearer " + TOKEN)
+                .header("Authorization", "Bearer " + token)
                 .build();
     }
 

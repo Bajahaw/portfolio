@@ -96,8 +96,10 @@
                     <div class="block block text-center text-md-start mt-4">
                         <button class="btn btn-dark rounded-pill m-1 text-nowrap">
                             <i class="bi bi-instagram me-2"></i>Social Accounts</button>
-                        <button class="btn btn-outline-dark rounded-pill m-1 text-nowrap"><i
-                                    class="bi bi-lightbulb me-2"></i>See Insights
+                        <button hx-get="/stats#navbar" hx-target="#content" hx-push-url="true"
+                                onclick="activate(document.getElementById('stats'))"
+                                class="btn btn-outline-dark rounded-pill m-1 text-nowrap">
+                            <i class="bi bi-lightbulb me-2"></i>See Insights
                         </button>
                     </div>
                 </div>
@@ -138,7 +140,7 @@
                 </div>
             </div>
         </div>
-        @template.pdf-item()
+        @template.fragments.pdf-item()
     </section>
 `;}
 

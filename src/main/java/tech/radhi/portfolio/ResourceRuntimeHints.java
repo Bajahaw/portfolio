@@ -1,10 +1,7 @@
 package tech.radhi.portfolio;
 
 import gg.jte.generated.precompiled.*;
-import gg.jte.generated.precompiled.fragments.Jte403Generated;
-import gg.jte.generated.precompiled.fragments.JtegithubstatsGenerated;
-import gg.jte.generated.precompiled.fragments.JterequeststatsGenerated;
-import gg.jte.generated.precompiled.fragments.JteupptimestatsGenerated;
+import gg.jte.generated.precompiled.fragments.*;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.aot.hint.MemberCategory;

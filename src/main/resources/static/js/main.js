@@ -42,6 +42,20 @@ async function prepareResume() {
     page.render(renderContext);
 }
 
+const ADMIN_KEY = localStorage.getItem('ADMIN_KEY');
+if (ADMIN_KEY) {
+    const extraNav = document.getElementById('extra-nav');
+    const adminButton = document.createElement('button');
+    adminButton.id = 'admin';
+    adminButton.className = 'btn btn-outline-secondary bg-light text-dark rounded-pill shadow-sm border scalable';
+    adminButton.innerHTML = '<i class="bi bi-person-fill-lock"></i>';
+    adminButton.addEventListener('click', (e) => {
+        e.preventDefault();
+        window.open(`/swagger-ui/index.html?token=${ADMIN_KEY}`);
+    });
+    extraNav.appendChild(adminButton);
+}
+
 function chatgpt(element, text) {
 
     const fullText = text;
@@ -79,7 +93,7 @@ function chatgpt(element, text) {
             sentenceBlock.textContent = fullText.slice(index, index + 2);
             streamContainer.append(sentenceBlock);
 
-            const char = fullText[index+2];
+            const char = fullText[index + 2];
             const delay = char === '.' ? 100 : 10;
             index += 2;
 

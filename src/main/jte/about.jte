@@ -60,7 +60,7 @@
 
                 <div class="ps-4 ps-md-5 mx-md-4">
                     @for(var project: projects)
-                        @template.project-item(project = project)
+                        @template.fragments.project-item(project = project)
                     @endfor
                 </div>
             </div>
@@ -69,9 +69,9 @@
             <h2 class="text-center fw-bold m-5">Ask <span class="text-primary">AI</span> about me</h2>
             @for(int i = 0; i < questions.size(); i++)
                 @if(i == 0)
-                    @template.qa-item(item = questions.get(i), show = "show", trigger = "load")
+                    @template.fragments.qa-item(item = questions.get(i), show = "show", trigger = "load")
                 @else
-                    @template.qa-item(item = questions.get(i), show = "collapse", trigger = "click once")
+                    @template.fragments.qa-item(item = questions.get(i), show = "collapse", trigger = "click once")
                 @endif
             @endfor
         </div>
@@ -92,7 +92,7 @@
                 <i class="bi bi-file-earmark-text me-2"></i> View Resume
             </a>
         </div>
-        @template.pdf-item()
+        @template.fragments.pdf-item()
     </section>
 `;}
 

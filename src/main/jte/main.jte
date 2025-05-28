@@ -25,14 +25,14 @@
                    hx-trigger="click" hx-on:click="activate(this)" hx-push-url="true">Home</a></li>
             <li><a id="about" href="/about" hx-get="/about" class="scalable nav-link px-md-3" hx-target="#content"
                    hx-trigger="click" hx-on:click="activate(this)" hx-push-url="true">About</a></li>
-            <li><a href="/stats" hx-get="/stats" class="scalable nav-link px-md-3" hx-target="#content"
+            <li><a id="stats" href="/stats" hx-get="/stats" class="scalable nav-link px-md-3" hx-target="#content"
                    hx-trigger="click" hx-on:click="activate(this)" hx-push-url="true">Stats</a></li>
             <li><a href="/soon" hx-get="/soon" class="scalable nav-link px-md-3" hx-target="#content" hx-trigger="click"
                    hx-on:click="activate(this)" hx-push-url="true">Blog</a></li>
             <li><a href="/soon" hx-get="/soon" class="scalable nav-link px-md-3" hx-target="#content" hx-trigger="click"
                    hx-on:click="activate(this)" hx-push-url="true">Contact</a></li>
         </ul>
-        <div class="d-flex position-absolute w-100 mx-5 p-5"></div>
+        <div id="extra-nav" class="d-flex position-absolute w-100"></div>
     </header>
 </div>
 <div id="content" style="min-height: 75vh">${content}</div>

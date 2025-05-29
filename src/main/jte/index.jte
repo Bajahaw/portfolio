@@ -1,7 +1,5 @@
-@import java.util.Map
-
 @param boolean headless = false
-@param Map<String, String> imgs
+@param java.util.Map<String, String> imgs = java.util.Map.of()
 !{var content = @`
     <section id="overview">
         <div class="container d-flex flex-column-reverse d-md-flex flex-md-row pt-5"

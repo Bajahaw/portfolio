@@ -20,9 +20,10 @@ public class SecurityConfig {
                                 "/actuator",
                                 "/actuator/health",
                                 "/actuator/health/**",
-                                "/content/add",
-                                "/content/put/**",
-                                "/content/delete/**"
+                                "/content/save",
+                                "/content/save-all",
+                                "/content/delete/**",
+                                "/content/invalidate-cache"
                         )
                         .authenticated().anyRequest().permitAll()
                 )

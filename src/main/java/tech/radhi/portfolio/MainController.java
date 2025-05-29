@@ -37,8 +37,8 @@ public class MainController {
     }
 
     @GetMapping("/stats") // New endpoint
-    public String insights(Model model,
-                           @RequestHeader(value = "HX-Request", required = false) String hxRequest) {
+    public String stats(Model model,
+                        @RequestHeader(value = "HX-Request", required = false) String hxRequest) {
         mainService.handleHtmxRequests(model, hxRequest);
         return "stats";
     }

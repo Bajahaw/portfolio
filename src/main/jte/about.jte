@@ -1,12 +1,12 @@
-@import java.util.List
 @import tech.radhi.portfolio.dto.ContentTemplate
 @import tech.radhi.portfolio.dto.ProjectTemplate
+@import java.util.List
 
-@param List<ContentTemplate> questions
-@param List<ProjectTemplate> projects
-@param List<String> frontend
-@param List<String> backend
-@param List<String> tools
+@param java.util.ArrayList<ContentTemplate> questions = new java.util.ArrayList<>()
+@param java.util.ArrayList<ProjectTemplate> projects = new java.util.ArrayList<>()
+@param java.util.ArrayList<String> frontend = new java.util.ArrayList<>()
+@param java.util.ArrayList<String> backend = new java.util.ArrayList<>()
+@param java.util.ArrayList<String> tools = new java.util.ArrayList<>()
 @param boolean headless = false
 
 !{var lists = List.of(frontend,backend,tools);}

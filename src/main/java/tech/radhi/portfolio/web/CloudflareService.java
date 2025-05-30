@@ -2,7 +2,7 @@ package tech.radhi.portfolio.web;
 
 import com.fasterxml.jackson.databind.JsonNode;
 import org.springframework.beans.factory.annotation.Value;
-import org.springframework.graphql.client.HttpGraphQlClient;
+import org.springframework.graphql.client.HttpSyncGraphQlClient;
 import org.springframework.stereotype.Component;
 
 import java.time.LocalDate;
@@ -12,12 +12,12 @@ import java.util.Map;
 public class CloudflareService {
 
     private final String ZONE;
-    private final HttpGraphQlClient graphQlClient;
+    private final HttpSyncGraphQlClient graphQlClient;
 
     public CloudflareService(
             @Value("${cloudflare.token}") String token,
             @Value("${cloudflare.zone}") String zone,
-            HttpGraphQlClient graphQlClient
+            HttpSyncGraphQlClient graphQlClient
     ) {
         this.ZONE = zone;
         this.graphQlClient = graphQlClient

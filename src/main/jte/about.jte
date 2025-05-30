@@ -2,11 +2,12 @@
 @import tech.radhi.portfolio.dto.ProjectTemplate
 @import java.util.List
 
-@param java.util.ArrayList<ContentTemplate> questions = new java.util.ArrayList<>()
-@param java.util.ArrayList<ProjectTemplate> projects = new java.util.ArrayList<>()
-@param java.util.ArrayList<String> frontend = new java.util.ArrayList<>()
-@param java.util.ArrayList<String> backend = new java.util.ArrayList<>()
-@param java.util.ArrayList<String> tools = new java.util.ArrayList<>()
+<%--todo: needs optimizing--%>
+@param java.util.List<ContentTemplate> questions = java.util.List.of()
+@param java.util.List<ProjectTemplate> projects = java.util.List.of()
+@param java.util.List<String> frontend = java.util.List.of()
+@param java.util.List<String> backend = java.util.List.of()
+@param java.util.List<String> tools = java.util.List.of()
 @param boolean headless = false
 
 !{var lists = List.of(frontend,backend,tools);}

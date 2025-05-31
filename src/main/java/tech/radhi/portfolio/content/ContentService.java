@@ -62,6 +62,11 @@ public class ContentService {
         }
     }
 
+    public String getCvUrl() {
+        var url = repository.getContentById("cv-url");
+        return url != null? url.contentBody() : "Url not found";
+    }
+
     public void saveContent(ContentTemplate content) {
         var contentExist = repository.existsById(content.id());
         if (contentExist) repository.save(content); // update

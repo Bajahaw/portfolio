@@ -14,7 +14,8 @@ function activate(element) {
 }
 
 async function prepareResume() {
-    const url = 'https://backend.radhi.tech/api/files/pbc_2337082678/za752529s88748l/cv_new_v3_l23uow5lsh.pdf';
+
+    const url = await fetch('/content/cv-url').then(r => r.text());
     const loadingTask = pdfjsLib.getDocument(url);
     const pdf = await loadingTask.promise;
     const page = await pdf.getPage(1);

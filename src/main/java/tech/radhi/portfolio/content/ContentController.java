@@ -3,10 +3,16 @@ package tech.radhi.portfolio.content;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.cache.annotation.CacheEvict;
+import org.springframework.core.io.Resource;
+import org.springframework.core.io.UrlResource;
+import org.springframework.http.HttpHeaders;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import tech.radhi.portfolio.dto.ContentTemplate;
 
+import java.io.IOException;
 import java.util.List;
 
 @RestController
@@ -15,9 +21,11 @@ public class ContentController {
 
     private static final Logger log = LoggerFactory.getLogger(ContentController.class);
     private final ContentService service;
+    private final ContentService contentService;
 
-    public ContentController(ContentService service) {
+    public ContentController(ContentService service, ContentService contentService) {
         this.service = service;
+        this.contentService = contentService;
     }
 
     @CacheEvict("default")
@@ -53,6 +61,34 @@ public class ContentController {
     public ResponseEntity<String> saveAll(@RequestBody List<ContentTemplate> list) {
         list.forEach(content -> service.saveContent(content)); // TODO: needs optimizing )_
         return ResponseEntity.ok("all saved");
+    }
+
+    @GetMapping("/cv-url")
+    public String getCvUrl() {
+        log.warn("url requested");
+        return contentService.getCvUrl();
+    }
+
+    @GetMapping("/download-cv")
+    public ResponseEntity<Void> prepareCV() {
+        HttpHeaders headers = new HttpHeaders();
+        headers.add("HX-Redirect", "/content/cv");
+        return new ResponseEntity<>(headers, HttpStatus.OK);
+    }
+
+    @GetMapping("/cv")
+    public ResponseEntity<Resource> downloadCV() throws IOException {
+        String url = service.getCvUrl();
+        Resource pdf = new UrlResource(url);
+        if (!pdf.exists() || !pdf.isReadable()) {
+            log.error("resource can not be downloaded");
+            return ResponseEntity.notFound().build();
+        }
+        String filename = "cv.pdf";
+        return ResponseEntity.ok()
+                .contentType(MediaType.APPLICATION_PDF)
+                .header(HttpHeaders.CONTENT_DISPOSITION, "attachment; filename=\"" + filename + "\"")
+                .body(pdf);
     }
 
 }

@@ -17,7 +17,7 @@
                 </div>
             </div>
             <div class="modal-footer">
-                <button class="btn btn-dark rounded-pill m-1">
+                <button hx-get="/content/download-cv" class="btn btn-dark rounded-pill m-1">
                     <i class="bi bi-download me-2"></i>Download
                 </button>
                 <button class="btn btn-outline-dark rounded-pill"

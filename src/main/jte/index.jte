@@ -81,7 +81,7 @@
             </div>
         </div>
     </section>
-    <section id="Contact" class="mx-0 px-0">
+    <section id="contact" class="mx-0 px-0">
         <div class="container d-flex flex-column py-5">
             <div class="d-flex flex-column d-md-flex flex-md-row" style="min-height: 500px;">
                 <div class="my-4 col-md-6 d-flex flex-column justify-content-center">

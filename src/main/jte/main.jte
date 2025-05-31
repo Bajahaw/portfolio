@@ -29,7 +29,7 @@
                    hx-trigger="click" hx-on:click="activate(this)" hx-push-url="true">Stats</a></li>
             <li><a href="/soon" hx-get="/soon" class="scalable nav-link px-md-3" hx-target="#content" hx-trigger="click"
                    hx-on:click="activate(this)" hx-push-url="true">Blog</a></li>
-            <li><a href="/soon" hx-get="/soon" class="scalable nav-link px-md-3" hx-target="#content" hx-trigger="click"
+            <li><a href="/#contact" hx-get="/#contact" class="scalable nav-link px-md-3" hx-target="#content" hx-trigger="click"
                    hx-on:click="activate(this)" hx-push-url="true">Contact</a></li>
         </ul>
         <div id="extra-nav" class="d-flex position-absolute w-100"></div>

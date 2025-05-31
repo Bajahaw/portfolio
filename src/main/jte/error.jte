@@ -3,7 +3,7 @@
 @param String error = "Internal Server Error"
 @param boolean headless = false
 !{var errorView = @`
-    <div class="container d-flex flex-column align-items-center p-4">
+    <div class="container d-flex flex-column text-center p-4">
         <h1>⚠️</h1>
         <h2 class="fw-semibold">${status}: ${error}</h2>
         <small class="text-muted">An error happened at: ${timestamp.toString()}.</small>

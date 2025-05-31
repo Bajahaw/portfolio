@@ -11,7 +11,7 @@ import tech.radhi.portfolio.dto.GithubStats;
 import tech.radhi.portfolio.dto.UptimeStats;
 import tech.radhi.portfolio.web.CloudflareService;
 import tech.radhi.portfolio.web.GithubService;
-import tech.radhi.portfolio.web.WebScraper;
+import tech.radhi.portfolio.web.WebService;
 
 import java.util.List;import java.util.stream.Collectors;
 
@@ -21,10 +21,10 @@ public class MainService {
     private final ContentService contentService;
     private final CloudflareService cloudflareService;
     private final GithubService githubService;
-    private final WebScraper scraper;
+    private final WebService webService;
 
     public MainService(
-            WebScraper scraper,
+            WebService webService,
             ContentService service,
             GithubService githubService,
             CloudflareService cloudflareService
@@ -32,7 +32,7 @@ public class MainService {
         this.contentService = service;
         this.cloudflareService = cloudflareService;
         this.githubService = githubService;
-        this.scraper = scraper;
+        this.webService = webService;
     }
 
     public void getIndexContent(Model model) {
@@ -69,7 +69,7 @@ public class MainService {
 
     public UptimeStats getUptimeStats() {
         try {
-            var uptimeData = scraper.fetchJsonNode(
+            var uptimeData = webService.fetchJsonNode(
                     "https://raw.githubusercontent.com/bajahaw/web-monitor/master/history/summary.json"
             );
             String uptimeDay = uptimeData.get(1).get("uptimeDay").asText();

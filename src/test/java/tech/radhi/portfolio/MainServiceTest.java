@@ -15,7 +15,7 @@ import tech.radhi.portfolio.dto.GithubStats;
 import tech.radhi.portfolio.dto.UptimeStats;
 import tech.radhi.portfolio.web.CloudflareService;
 import tech.radhi.portfolio.web.GithubService;
-import tech.radhi.portfolio.web.WebScraper;
+import tech.radhi.portfolio.web.WebService;
 
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -41,7 +41,7 @@ class MainServiceTest {
     @Mock
     private GithubService githubService;
     @Mock
-    private WebScraper webScraper;
+    private WebService webScraper;
 
     @InjectMocks
     private MainService mainService;

@@ -21,10 +21,10 @@ public class WebRestController {
 
     private static final Logger log = LoggerFactory.getLogger(WebRestController.class);
 
-    private final WebScraper scraper;
+    private final WebService scraper;
     private final CloudflareService cloudflareService;
 
-    public WebRestController(WebScraper scraper, CloudflareService service, CloudflareService cloudflareService) {
+    public WebRestController(WebService scraper, CloudflareService service, CloudflareService cloudflareService) {
         this.scraper = scraper;
         this.cloudflareService = cloudflareService;
     }

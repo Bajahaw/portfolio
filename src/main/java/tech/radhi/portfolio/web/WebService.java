@@ -14,12 +14,12 @@ import java.util.Optional;
 import java.util.function.Function;
 
 @Component
-public class WebScraper {
+public class WebService {
 
     private final RestClient restClient;
     private final ObjectMapper mapper;
 
-    public WebScraper(RestClient restClient, ObjectMapper mapper) {
+    public WebService(RestClient restClient, ObjectMapper mapper) {
         this.restClient = restClient;
         this.mapper = mapper;
     }

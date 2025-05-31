@@ -32,7 +32,7 @@ class WebRestControllerTest {
     private MockMvc mockMvc;
 
     @MockitoBean
-    private WebScraper webScraper;
+    private WebService webScraper;
 
     @MockitoBean
     private CloudflareService cloudflareService; // This bean is used by WebRestController

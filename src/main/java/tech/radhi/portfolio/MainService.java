@@ -51,12 +51,9 @@ public class MainService {
         }
     }
 
-    public void getAboutContent(Model model) {
+    public void getFAQ(Model model) {
         var questions = contentService.getListOfContent("q");
-        var projects = contentService.getListOfProjects();
-
         model.addAttribute("questions", questions);
-        model.addAttribute("projects", projects);
     }
 
     public void getSkills(Model model) {
@@ -65,6 +62,11 @@ public class MainService {
         model.addAttribute("frontend", List.of(skills[0].split(",")));
         model.addAttribute("backend", List.of(skills[1].split(",")));
         model.addAttribute("tools", List.of(skills[2].split(",")));
+    }
+
+    public void getProjects(Model model) {
+        var projects = contentService.getListOfProjects();
+        model.addAttribute("projects", projects);
     }
 
     public UptimeStats getUptimeStats() {

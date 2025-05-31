@@ -90,7 +90,7 @@ class MainServiceTest {
         when(contentService.getListOfContent("q")).thenReturn(Collections.emptyList());
         when(contentService.getListOfProjects()).thenReturn(Collections.emptyList());
 
-        mainService.getAboutContent(model);
+        mainService.getFAQ(model);
 
         assertTrue(model.containsAttribute("frontend"));
         assertTrue(model.containsAttribute("backend"));
@@ -109,7 +109,7 @@ class MainServiceTest {
         when(contentService.getListOfContent("q")).thenReturn(Collections.emptyList());
         when(contentService.getListOfProjects()).thenReturn(Collections.emptyList());
 
-        mainService.getAboutContent(model);
+        mainService.getFAQ(model);
 
         assertEquals(List.of("sorry"), model.getAttribute("frontend"));
         assertEquals(List.of("error"), model.getAttribute("backend"));

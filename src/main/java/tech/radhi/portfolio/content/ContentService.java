@@ -62,6 +62,7 @@ public class ContentService {
         }
     }
 
+    @Cacheable(cacheNames = "default")
     public String getCvUrl() {
         var url = repository.getContentById("cv-url");
         return url != null? url.contentBody() : "Url not found";

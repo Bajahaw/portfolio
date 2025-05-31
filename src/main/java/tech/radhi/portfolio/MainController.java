@@ -31,7 +31,6 @@ public class MainController {
     public String about(Model model,
             @RequestHeader(value = "HX-Request", required = false) String hxRequest
     ) {
-        mainService.getAboutContent(model);
         mainService.handleHtmxRequests(model, hxRequest);
         return "about";
     }
@@ -47,6 +46,18 @@ public class MainController {
     public String getSkills(Model model) {
         mainService.getSkills(model);
         return "fragments/skills";
+    }
+
+    @GetMapping("/projects")
+    public String getProjects(Model model) {
+        mainService.getProjects(model);
+        return "fragments/project-item";
+    }
+
+    @GetMapping("/FAQ")
+    public String getFAQ(Model model) {
+        mainService.getFAQ(model);
+        return "fragments/qa-item";
     }
 
     @GetMapping("/github-stats")

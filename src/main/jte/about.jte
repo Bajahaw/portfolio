@@ -2,9 +2,6 @@
 @import tech.radhi.portfolio.dto.ProjectTemplate
 @import java.util.List
 
-<%--todo: needs optimizing--%>
-@param java.util.List<ContentTemplate> questions = java.util.List.of()
-@param java.util.List<ProjectTemplate> projects = java.util.List.of()
 @param boolean headless = false
 
 !{ var  content = @`
@@ -39,22 +36,20 @@
                 <div class="position-absolute h-100 ms-md-4 rounded-2"
                      style="width: 5px; background-color: #dee2e6;"></div>
 
-                <div class="ps-4 ps-md-5 mx-md-4">
-                    @for(var project: projects)
-                        @template.fragments.project-item(project = project)
-                    @endfor
+                <div hx-get="/projects"
+                     hx-trigger="load"
+                     hx-swap="innerHtml"
+                        class="ps-4 ps-md-5 mx-md-4">
+                        @template.fragments.project-item()
                 </div>
             </div>
         </div>
         <div class="container col-lg-9">
             <h2 class="text-center fw-bold m-5">Ask <span class="text-primary">AI</span> about me</h2>
-            @for(int i = 0; i < questions.size(); i++)
-                @if(i == 0)
-                    @template.fragments.qa-item(item = questions.get(i), show = "show", trigger = "load")
-                @else
-                    @template.fragments.qa-item(item = questions.get(i), show = "collapse", trigger = "click once")
-                @endif
-            @endfor
+            <div hx-get="/FAQ"
+                 hx-trigger="load"
+                 hx-swap="outerHtml">
+            </div>
         </div>
 
         <div class="text-center my-5">

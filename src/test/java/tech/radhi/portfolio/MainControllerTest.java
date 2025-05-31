@@ -64,7 +64,7 @@ class MainControllerTest {
 
     @Test
     void about_shouldReturnAboutViewAndPopulateModel() throws Exception {
-        doNothing().when(mainService).getAboutContent(any(Model.class));
+        doNothing().when(mainService).getFAQ(any(Model.class));
 
         mockMvc.perform(get("/about"))
                 .andExpect(status().isOk())

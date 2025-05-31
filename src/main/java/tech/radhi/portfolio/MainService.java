@@ -13,8 +13,7 @@ import tech.radhi.portfolio.web.CloudflareService;
 import tech.radhi.portfolio.web.GithubService;
 import tech.radhi.portfolio.web.WebScraper;
 
-import java.util.List;
-import java.util.stream.Collectors;
+import java.util.List;import java.util.stream.Collectors;
 
 @Service
 public class MainService {
@@ -53,13 +52,15 @@ public class MainService {
     }
 
     public void getAboutContent(Model model) {
-        var skills = contentService.getContentById("skills").split("\\.");
         var questions = contentService.getListOfContent("q");
         var projects = contentService.getListOfProjects();
 
         model.addAttribute("questions", questions);
         model.addAttribute("projects", projects);
+    }
 
+    public void getSkills(Model model) {
+        var skills = contentService.getContentById("skills").split("\\.");
         if (skills.length <= 2) skills = new String[]{"sorry", "error", "happened"};
         model.addAttribute("frontend", List.of(skills[0].split(",")));
         model.addAttribute("backend", List.of(skills[1].split(",")));

@@ -33,7 +33,9 @@ public class ResourceRuntimeHints implements RuntimeHintsRegistrar {
                 JtestatsGenerated.class,
                 JtegithubstatsGenerated.class,
                 JterequeststatsGenerated.class,
-                JteupptimestatsGenerated.class
+                JteupptimestatsGenerated.class,
+                JteskillsGenerated.class,
+                JtepdfitemGenerated.class
         );
 
         classes.forEach(c ->

@@ -71,7 +71,9 @@
                     <button class="btn btn-outline-dark rounded-pill m-1"
                             data-bs-toggle="modal"
                             data-bs-target="#pdfModal"
-                            hx-trigger="click"
+                            hx-get="/pdf-item"
+                            hx-trigger="revealed"
+                            hx-target="#modal-container"
                             hx-on:click="prepareResume()">
                         <i class="bi bi-file-earmark-text me-1"></i> View Resume
                     </button>
@@ -138,7 +140,7 @@
                 </div>
             </div>
         </div>
-        @template.fragments.pdf-item()
+        <div id="modal-container"></div>
     </section>
 `;}
 

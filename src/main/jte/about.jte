@@ -5,30 +5,7 @@
 <%--todo: needs optimizing--%>
 @param java.util.List<ContentTemplate> questions = java.util.List.of()
 @param java.util.List<ProjectTemplate> projects = java.util.List.of()
-@param java.util.List<String> frontend = java.util.List.of()
-@param java.util.List<String> backend = java.util.List.of()
-@param java.util.List<String> tools = java.util.List.of()
 @param boolean headless = false
-
-!{var lists = List.of(frontend,backend,tools);}
-!{var listNames = List.of("Frontend", "Backend", "Tools & Practices");}
-!{ var skillsTemplate = @`
-    @for(var list: lists)
-        <div class="col-md-4">
-            <div class="card h-100 border-0 card-shadow rounded-4">
-                <div class="card-body text-center p-4">
-                    <i class="bi bi-code-square fs-1 mb-3"></i>
-                    <h4 class="card-title fw-semibold">${listNames.get(lists.indexOf(list))}</h4>
-                    <div class="d-flex flex-wrap justify-content-center gap-2 mt-3">
-                        @for(String skill : list)
-                            <span class="badge bg-light text-secondary border p-2 block">${skill}</span>
-                        @endfor
-                    </div>
-                </div>
-            </div>
-        </div>
-    @endfor
-`;}
 
 !{ var  content = @`
     <section id="about-details">
@@ -49,8 +26,11 @@
         </div>
         <div class="container py-5">
             <h2 class="text-center mb-4 fw-bold">Skills & Expertise</h2>
-            <div class="row g-4">
-                ${skillsTemplate}
+            <div hx-get="/skills"
+                 hx-trigger="load"
+                 hx-swap="innerHtml"
+                 class="row g-4">
+                @template.fragments.skills()
             </div>
         </div>
         <div class="container py-5">
@@ -88,12 +68,14 @@
             <a class="btn btn-outline-dark rounded-pill px-3 py-2 m-1"
                data-bs-toggle="modal"
                data-bs-target="#pdfModal"
-               hx-trigger="click"
+               hx-get="/pdf-item"
+               hx-trigger="revealed"
+               hx-target="#modal-container"
                hx-on:click="prepareResume()">
                 <i class="bi bi-file-earmark-text me-2"></i> View Resume
             </a>
         </div>
-        @template.fragments.pdf-item()
+        <div id="modal-container"></div>
     </section>
 `;}
 

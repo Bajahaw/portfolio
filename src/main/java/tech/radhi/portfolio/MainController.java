@@ -36,29 +36,40 @@ public class MainController {
         return "about";
     }
 
-    @GetMapping("/stats") // New endpoint
+    @GetMapping("/stats")
     public String stats(Model model,
                         @RequestHeader(value = "HX-Request", required = false) String hxRequest) {
         mainService.handleHtmxRequests(model, hxRequest);
         return "stats";
     }
 
-    @GetMapping("/github-stats") // New endpoint
+    @GetMapping("/skills")
+    public String getSkills(Model model) {
+        mainService.getSkills(model);
+        return "fragments/skills";
+    }
+
+    @GetMapping("/github-stats")
     public String getGithubStats(Model model) {
         model.addAttribute("stats", mainService.getGithubStats());
         return "fragments/github-stats";
     }
 
-    @GetMapping("/cloudflare-stats") // New endpoint
+    @GetMapping("/cloudflare-stats")
     public String getCloudflareStats(Model model) {
         model.addAttribute("stats", mainService.getCloudflareStats());
         return "fragments/request-stats";
     }
 
-    @GetMapping("/upptime-stats") // New endpoint
+    @GetMapping("/upptime-stats")
     public String getUptimeStats(Model model) {
         model.addAttribute("stats", mainService.getUptimeStats());
         return "fragments/upptime-stats";
+    }
+
+    @GetMapping("/pdf-item")
+    public String getPdfModal() {
+        return "fragments/pdf-item";
     }
 
     @GetMapping("/403")

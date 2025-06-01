@@ -21,11 +21,9 @@ public class ContentController {
 
     private static final Logger log = LoggerFactory.getLogger(ContentController.class);
     private final ContentService service;
-    private final ContentService contentService;
 
-    public ContentController(ContentService service, ContentService contentService) {
+    public ContentController(ContentService service) {
         this.service = service;
-        this.contentService = contentService;
     }
 
     @CacheEvict("default")
@@ -63,12 +61,6 @@ public class ContentController {
         return ResponseEntity.ok("all saved");
     }
 
-    @GetMapping("/cv-url")
-    public String getCvUrl() {
-        log.warn("url requested");
-        return contentService.getCvUrl();
-    }
-
     @GetMapping("/download-cv")
     public ResponseEntity<Void> prepareCV() {
         HttpHeaders headers = new HttpHeaders();
@@ -78,13 +70,13 @@ public class ContentController {
 
     @GetMapping("/cv")
     public ResponseEntity<Resource> downloadCV() throws IOException {
-        String url = service.getCvUrl();
+        String url = service.getContentById("cv-url");
         Resource pdf = new UrlResource(url);
         if (!pdf.exists() || !pdf.isReadable()) {
             log.error("resource can not be downloaded");
             return ResponseEntity.notFound().build();
         }
-        String filename = "cv.pdf";
+        String filename = "CV-NEW-V3.pdf";
         return ResponseEntity.ok()
                 .contentType(MediaType.APPLICATION_PDF)
                 .header(HttpHeaders.CONTENT_DISPOSITION, "attachment; filename=\"" + filename + "\"")

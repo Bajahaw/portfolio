@@ -13,6 +13,15 @@ function activate(element) {
     element.classList.add('active');
 }
 
+function copyEmail() {
+    const copyBtn = document.getElementById('copyButton');
+    navigator.clipboard.writeText('info@radhi.tech');
+    copyBtn.innerHTML = '<i class="bi bi-check2-all text-success"></i>';
+    setTimeout(() => {
+        copyBtn.innerHTML = '<i class="bi bi-copy"></i>';
+    }, 1500)
+}
+
 async function prepareResume() {
 
     const url = await fetch('/content/cv-url').then(r => r.text());

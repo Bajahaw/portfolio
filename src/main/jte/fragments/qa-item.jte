@@ -6,7 +6,7 @@
     !{var item = questions.get(i);}
     !{var show = i == 0? "show" : "collapse";}
     !{var trigger = i == 0? "load" : "click once";}
-    <div class="card-shadow overflow-hidden mb-4 rounded-4">
+    <div class="card-shadow overflow-hidden mb-4 rounded-4 block">
         <div data-bs-toggle="collapse" data-bs-target="#${item.id()}"
              role="button" aria-expanded="false" aria-controls="${item.id()}"
              hx-get="/content/${item.id()}-answer" hx-trigger="${trigger}"

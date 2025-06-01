@@ -1,7 +1,3 @@
-@import tech.radhi.portfolio.dto.ContentTemplate
-@import tech.radhi.portfolio.dto.ProjectTemplate
-@import java.util.List
-
 @param boolean headless = false
 
 !{ var  content = @`
@@ -52,7 +48,7 @@
             </div>
         </div>
 
-        <div class="text-center my-5">
+        <div class="text-center my-5 block">
             <a class="btn btn-dark rounded-pill px-3 py-2 m-1"
                hx-get="/#navbar"
                hx-target="#content"

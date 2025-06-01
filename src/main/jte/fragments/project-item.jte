@@ -19,7 +19,7 @@
                         <p class="card-text text-secondary">${project.description()}</p>
                         <div class="d-flex flex-wrap gap-1 mt-2">
                             @for(var tech : project.technologies())
-                                <span class="badge bg-light text-secondary border">${tech}</span>
+                                <span class="badge bg-light text-secondary border block">${tech}</span>
                             @endfor
                         </div>
                     </div>

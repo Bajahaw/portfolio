@@ -116,11 +116,11 @@
                                     options: </p>
                             </div>
                             <div class="d-grid gap-3">
-                                <div class="form-control d-flex flex-nowrap align-items-center rounded-pill">
+                                <div class="block form-control d-flex flex-nowrap align-items-center rounded-pill">
                                     <span class="text-secondary position-absolute w-50 text-truncate">info@radhi.tech</span>
                                     <div class="ms-auto d-flex flex-nowrap">
                                         <button class="btn btn-sm" type="button" id="copyButton"
-                                                onclick="navigator.clipboard.writeText('info@radhi.tech');">
+                                                onclick="copyEmail()">
                                             <i class="bi bi-copy"></i>
                                         </button>
                                         <a href="mailto:info@radhi.tech"
@@ -130,10 +130,12 @@
                                     </div>
                                 </div>
                                 <a href="https://www.linkedin.com/in/radhi-bajahaw"
-                                   class="btn btn-dark rounded-pill card-shadow" target="_blank">
+                                   class="btn btn-dark rounded-pill card-shadow block"
+                                   target="_blank">
                                     <i class="bi bi-linkedin mx-1"></i> LinkedIn
                                 </a>
-                                <a href="https://github.com/Bajahaw" class="btn btn-dark rounded-pill mb-2 card-shadow"
+                                <a href="https://github.com/Bajahaw"
+                                   class="btn btn-dark rounded-pill mb-2 card-shadow block"
                                    target="_blank">
                                     <i class="bi bi-github mx-1"></i> GitHub
                                 </a>

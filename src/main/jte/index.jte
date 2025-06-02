@@ -94,11 +94,11 @@
                         <span class="result-streaming"></span>
                     </div>
                     <div class="block block text-center text-md-start mt-4">
-                        <button hx-get="/soon"
+                        <button hx-get="/blog#navbar"
                                 hx-target="#content"
                                 hx-trigger="click"
                                 class="btn btn-dark rounded-pill m-1 text-nowrap">
-                            <i class="bi bi-instagram me-2"></i>Social Accounts</button>
+                            <i class="bi bi-newspaper me-2"></i>Blog page</button>
                         <button hx-get="/stats#navbar" hx-target="#content" hx-push-url="true"
                                 onclick="activate(document.getElementById('stats'))"
                                 class="btn btn-outline-dark rounded-pill m-1 text-nowrap">

@@ -27,7 +27,7 @@
                    hx-trigger="click" hx-on:click="activate(this)" hx-push-url="true">About</a></li>
             <li><a id="stats" href="/stats" hx-get="/stats" class="scalable nav-link px-md-3" hx-target="#content"
                    hx-trigger="click" hx-on:click="activate(this)" hx-push-url="true">Stats</a></li>
-            <li><a href="/soon" hx-get="/soon" class="scalable nav-link px-md-3" hx-target="#content" hx-trigger="click"
+            <li><a href="/blog" hx-get="/blog" class="scalable nav-link px-md-3" hx-target="#content" hx-trigger="click"
                    hx-on:click="activate(this)" hx-push-url="true">Blog</a></li>
             <li><a href="/#contact" hx-get="/#contact" class="scalable nav-link px-md-3" hx-target="#content" hx-trigger="click"
                    hx-on:click="activate(this)" hx-push-url="true">Contact</a></li>
@@ -36,7 +36,7 @@
     </header>
 </div>
 <div id="content" style="min-height: 75vh">${content}</div>
-<footer class="bg-dark text-light py-4 mt-sm-4">
+<footer class="bg-dark text-light py-4 ">
     <div class="text-center">
         <p class="mb-2">&copy; 2025 Radhi Bajahaw. All rights reserved.</p>
         <p class="mb-0">

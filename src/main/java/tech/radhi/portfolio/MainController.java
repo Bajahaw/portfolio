@@ -42,6 +42,14 @@ public class MainController {
         return "stats";
     }
 
+    @GetMapping("/blog")
+    public String blog(Model model,
+                       @RequestHeader(value = "HX-Request", required = false) String hxRequest
+    ) {
+        mainService.handleHtmxRequests(model, hxRequest);
+        return "blog";
+    }
+
     @GetMapping("/skills")
     public String getSkills(Model model) {
         mainService.getSkills(model);

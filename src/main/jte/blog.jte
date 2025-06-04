@@ -2,7 +2,7 @@
 @param gg.jte.Content content = @`
     <div class="container d-flex flex-column align-items-center py-5">
         <h1 class="display-4 fw-bold mt-2 text-center">Blog</h1>
-        <p class="lead text-secondary text-center mb-5">
+        <p class="lead text-secondary text-center">
             Thoughts, tutorials, and updates on my journey as a developer.
         </p>
         <div id="intro"
@@ -16,7 +16,7 @@
     <section id="blog-posts" class="py-5 bg-light">
         <div class="container">
             <div class="row">
-                <div class="col-md-4 mb-4 block">
+                <div class="col-md-4 mb-4">
                     <div class="card h-100 border-0 card-shadow rounded-4">
                         <img src="https://backend.radhi.tech/api/files/pbc_2337082678/xiv1gthnym4s3n2/year_kfxk8mzn0s.png"
                              class="img-fluid rounded-3 m-2" alt="Spring Boot">
@@ -31,7 +31,7 @@
                     </div>
                 </div>
 
-                <div class="col-md-4 mb-4 block">
+                <div class="col-md-4 mb-4">
                     <div class="card h-100 border-0 card-shadow rounded-4">
                         <img src="https://backend.radhi.tech/api/files/pbc_2337082678/68zo753w2l2g719/tech_g7hjd73xns.webp"
                              class="img-fluid rounded-3 m-2" alt="HTMX">
@@ -46,7 +46,7 @@
                     </div>
                 </div>
 
-                <div class="col-md-4 mb-4 block">
+                <div class="col-md-4 mb-4">
                     <div class="card h-100 border-0 card-shadow rounded-4">
                         <img src="https://backend.radhi.tech/api/files/pbc_2337082678/ppxsgmv2r9d2ep6/arch_mqikigl8z3.webp"
                              class="img-fluid rounded-3 m-2" alt="Docker">

@@ -18,7 +18,7 @@
             <div class="row">
                 <div class="col-md-4 mb-4">
                     <div class="card h-100 border-0 card-shadow rounded-4">
-                        <img src="https://backend.radhi.tech/api/files/pbc_2337082678/xiv1gthnym4s3n2/year_kfxk8mzn0s.png"
+                        <img src="https://backend.radhi.tech/year.png"
                              class="img-fluid rounded-3 m-2" alt="Spring Boot">
                         <div class="card-body">
                             <h5 class="card-title block">A year of coding. What have I learned?</h5>
@@ -33,12 +33,12 @@
 
                 <div class="col-md-4 mb-4">
                     <div class="card h-100 border-0 card-shadow rounded-4">
-                        <img src="https://backend.radhi.tech/api/files/pbc_2337082678/68zo753w2l2g719/tech_g7hjd73xns.webp"
+                        <img src="https://backend.radhi.tech/stack.webp"
                              class="img-fluid rounded-3 m-2" alt="HTMX">
                         <div class="card-body">
                             <h5 class="card-title block">HTMX: Modern Web Apps without JavaScript</h5>
-                            <p class="card-text text-secondary mt-3 block">Building dynamic web applications with simplicity and
-                                power.</p>
+                            <p class="card-text text-secondary mt-3 block">Building dynamic web applications
+                                with simplicity and power.</p>
                         </div>
                         <div class="card-footer bg-transparent border-0 block">
                             <small class="text-muted">Soon</small>
@@ -48,12 +48,12 @@
 
                 <div class="col-md-4 mb-4">
                     <div class="card h-100 border-0 card-shadow rounded-4">
-                        <img src="https://backend.radhi.tech/api/files/pbc_2337082678/ppxsgmv2r9d2ep6/arch_mqikigl8z3.webp"
+                        <img src="https://backend.radhi.tech/setup.webp"
                              class="img-fluid rounded-3 m-2" alt="Docker">
                         <div class="card-body">
                             <h5 class="card-title block">Dockerizing Your Java Application</h5>
-                            <p class="card-text text-secondary mt-3 block">Step-by-step guide to containerize your Java app with
-                                Docker.</p>
+                            <p class="card-text text-secondary mt-3 block">Step-by-step guide to
+                                containerize your Java app with Docker.</p>
                         </div>
                         <div class="card-footer bg-transparent border-0 block">
                             <small class="text-muted">Soon ..</small>

@@ -69,7 +69,7 @@
                         <div class="card h-100 border-0 card-shadow rounded-4 block">
                             <div class="col-md-3 p-2 d-flex align-items-center w-100">
                                 <img class="rounded img-fluid"
-                                     src="https://backend.radhi.tech/api/files/pbc_2337082678/68zo753w2l2g719/tech_g7hjd73xns.webp"
+                                     src="https://backend.radhi.tech/stack.webp"
                                      alt="My setup">
                             </div>
                             <div class="card-body p-4 d-flex flex-column block">
@@ -93,7 +93,7 @@
                         <div class="card h-100 border-0 card-shadow rounded-4 block w-100">
                             <div class="col-md-3 p-2 d-flex align-items-center w-100">
                                 <img class="rounded img-fluid"
-                                     src="https://backend.radhi.tech/api/files/pbc_2337082678/ppxsgmv2r9d2ep6/arch_mqikigl8z3.webp"
+                                     src="https://backend.radhi.tech/setup.webp"
                                      alt="My setup">
                             </div>
                             <div class="card-body p-4 d-flex flex-column block">

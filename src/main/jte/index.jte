@@ -1,5 +1,4 @@
 @param boolean headless = false
-@param java.util.Map<String, String> imgs = java.util.Map.of()
 !{var content = @`
     <section id="overview">
         <div class="container d-flex flex-column-reverse d-md-flex flex-md-row pt-5"
@@ -34,7 +33,7 @@
             </div>
             <div class="col col-9 col-md-3 m-auto m-md-5">
                 <img class="crop-img tilt-image lg rounded-4"
-                     src="${imgs.get("developer-avatar-illustration-1")}"
+                     src="https://backend.radhi.tech/dev-avatar-1.png"
                      alt="Developer avatar illustration">
             </div>
         </div>
@@ -48,7 +47,7 @@
              style="min-height: 640px">
             <div class="col col-9 col-lg-3 col-md-5 m-auto m-lg-5 m-md-0 align-self-center block">
                 <img class="crop-img tilt-image rounded-4"
-                     src="${imgs.get("developer-avatar-illustration-2")}"
+                     src="https://backend.radhi.tech/dev-avatar-2.png"
                      alt="Developer avatar illustration">
             </div>
             <div class="col-lg-7 col-md-8 mx-lg-5 d-flex flex-column align-items-center justify-content-center py-5 px-lg-0">

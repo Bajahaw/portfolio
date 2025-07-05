@@ -5,10 +5,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.graphql.client.FieldAccessException;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.ExceptionHandler;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 import tech.radhi.portfolio.dto.Page;
 
 import java.util.Collections;
@@ -16,17 +13,20 @@ import java.util.Map;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
-@RestController
+@RestController()
+@RequestMapping("/web")
 public class WebRestController {
 
     private static final Logger log = LoggerFactory.getLogger(WebRestController.class);
 
     private final WebService scraper;
     private final CloudflareService cloudflareService;
+    private final GithubService githubService;
 
-    public WebRestController(WebService scraper, CloudflareService service, CloudflareService cloudflareService) {
+    public WebRestController(WebService scraper, CloudflareService cloudflareService, GithubService githubService) {
         this.scraper = scraper;
         this.cloudflareService = cloudflareService;
+        this.githubService = githubService;
     }
 
     @GetMapping("/scrape")
@@ -59,6 +59,11 @@ public class WebRestController {
     @GetMapping("/cloudflare")
     public JsonNode getAnalytics() {
         return cloudflareService.getAnalytics();
+    }
+
+    @GetMapping("/github")
+    public JsonNode getGithubAnalytics() {
+        return githubService.getAnalytics();
     }
 
     @ExceptionHandler(FieldAccessException.class)

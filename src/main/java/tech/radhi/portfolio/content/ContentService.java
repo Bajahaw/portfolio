@@ -58,7 +58,10 @@ public class ContentService {
             return mapper.readValue(contentTemplate.contentBody(), ProjectTemplate.class);
         } catch (JsonProcessingException e) {
             log.error("Error parsing project:", e);
-            return new ProjectTemplate(0,"error","error happened",List.of("error"),"error");
+            return new ProjectTemplate(
+                    0,"error","error happened",
+                    List.of("error"),"error", "#", "#"
+            );
         }
     }
 
@@ -74,5 +77,17 @@ public class ContentService {
 
     public List<ContentTemplate> getAllContent() {
         return repository.getAllContent();
+    }
+
+    public boolean saveProject(String id, ProjectTemplate project) {
+        try {
+            String content = mapper.writeValueAsString(project);
+            var contentTemplate = new ContentTemplate(id, "project", content);
+            saveContent(contentTemplate);
+            return true;
+        } catch (JsonProcessingException e) {
+            log.error("Error saving project:", e);
+            return false;
+        }
     }
 }

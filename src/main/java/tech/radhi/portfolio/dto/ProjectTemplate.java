@@ -7,5 +7,7 @@ public record ProjectTemplate(
         String title,
         String description,
         List<String> technologies,
-        String imageUrl
+        String imageUrl,
+        String repoLink,
+        String liveLink
 ) { }

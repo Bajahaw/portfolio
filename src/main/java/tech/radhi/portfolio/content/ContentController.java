@@ -67,12 +67,12 @@ public class ContentController {
             @RequestParam("id") String id,
             @RequestBody ProjectTemplate project
     ) {
-        var content = new ContentTemplate(
-                id, "project",
-                project.toString()
-        );
-        service.saveContent(content);
-        return ResponseEntity.ok("added!");
+        if (service.saveProject(id, project))
+            return ResponseEntity.ok("added!");
+
+        return ResponseEntity
+                .status(400)
+                .body("Unable to save project!");
     }
 
     @GetMapping("/download-cv")

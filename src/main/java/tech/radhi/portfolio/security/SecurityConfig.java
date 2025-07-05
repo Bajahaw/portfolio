@@ -22,6 +22,7 @@ public class SecurityConfig {
                                 "/actuator/health/**",
                                 "/content/save",
                                 "/content/save-all",
+                                "/content/project/**",
                                 "/content/delete/**",
                                 "/content/invalidate-cache"
                         )

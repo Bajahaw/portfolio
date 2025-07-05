@@ -11,6 +11,7 @@ import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import tech.radhi.portfolio.dto.ContentTemplate;
+import tech.radhi.portfolio.dto.ProjectTemplate;
 
 import java.io.IOException;
 import java.util.List;
@@ -59,6 +60,19 @@ public class ContentController {
     public ResponseEntity<String> saveAll(@RequestBody List<ContentTemplate> list) {
         list.forEach(content -> service.saveContent(content)); // TODO: needs optimizing )_
         return ResponseEntity.ok("all saved");
+    }
+
+    @PostMapping("/project/save")
+    public ResponseEntity<String> saveProject(
+            @RequestParam("id") String id,
+            @RequestBody ProjectTemplate project
+    ) {
+        var content = new ContentTemplate(
+                id, "project",
+                project.toString()
+        );
+        service.saveContent(content);
+        return ResponseEntity.ok("added!");
     }
 
     @GetMapping("/download-cv")

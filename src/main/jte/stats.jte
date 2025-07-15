@@ -9,7 +9,6 @@
             <p class="lead text-secondary text-center mb-5">
                 A quick look into my coding world, site performance, and more.
             </p>
-            <!-- Website Analytics -->
             <div class="mb-5">
                 <%-- <h2 class="text-center fw-bold mb-4">Website Analytics</h2>--%>
                 <div hx-get="/cloudflare-stats"
@@ -23,13 +22,11 @@
                     @template.fragments.upptime-stats()
                 </div>
             </div>
-            <!-- GitHub Stats -->
             <div hx-get="/github-stats"
                  hx-trigger="load"
                  hx-swap="innerHtml">
                 @template.fragments.github-stats()
             </div>
-            <!-- Resume Skill Analyzer -->
             <div class="mb-5">
                 <h2 class="text-center fw-bold mb-4">Resume Insights (AI Powered)</h2>
                 <div class="row justify-content-center">
@@ -59,9 +56,6 @@
                     </div>
                 </div>
             </div>
-
-            <!-- Coding Corner -->
-
             <div class="mb-5">
                 <h2 class="text-center fw-bold mb-4">Coding Corner</h2>
                 <div class="row justify-content-center">

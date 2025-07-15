@@ -10,6 +10,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" type="image/png" href="https://backend.radhi.tech/favicon.png">
     <meta name="htmx-config" content='{"historyCacheSize": 0, "refreshOnHistoryMiss": true}'>
+    <meta name="description" content="Radhi Bajahaw - Software Engineer, with Backend and DevOps specialities.">
     <meta property="og:title" content="About Me - Radhi Bajahaw" />
     <meta property="og:description" content="Software Engingeer, with Backend and DevOps specilities." />
     <meta property="og:image" content="https://backend.radhi.tech/og-portfolio.png" />

@@ -10,7 +10,7 @@
                 </span>
             </p>
             <div id="intro"
-                 class="text-secondary lead ai-response col-12 col-md-9 mt-4"
+                 class="text-secondary lead hyphened ai-response col-12 col-md-9 mt-4"
                  hx-get="/content/about-me-brief"
                  hx-trigger="revealed"
                  hx-swap="InnerHtml">

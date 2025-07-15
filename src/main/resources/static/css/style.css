@@ -71,6 +71,12 @@ body {
     }
 }
 
+@media (max-width: 767px) {
+    .hyphened {
+        hyphens: auto;
+        word-break: auto-phrase;
+    }
+}
 
 #resume {
     width: 100% !important;

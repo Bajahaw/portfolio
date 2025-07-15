@@ -6,7 +6,7 @@
             Thoughts, tutorials, and updates on my journey as a developer.
         </p>
         <div id="intro"
-             class="text-secondary lead ai-response col-12 col-md-9 mt-4"
+             class="text-secondary lead hyphened ai-response col-12 col-md-9 mt-4"
              hx-get="/content/about-blog"
              hx-trigger="revealed"
              hx-swap="InnerHtml">

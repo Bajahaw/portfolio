@@ -1,5 +1,5 @@
 @param boolean headless = false
-!{var content = @`
+@param gg.jte.Content content = @`
     <section id="overview">
         <div class="container d-flex flex-column-reverse d-md-flex flex-md-row pt-5"
              style="min-height: 640px">
@@ -11,7 +11,7 @@
                 </div>
                 <div class="d-flex flex-column justify-content-between mt-5 mb-0 h-50">
                     <div id="intro"
-                         class="text-secondary text-larger ai-response w-100"
+                         class="text-secondary text-larger hyphened ai-response w-100"
                          hx-get="/content/overview"
                          hx-trigger="revealed"
                          hx-swap="InnerHtml">
@@ -53,7 +53,7 @@
             <div class="col-lg-7 col-md-8 mx-lg-5 d-flex flex-column align-items-center justify-content-center py-5 px-lg-0">
                 <h1 class="block display-5 fw-bold mt-2">About Me</h1>
                 <div id="about-me-brief"
-                     class="block text-secondary text-sm-center text-larger ai-response my-4 w-100"
+                     class="block text-secondary text-sm-center text-larger hyphened ai-response my-4 w-100"
                      hx-get="/content/about-me-brief"
                      hx-trigger="revealed"
                      hx-swap="InnerHtml">
@@ -86,7 +86,7 @@
                 <div class="my-4 col-md-6 d-flex flex-column justify-content-center">
                     <h1 class="block display-5 fw-bold mb-5 text-center text-md-start">Get in Touch</h1>
                     <div id="social-overview"
-                         class="block text-secondary text-larger ai-response"
+                         class="block text-secondary text-larger hyphened ai-response mb-4"
                          hx-get="/content/social-overview"
                          hx-trigger="revealed"
                          hx-swap="InnerHtml">
@@ -96,11 +96,11 @@
                         <button hx-get="/blog#navbar"
                                 hx-target="#content"
                                 hx-trigger="click"
-                                class="btn btn-dark rounded-pill m-1 text-nowrap">
+                                class="btn btn-dark rounded-pill mx-1 text-nowrap">
                             <i class="bi bi-newspaper me-2"></i>Blog page</button>
                         <button hx-get="/stats#navbar" hx-target="#content" hx-push-url="true"
                                 onclick="activate(document.getElementById('stats'))"
-                                class="btn btn-outline-dark rounded-pill m-1 text-nowrap">
+                                class="btn btn-outline-dark rounded-pill mx-1 text-nowrap">
                             <i class="bi bi-lightbulb me-2"></i>See Insights
                         </button>
                     </div>
@@ -146,7 +146,7 @@
         </div>
         <div id="modal-container"></div>
     </section>
-`;}
+`
 
 @if(headless) ${content}
 @else @template.main(content = content)

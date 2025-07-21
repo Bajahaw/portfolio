@@ -7,6 +7,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.cache.annotation.Cacheable;
 import org.springframework.data.jdbc.core.JdbcAggregateTemplate;
 import org.springframework.stereotype.Service;
+import tech.radhi.portfolio.ai.AiService;
 import tech.radhi.portfolio.dto.ContentTemplate;
 import tech.radhi.portfolio.dto.ProjectTemplate;
 
@@ -15,12 +16,14 @@ import java.util.List;
 
 @Service
 public class ContentService {
+    private final AiService aiService;
     private final ContentRepository repository;
     private final JdbcAggregateTemplate jdbcTemplate;
     private final ObjectMapper mapper;
     private static final Logger log = LoggerFactory.getLogger(ContentService.class);
 
-    public ContentService(ContentRepository repository, JdbcAggregateTemplate template, ObjectMapper mapper) {
+    public ContentService(AiService aiService, ContentRepository repository, JdbcAggregateTemplate template, ObjectMapper mapper) {
+        this.aiService = aiService;
         this.repository = repository;
         this.jdbcTemplate = template;
         this.mapper = mapper;
@@ -29,7 +32,17 @@ public class ContentService {
     @Cacheable(cacheNames = "default", key = "#id")
     public String getContentById(String id) {
         ContentTemplate p = repository.getContentById(id);
-        return p != null ? p.contentBody() : "Oh!, Something seems off, got nothing to say ..";
+        if (p == null) return "Oh, Something seems off, got nothing to say ..";
+        return p.type().equals("prompt")?
+                respondWithAI(p.contentBody()) :
+                p.contentBody();
+    }
+
+    @Cacheable (cacheNames = "default", key = "#prompt")
+    public String respondWithAI(String prompt) {
+        var context = getContentById("context");
+        var message = context + "\n" + prompt;
+        return aiService.chat(message);
     }
 
     @Cacheable(cacheNames = "default", key = "#type")

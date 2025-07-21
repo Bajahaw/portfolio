@@ -5,6 +5,7 @@ plugins {
 	id("org.graalvm.buildtools.native") version "0.10.4"
 	id("gg.jte.gradle") version "3.1.12"
 }
+val springAiVersion by extra("1.0.0")
 
 group = "tech.radhi"
 version = "0.0.1-SNAPSHOT"
@@ -39,6 +40,7 @@ dependencies {
 	implementation("gg.jte:jte:3.1.12")
 	implementation("gg.jte:jte-spring-boot-starter-3:3.1.12")
 	implementation("org.springframework.boot:spring-boot-starter-graphql")
+	implementation("org.springframework.ai:spring-ai-starter-model-openai")
 	testImplementation("org.springframework.boot:spring-boot-starter-test")
 	testImplementation("org.springframework.security:spring-security-test")
 	testImplementation("org.springframework.graphql:spring-graphql-test")
@@ -46,6 +48,11 @@ dependencies {
 	testImplementation("org.springframework.graphql:spring-graphql-test")
 	testRuntimeOnly("org.junit.platform:junit-platform-launcher")
 	runtimeOnly("org.postgresql:postgresql")
+}
+dependencyManagement {
+	imports {
+		mavenBom("org.springframework.ai:spring-ai-bom:$springAiVersion")
+	}
 }
 
 jte {

@@ -1,6 +1,5 @@
 package tech.radhi.portfolio.ai;
 
-import com.fasterxml.jackson.databind.JsonNode;
 import org.springframework.ai.chat.client.ChatClient;
 import org.springframework.ai.chat.prompt.ChatOptions;
 import org.springframework.stereotype.Service;
@@ -14,6 +13,7 @@ public class AiService {
                 .defaultSystem("""
                      You are a helpful assistant. You are being used in a personal
                      portfolio website to answer questions about the site content and its owner.
+                     Your answers should be plain text, no Html or Markdown formatting.
                      You should be concise, informative, and helpful in your responses.
                     """)
                 .defaultOptions(
@@ -24,10 +24,10 @@ public class AiService {
                                 .build()
                 ).build();
     }
-    public JsonNode chat(String prompt) {
+    public String chat(String prompt) {
         return chatClient
                 .prompt(prompt)
                 .call()
-                .entity(JsonNode.class);
+                .content();
     }
 }

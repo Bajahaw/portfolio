@@ -27,17 +27,12 @@
             </div>
         </div>
         <div class="container py-5">
-            <h2 class="text-center fw-bold mb-5">Projects I've worked on ..</h2>
-            <div class="position-relative">
-                <div class="position-absolute h-100 ms-md-4 rounded-2"
-                     style="width: 5px; background-color: #dee2e6;"></div>
-
-                <div hx-get="/projects"
-                     hx-trigger="load"
-                     hx-swap="innerHtml"
-                        class="ps-4 ps-md-5 mx-md-4">
-                        @template.fragments.project-item()
-                </div>
+            <h2 class="text-center fw-bold mb-4">Projects I've worked on ..</h2>
+            <div hx-get="/projects"
+                 hx-trigger="load"
+                 hx-swap="innerHtml"
+                 class="row g-4">
+                @template.fragments.project-item()
             </div>
         </div>
         <div class="container col-lg-9">

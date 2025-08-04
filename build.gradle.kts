@@ -1,6 +1,6 @@
 plugins {
 	java
-	id("org.springframework.boot") version "3.4.5"
+	id("org.springframework.boot") version "3.5.4"
 	id("io.spring.dependency-management") version "1.1.7"
 	id("org.graalvm.buildtools.native") version "0.10.4"
 	id("gg.jte.gradle") version "3.1.12"
@@ -32,13 +32,12 @@ repositories {
 
 dependencies {
 	implementation("org.springframework.boot:spring-boot-starter-data-jdbc")
-	implementation("org.springdoc:springdoc-openapi-starter-webmvc-ui:2.8.6")
+	implementation("org.springdoc:springdoc-openapi-starter-webmvc-ui:2.8.9")
 	implementation("org.springframework.boot:spring-boot-starter-security")
 	implementation("org.springframework.boot:spring-boot-starter-actuator")
 	implementation("org.springframework.boot:spring-boot-starter-web")
 	implementation("org.jsoup:jsoup:1.20.1")
-	implementation("gg.jte:jte:3.1.12")
-	implementation("gg.jte:jte-spring-boot-starter-3:3.1.12")
+	implementation("gg.jte:jte-spring-boot-starter-3:3.1.16")
 	implementation("org.springframework.boot:spring-boot-starter-graphql")
 	implementation("org.springframework.ai:spring-ai-starter-model-openai")
 	testImplementation("org.springframework.boot:spring-boot-starter-test")

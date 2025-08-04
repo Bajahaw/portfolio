@@ -90,7 +90,7 @@ public class ContentController {
             log.error("resource can not be downloaded");
             return ResponseEntity.notFound().build();
         }
-        String filename = "CV-NEW-V3.pdf";
+        String filename = "CV-NEW-V3.2.pdf";
         return ResponseEntity.ok()
                 .contentType(MediaType.APPLICATION_PDF)
                 .header(HttpHeaders.CONTENT_DISPOSITION, "attachment; filename=\"" + filename + "\"")

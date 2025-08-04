@@ -24,7 +24,8 @@ public class SecurityConfig {
                                 "/content/save-all",
                                 "/content/project/**",
                                 "/content/delete/**",
-                                "/content/invalidate-cache"
+                                "/content/invalidate-cache",
+                                "/api/ai/**"
                         )
                         .authenticated().anyRequest().permitAll()
                 )

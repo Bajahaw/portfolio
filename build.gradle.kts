@@ -22,6 +22,7 @@ graalvmNative {
 			buildArgs.add("--libc=musl")
 			buildArgs.add("--static")
 			buildArgs.add("-O3")
+			buildArgs.add("-XX:+UseCompactObjectHeaders")
 		}
 	}
 }
